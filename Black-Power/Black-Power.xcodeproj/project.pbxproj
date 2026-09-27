@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AB153DDD30696E980081D9CD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AB153DDC30696E980081D9CD /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		AB153D8030690F260081D9CD /* Black-Power.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Black-Power.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB153DDC30696E980081D9CD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		AB153D7730690F260081D9CD = {
 			isa = PBXGroup;
 			children = (
+				AB153DDC30696E980081D9CD /* README.md */,
 				AB153D8230690F260081D9CD /* Black-Power */,
 				AB153D8130690F260081D9CD /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB153DDD30696E980081D9CD /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
