@@ -10,7 +10,11 @@ import SwiftUI
 struct BllackPower: View {
     var body: some View {
       Text("Black Power taking up space")
+        .font(.system(size: 28))
+        .bold()
       BlackPowerCanvasView(startingAngle: .pi)
+      Text("...more")
+        .font(.largeTitle)
     }
 }
 
@@ -30,8 +34,8 @@ struct BlackPowerCanvasView: View {
 }
 
 func drawBlackPower(
-  context :GraphicsContext,
-  size :CGSize,
+  context: GraphicsContext,
+  size: CGSize,
   startingAngle: CGFloat )
 {
   let dim: CGFloat = min(size.width, size.height)
