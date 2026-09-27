@@ -7,19 +7,31 @@
 
 import SwiftUI
 
+let animInterval = 0.10; // update very tenth of a second
+
 struct BllackPower: View {
-    var body: some View {
-      Text("Black Power taking up space")
-        .font(.system(size: 28))
-        .bold()
-      BlackPowerCanvasView(startingAngle: .pi)
-      Text("...more")
-        .font(.largeTitle)
+  @State private var angle: CGFloat = .pi
+  var body: some View {
+    Text("Black Power taking up space")
+      .font(.system(size: 28))
+      .bold()
+    TimelineView(.animation(minimumInterval: animInterval)) {
+      context in
+      BlackPowerCanvasView(startingAngle: angle)
+        .onChange(of: context.date) { _, _ in
+          angle += .pi / 180
+        }
     }
+    .onAppear {
+      print("onAppear")
+    }
+    Text("...more")
+      .font(.largeTitle)
+  }
 }
 
 #Preview {
-    BllackPower()
+  BllackPower()
 }
 
 struct BlackPowerCanvasView: View {
@@ -120,5 +132,5 @@ extension Color {
   }
 }
 
-
-
+// https://claude.ai/chat/9af10cbe-79dd-43f7-bb52-0570235c15f6
+// example code for using TimelineView to animate @State variable
