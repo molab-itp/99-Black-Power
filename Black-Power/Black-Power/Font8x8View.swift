@@ -11,7 +11,7 @@ struct Font8x8View: View {
     var body: some View {
       VStack {
         Text("Hello, World!a")
-        Text(buildString("ox", scale: 1))
+        Text(buildString("Food", scale: 1).joined(separator: "\n"))
           .font(.system(.body, design: .monospaced))
 //          .font(.system(size: 12, design: .monospaced))
       }
@@ -60,15 +60,16 @@ func createScreen(_ str: String) -> Screen {
   return charScreen
 }
 
-func buildString(_ str:String, scale: Int) -> String {
-  var out:String = ""
+func buildString(_ str:String, scale: Int) -> [String] {
+  var outs:[String] = []
   let charScreen = createScreen(str)
   let n = charScreen[0].count;
   for _ in 0..<scale {
-    out += String(repeating: grayChar, count: n*scale+scale*2) + "\n"
+    outs.append(String(repeating: grayChar, count: n*scale+scale*2))
   }
   for line in charScreen {
     for _ in 0..<scale {
+      var out:String = ""
       for _ in 0..<scale*2 {
         out += grayChar
       }
@@ -77,10 +78,10 @@ func buildString(_ str:String, scale: Int) -> String {
           out += String(item)
         }
       }
-      out += "\n"
+      outs.append(out)
     }
   }
-  return out
+  return outs
 }
 
 let font8x8_basic: [[Int]] = [
