@@ -46,3 +46,6 @@ and add to prep/data
 >> in prep/
 npm run build
 
+v1.4
+
+adjust thumb for Prince Hall

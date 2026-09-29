@@ -41,6 +41,8 @@ const IMAGE_OVERRIDES = {
   'august-wilson': {
     file: 'August_wilson.jpg', // non-free, used under fair use on English Wikipedia
   },
+  // position: CSS background-position for the cropped grid thumbnail
+  'prince-hall': { position: 'center top' },
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -255,6 +257,7 @@ async function main() {
         license: meta.LicenseShortName?.value || null,
         licenseUrl: meta.LicenseUrl?.value || null,
         note: IMAGE_OVERRIDES[slug]?.note || null,
+        position: IMAGE_OVERRIDES[slug]?.position || null,
       };
     } else {
       console.log(`${String(i + 1).padStart(3)} ${p.name} — no image`);

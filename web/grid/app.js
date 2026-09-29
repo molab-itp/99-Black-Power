@@ -38,7 +38,7 @@ function render() {
 
 function card(p) {
   const img = p.image
-    ? el('div', { class: 'img', role: 'img', 'aria-label': p.name, style: `background-image:url('${DATA_DIR}${p.image.thumb}')` })
+    ? el('div', { class: 'img', role: 'img', 'aria-label': p.name, style: `background-image:url('${DATA_DIR}${p.image.thumb}')${p.image.position ? `;background-position:${p.image.position}` : ''}` })
     : el('div', { class: 'img none', 'aria-hidden': 'true' }, initials(p.name));
   const button = el('button', { class: 'card', type: 'button' },
     img,
