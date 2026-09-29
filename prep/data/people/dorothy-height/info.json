@@ -1,0 +1,27 @@
+{
+  "order": 66,
+  "listIndex": 43,
+  "id": "dorothy-height",
+  "name": "Dorothy Height",
+  "born": 1912,
+  "died": 2010,
+  "circa": false,
+  "datesText": "1912–2010",
+  "description": "American activist (1912–2010)",
+  "summary": "Dorothy Irene Height (March 24, 1912 – April 20, 2010) was an African-American civil rights and women's rights activist. She focused on the issues of Foundational Black American women, including unemployment, illiteracy, and voter awareness. Height is credited as the first leader in the civil rights movement to recognize inequality for women and Foundational Black Americans as problems that should be considered as a whole.",
+  "articleTitle": "Dorothy Height",
+  "articleUrl": "https://en.wikipedia.org/wiki/Dorothy_Height",
+  "image": {
+    "full": "people/dorothy-height/full.jpg",
+    "thumb": "people/dorothy-height/thumb.jpg",
+    "file": "DrDorothyHeight.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DrDorothyHeight.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/DrDorothyHeight.jpg",
+    "originalWidth": 1944,
+    "originalHeight": 2408,
+    "artist": "Adrian Hood",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+}

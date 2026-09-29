@@ -1,0 +1,27 @@
+{
+  "order": 60,
+  "listIndex": 99,
+  "id": "richard-wright",
+  "name": "Richard Wright",
+  "born": 1908,
+  "died": 1960,
+  "circa": false,
+  "datesText": "1908–1960",
+  "description": "American novelist and poet (1908–1960)",
+  "summary": "Richard Nathaniel Wright (September 4, 1908 – November 28, 1960) was an American author of novels, short stories, poems, and non-fiction. Much of his literature concerns racial themes, especially related to the plight of African Americans during the late 19th to mid 20th centuries suffering discrimination and violence. His best known works include the novella collection Uncle Tom's Children (1938), the novel Native Son (1940), and the memoir Black Boy (1945).",
+  "articleTitle": "Richard Wright (author)",
+  "articleUrl": "https://en.wikipedia.org/wiki/Richard_Wright_(author)",
+  "image": {
+    "full": "people/richard-wright/full.jpg",
+    "thumb": "people/richard-wright/thumb.jpg",
+    "file": "Richard_Wright.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Richard_Wright.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Richard_Wright.jpg",
+    "originalWidth": 1216,
+    "originalHeight": 1536,
+    "artist": "Carl Van Vechten",
+    "credit": "Van Vechten Collection at Library of Congress",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

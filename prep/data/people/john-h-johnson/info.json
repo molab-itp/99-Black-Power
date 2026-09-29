@@ -1,0 +1,27 @@
+{
+  "order": 75,
+  "listIndex": 52,
+  "id": "john-h-johnson",
+  "name": "John H. Johnson",
+  "born": 1918,
+  "died": 2005,
+  "circa": false,
+  "datesText": "1918–2005",
+  "description": "American businessman and publisher (1918–2005)",
+  "summary": "John Harold Johnson (January 19, 1918 – August 8, 2005) was an American business executive and publisher. He was the founder in 1942 of the Johnson Publishing Company, headquartered in Chicago, Illinois. Johnson's company, with its creation of Ebony (1945) and Jet (1951) magazines, was among the most influential African-American business in media in the second half of the twentieth century, peaking at 9 million subscribers.",
+  "articleTitle": "John H. Johnson",
+  "articleUrl": "https://en.wikipedia.org/wiki/John_H._Johnson",
+  "image": {
+    "full": "people/john-h-johnson/full.jpg",
+    "thumb": "people/john-h-johnson/thumb.jpg",
+    "file": "John_H._Johnson_in_1954.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_H._Johnson_in_1954.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/John_H._Johnson_in_1954.jpg",
+    "originalWidth": 640,
+    "originalHeight": 720,
+    "artist": "Unknown authorUnknown author",
+    "credit": "[1], [2], [3], [4], [5],",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 21,
+  "listIndex": 57,
+  "id": "edmonia-lewis",
+  "name": "Edmonia Lewis",
+  "born": 1844,
+  "died": 1907,
+  "circa": false,
+  "datesText": "1844–1907",
+  "description": "American sculptor (1844–1907)",
+  "summary": "Mary Edmonia Lewis, also known as \"Wildfire\" (c. July 4, 1844 – September 17, 1907), was an American sculptor. Born in Upstate New York of mixed African-American and Native American (Mississauga Ojibwe) heritage, she moved to Rome, Italy in 1866, where she spent most of her career.",
+  "articleTitle": "Edmonia Lewis",
+  "articleUrl": "https://en.wikipedia.org/wiki/Edmonia_Lewis",
+  "image": {
+    "full": "people/edmonia-lewis/full.jpg",
+    "thumb": "people/edmonia-lewis/thumb.jpg",
+    "file": "Edmonia_Lewis_by_Henry_Rocher.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edmonia_Lewis_by_Henry_Rocher.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Edmonia_Lewis_by_Henry_Rocher.jpg",
+    "originalWidth": 2404,
+    "originalHeight": 4314,
+    "artist": "Henry Rocher / Adam Cuerden",
+    "credit": "National Portrait Gallery (United States) Object number NPG.94.95",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

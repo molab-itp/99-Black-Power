@@ -1,0 +1,27 @@
+{
+  "order": 37,
+  "listIndex": 66,
+  "id": "garrett-morgan",
+  "name": "Garrett Morgan",
+  "born": 1877,
+  "died": 1963,
+  "circa": false,
+  "datesText": "1877–1963",
+  "description": "American inventor and entrepreneur",
+  "summary": "Garrett Augustus Morgan Sr. (March 4, 1877 – July 27, 1963) was an American inventor, businessman, and community leader. His most notable inventions were a protective \"smoke hood\" that he notably used in a 1916 tunnel construction disaster rescue, a type of three-way traffic light invented in 1923, a hair-straightening cream, and other hair-care products.",
+  "articleTitle": "Garrett Morgan",
+  "articleUrl": "https://en.wikipedia.org/wiki/Garrett_Morgan",
+  "image": {
+    "full": "people/garrett-morgan/full.jpg",
+    "thumb": "people/garrett-morgan/thumb.jpg",
+    "file": "Garrett_Morgan.gif",
+    "sourceUrl": "https://en.wikipedia.org/wiki/File:Garrett_Morgan.gif",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/en/f/f7/Garrett_Morgan.gif",
+    "originalWidth": 271,
+    "originalHeight": 340,
+    "artist": null,
+    "credit": "This image comes from an official publication of the US Department of Transportation, located at http://www.tfhrc.gov/pubrds/janpr/gam.htm.",
+    "license": "PD",
+    "licenseUrl": null
+  }
+}

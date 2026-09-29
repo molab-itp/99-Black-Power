@@ -1,0 +1,27 @@
+{
+  "order": 83,
+  "listIndex": 6,
+  "id": "maya-angelou",
+  "name": "Maya Angelou",
+  "born": 1928,
+  "died": 2014,
+  "circa": false,
+  "datesText": "1928–2014",
+  "description": "American writer and activist (1928–2014)",
+  "summary": "Maya Angelou (  AN-jə-loh; born Marguerite Annie Johnson; April 4, 1928 – May 28, 2014) was an American memoirist, essayist, poet, and civil rights activist. She published seven autobiographies, three books of essays, several books of poetry, and is credited with a list of plays, movies, and television shows spanning more than 50 years. She received dozens of awards and more than 50 honorary degrees.",
+  "articleTitle": "Maya Angelou",
+  "articleUrl": "https://en.wikipedia.org/wiki/Maya_Angelou",
+  "image": {
+    "full": "people/maya-angelou/full.jpg",
+    "thumb": "people/maya-angelou/thumb.jpg",
+    "file": "Angelou_at_Clinton_inauguration_(cropped_2).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angelou_at_Clinton_inauguration_(cropped_2).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Angelou_at_Clinton_inauguration_%28cropped_2%29.jpg",
+    "originalWidth": 1180,
+    "originalHeight": 1600,
+    "artist": "Clinton Library",
+    "credit": "William J. Clinton Presidential Library",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

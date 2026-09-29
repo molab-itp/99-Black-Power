@@ -1,0 +1,27 @@
+{
+  "order": 56,
+  "listIndex": 15,
+  "id": "arna-bontemps",
+  "name": "Arna Bontemps",
+  "born": 1902,
+  "died": 1973,
+  "circa": false,
+  "datesText": "1902–1973",
+  "description": "American writer and librarian (1902–1973)",
+  "summary": "Arna Wendell Bontemps ( bon-TOM) (October 13, 1902 – June 4, 1973) was an American poet, novelist and librarian, and a noted member of the Harlem Renaissance.",
+  "articleTitle": "Arna Bontemps",
+  "articleUrl": "https://en.wikipedia.org/wiki/Arna_Bontemps",
+  "image": {
+    "full": "people/arna-bontemps/full.jpg",
+    "thumb": "people/arna-bontemps/thumb.jpg",
+    "file": "Arna_Bontemps_(1939).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arna_Bontemps_(1939).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Arna_Bontemps_%281939%29.jpg",
+    "originalWidth": 2568,
+    "originalHeight": 3465,
+    "artist": "Carl Van Vechten / Adam Cuerden",
+    "credit": "This image is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3f06356.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

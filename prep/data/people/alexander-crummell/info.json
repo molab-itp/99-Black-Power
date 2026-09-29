@@ -1,0 +1,27 @@
+{
+  "order": 16,
+  "listIndex": 26,
+  "id": "alexander-crummell",
+  "name": "Alexander Crummell",
+  "born": 1819,
+  "died": 1898,
+  "circa": false,
+  "datesText": "1819–1898",
+  "description": "American minister and academic (1819–1898)",
+  "summary": "Alexander Crummell (March 3, 1819 – September 10, 1898) was a minister, author, abolitionist, and academic. Born to free black parents in New York City, Crummell attended various educational institutions and was ordained as an Episcopal priest in the United States. He was a member of Prince Hall Freemasonry.",
+  "articleTitle": "Alexander Crummell",
+  "articleUrl": "https://en.wikipedia.org/wiki/Alexander_Crummell",
+  "image": {
+    "full": "people/alexander-crummell/full.jpg",
+    "thumb": "people/alexander-crummell/thumb.jpg",
+    "file": "Alexander_Crummel_(cropped).png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexander_Crummel_(cropped).png",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Alexander_Crummel_%28cropped%29.png",
+    "originalWidth": 389,
+    "originalHeight": 482,
+    "artist": "Internet Archive Book Images",
+    "credit": "https://archive.org/stream/greatnessofchris00crum#page/n7/mode/2up Book: Crummell, Alexander. The Greatness of Christ: And Other Sermons. New York: Thomas Whittaker, 1882.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

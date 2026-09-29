@@ -1,0 +1,27 @@
+{
+  "order": 23,
+  "listIndex": 89,
+  "id": "booker-t-washington",
+  "name": "Booker T. Washington",
+  "born": 1856,
+  "died": 1915,
+  "circa": false,
+  "datesText": "1856–1915",
+  "description": "American educator, author, orator and adviser (1856–1915)",
+  "summary": "Booker Taliaferro Washington (April 5, 1856 – November 14, 1915) was an American educator, author, and orator. Between 1890 and 1915, Washington was the primary leader in the African-American community and of the contemporary Black elite.\nBorn into slavery on April 5, 1856, in Hale's Ford, Virginia, Washington was freed when U.S. troops reached the area during the Civil War.",
+  "articleTitle": "Booker T. Washington",
+  "articleUrl": "https://en.wikipedia.org/wiki/Booker_T._Washington",
+  "image": {
+    "full": "people/booker-t-washington/full.jpg",
+    "thumb": "people/booker-t-washington/thumb.jpg",
+    "file": "Booker_T_Washington_retouched_flattened-crop.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Booker_T_Washington_retouched_flattened-crop.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Booker_T_Washington_retouched_flattened-crop.jpg",
+    "originalWidth": 2344,
+    "originalHeight": 3313,
+    "artist": "Harris &amp; Ewing",
+    "credit": "http://hdl.loc.gov/loc.pnp/hec.16114",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 62,
+  "listIndex": 60,
+  "id": "thurgood-marshall",
+  "name": "Thurgood Marshall",
+  "born": 1908,
+  "died": 1993,
+  "circa": false,
+  "datesText": "1908–1993",
+  "description": "US Supreme Court justice from 1967 to 1991",
+  "summary": "Thoroughgood \"Thurgood\" Marshall (July 2, 1908 – January 24, 1993) was an American lawyer who served as an associate justice of the Supreme Court of the United States from 1967 until 1991. He was the Supreme Court's first African-American justice. Before his judicial service, he was an attorney who fought for civil rights, leading the NAACP Legal Defense and Educational Fund.",
+  "articleTitle": "Thurgood Marshall",
+  "articleUrl": "https://en.wikipedia.org/wiki/Thurgood_Marshall",
+  "image": {
+    "full": "people/thurgood-marshall/full.jpg",
+    "thumb": "people/thurgood-marshall/thumb.jpg",
+    "file": "Thurgood-marshall-2.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thurgood-marshall-2.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Thurgood-marshall-2.jpg",
+    "originalWidth": 1184,
+    "originalHeight": 1488,
+    "artist": "Robert S. Oakes",
+    "credit": "This image is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3b07878.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

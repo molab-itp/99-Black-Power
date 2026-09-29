@@ -1,0 +1,27 @@
+{
+  "order": 4,
+  "listIndex": 91,
+  "id": "phillis-wheatley",
+  "name": "Phillis Wheatley",
+  "born": 1753,
+  "died": 1784,
+  "circa": true,
+  "datesText": "1753–1784",
+  "description": "American writer (c. 1753–1784)",
+  "summary": "Phillis Wheatley Peters, also spelled Phyllis and Wheatly (c. 1753 – December 5, 1784), was an American writer who is considered the first African-American author of a published book of poetry. Born in West Africa, she was sold into slavery at the age of seven or eight and transported to North America, where she was bought by the Wheatley family of Boston. After she learned to read and write, they encouraged her poetry when they saw her talent.",
+  "articleTitle": "Phillis Wheatley",
+  "articleUrl": "https://en.wikipedia.org/wiki/Phillis_Wheatley",
+  "image": {
+    "full": "people/phillis-wheatley/full.jpg",
+    "thumb": "people/phillis-wheatley/thumb.jpg",
+    "file": "Phillis_Wheatley_frontispiece.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phillis_Wheatley_frontispiece.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Phillis_Wheatley_frontispiece.jpg",
+    "originalWidth": 806,
+    "originalHeight": 1024,
+    "artist": "Scipio Moorhead",
+    "credit": "This image is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3a40394.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

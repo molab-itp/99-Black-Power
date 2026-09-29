@@ -1,0 +1,14 @@
+{
+  "name": "prep-100-greatest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Parse Wikipedia's 100 Greatest African Americans list into JSON with images",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "build:force": "node build.js --force"
+  },
+  "dependencies": {
+    "sharp": "^0.34.0"
+  }
+}

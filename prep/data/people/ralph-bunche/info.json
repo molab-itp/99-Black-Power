@@ -1,0 +1,27 @@
+{
+  "order": 58,
+  "listIndex": 19,
+  "id": "ralph-bunche",
+  "name": "Ralph Bunche",
+  "born": 1903,
+  "died": 1971,
+  "circa": false,
+  "datesText": "1903–1971",
+  "description": "American political scientist (1904–1971)",
+  "summary": "Ralph Johnson Bunche ( BUNCH; August 7, 1904 – December 9, 1971) was an American political scientist and diplomat who received the 1950 Nobel Peace Prize for his late 1940s mediation in the Arab–Israeli conflict. He is the first black Nobel laureate and the first Black person to be awarded a Nobel Prize. He was involved in the formation and early administration of the United Nations, serving as the under‑secretary‑general and briefly the acting secretary-general in 1953, and played a major role in both the decolonization process and numerous United Nations peacekeeping operations.",
+  "articleTitle": "Ralph Bunche",
+  "articleUrl": "https://en.wikipedia.org/wiki/Ralph_Bunche",
+  "image": {
+    "full": "people/ralph-bunche/full.jpg",
+    "thumb": "people/ralph-bunche/thumb.jpg",
+    "file": "Ralph_Bunche_1955.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ralph_Bunche_1955.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Ralph_Bunche_1955.jpg",
+    "originalWidth": 1350,
+    "originalHeight": 1800,
+    "artist": "Bettmann Archive",
+    "credit": "https://www.gettyimages.com/detail/news-photo/ralph-j-bunche-undersecretary-of-the-united-nations-and-news-photo/514901210",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

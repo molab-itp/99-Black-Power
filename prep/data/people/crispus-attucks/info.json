@@ -1,0 +1,27 @@
+{
+  "order": 1,
+  "listIndex": 8,
+  "id": "crispus-attucks",
+  "name": "Crispus Attucks",
+  "born": 1723,
+  "died": 1770,
+  "circa": false,
+  "datesText": "1723–1770",
+  "description": "Boston Massacre victim (1723–1770)",
+  "summary": "Crispus Attucks (c. 1723 – March 5, 1770) was an American whaler, sailor, and stevedore of African American and Native American descent who is traditionally regarded as the first person killed in the Boston Massacre, and as a result the first American killed in the American Revolution. \nAlthough he is widely remembered as the first American casualty of the American Revolutionary War, 11-year-old Christopher Seider was shot a few weeks earlier by customs officer Ebenezer Richardson on February 22, 1770. Historians disagree on whether Attucks was a free man or an escaped slave, but most agree that he was of Wampanoag and African descent.",
+  "articleTitle": "Crispus Attucks",
+  "articleUrl": "https://en.wikipedia.org/wiki/Crispus_Attucks",
+  "image": {
+    "full": "people/crispus-attucks/full.jpg",
+    "thumb": "people/crispus-attucks/thumb.jpg",
+    "file": "Crispus_Attucks.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Crispus_Attucks.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Crispus_Attucks.jpg",
+    "originalWidth": 1250,
+    "originalHeight": 1600,
+    "artist": "Original uploader was Mav at en.wikipedia",
+    "credit": "Transferred from en.wikipedia to Commons.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

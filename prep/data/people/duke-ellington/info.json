@@ -1,0 +1,27 @@
+{
+  "order": 52,
+  "listIndex": 35,
+  "id": "duke-ellington",
+  "name": "Duke Ellington",
+  "born": 1899,
+  "died": 1974,
+  "circa": false,
+  "datesText": "1899–1974",
+  "description": "American jazz pianist and composer (1899–1974)",
+  "summary": "Edward Kennedy \"Duke\" Ellington (April 29, 1899 – May 24, 1974) was an American jazz pianist, composer, and leader of his eponymous jazz orchestra from 1924 through the rest of his life. Music critic Ralph J. Gleason called him \"America's most important composer\".\nBorn and raised in Washington, D.C., Ellington was based in New York City from the mid-1920s and gained a national profile through his orchestra's appearances at the Cotton Club in Harlem.",
+  "articleTitle": "Duke Ellington",
+  "articleUrl": "https://en.wikipedia.org/wiki/Duke_Ellington",
+  "image": {
+    "full": "people/duke-ellington/full.jpg",
+    "thumb": "people/duke-ellington/thumb.jpg",
+    "file": "Duke_Ellington_-_publicity.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duke_Ellington_-_publicity.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Duke_Ellington_-_publicity.JPG",
+    "originalWidth": 1049,
+    "originalHeight": 1279,
+    "artist": "Unknown authorUnknown author",
+    "credit": "eBay",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

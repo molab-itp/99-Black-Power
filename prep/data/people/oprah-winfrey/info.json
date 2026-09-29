@@ -1,0 +1,27 @@
+{
+  "order": 98,
+  "listIndex": 96,
+  "id": "oprah-winfrey",
+  "name": "Oprah Winfrey",
+  "born": 1954,
+  "died": null,
+  "circa": false,
+  "datesText": "born 1954",
+  "description": "American actress and media mogul (born 1954)",
+  "summary": "Oprah Gail Winfrey (; born  Orpah Gail Winfrey; January 29, 1954) is an American media mogul, actress, executive producer, author, and television personality. She is best known for her talk show, The Oprah Winfrey Show, broadcast from Chicago, which ran in national syndication for 25 years, from 1986 to 2011. Globally, she is the richest Black woman and the wealthiest female celebrity.",
+  "articleTitle": "Oprah Winfrey",
+  "articleUrl": "https://en.wikipedia.org/wiki/Oprah_Winfrey",
+  "image": {
+    "full": "people/oprah-winfrey/full.jpg",
+    "thumb": "people/oprah-winfrey/thumb.jpg",
+    "file": "Oprah_Winfrey_2016.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oprah_Winfrey_2016.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Oprah_Winfrey_2016.jpg",
+    "originalWidth": 1108,
+    "originalHeight": 1604,
+    "artist": "US Embassy South Africa",
+    "credit": "https://www.flickr.com/photos/usembassysa/30637612874/",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

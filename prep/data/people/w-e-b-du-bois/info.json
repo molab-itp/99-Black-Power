@@ -1,0 +1,27 @@
+{
+  "order": 30,
+  "listIndex": 32,
+  "id": "w-e-b-du-bois",
+  "name": "W. E. B. Du Bois",
+  "born": 1868,
+  "died": 1963,
+  "circa": false,
+  "datesText": "1868–1963",
+  "description": "American sociologist and activist (1868–1963)",
+  "summary": "William Edward Burghardt Du Bois ( doo-BOYSS; February 23, 1868 – August 27, 1963) was an American sociologist, writer, historian, and Pan-Africanist civil rights activist. Born in Great Barrington, Massachusetts, Du Bois grew up in a relatively tolerant and integrated community. He completed graduate work at Harvard University, where he was the first African American to earn a doctorate.",
+  "articleTitle": "W. E. B. Du Bois",
+  "articleUrl": "https://en.wikipedia.org/wiki/W._E._B._Du_Bois",
+  "image": {
+    "full": "people/w-e-b-du-bois/full.jpg",
+    "thumb": "people/w-e-b-du-bois/thumb.jpg",
+    "file": "W.E.B._Du_Bois_by_James_E._Purdy,_1907_(3x4).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:W.E.B._Du_Bois_by_James_E._Purdy,_1907_(3x4).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/W.E.B._Du_Bois_by_James_E._Purdy%2C_1907_%283x4%29.jpg",
+    "originalWidth": 2808,
+    "originalHeight": 3744,
+    "artist": "James E. Purdy / Adam Cuerden",
+    "credit": "National Portrait Gallery",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

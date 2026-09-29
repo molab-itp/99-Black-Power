@@ -1,0 +1,27 @@
+{
+  "order": 3,
+  "listIndex": 40,
+  "id": "prince-hall",
+  "name": "Prince Hall",
+  "born": 1735,
+  "died": 1807,
+  "circa": false,
+  "datesText": "1735–1807",
+  "description": "American free Black leader and Freemason (c. 1736 – 1807)",
+  "summary": "Prince Hall (c. 1735/38 – December 7, 1807) was an American abolitionist and leader in the free Black community in Boston. He founded Prince Hall Freemasonry and lobbied for education rights for African-American children. He was also active in the Back-to-Africa movement.",
+  "articleTitle": "Prince Hall",
+  "articleUrl": "https://en.wikipedia.org/wiki/Prince_Hall",
+  "image": {
+    "full": "people/prince-hall/full.jpg",
+    "thumb": "people/prince-hall/thumb.jpg",
+    "file": "Prince_hall_portrait.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prince_hall_portrait.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Prince_hall_portrait.jpg",
+    "originalWidth": 589,
+    "originalHeight": 1194,
+    "artist": "According to the site Grand Logde of British Culumbia and Yucon[2], the portrait is unattributed.[3]",
+    "credit": "Site: Grand Logde of British Culumbia and Yukon[1] Portrait: http://freemasonry.bcy.ca/prince_hall/PrnceHll.jpg",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 14,
+  "listIndex": 38,
+  "id": "henry-highland-garnet",
+  "name": "Henry Highland Garnet",
+  "born": 1815,
+  "died": 1882,
+  "circa": false,
+  "datesText": "1815–1882",
+  "description": "American abolitionist (1815–1882)",
+  "summary": "Henry Highland Garnet (December 23, 1815 – February 13, 1882) was an American abolitionist, minister, educator, orator, and diplomat. Having escaped as a child from slavery in Maryland with his family, he grew up in New York City. He was educated at the African Free School, and later the Noyes Academy and the Oneida Institute.",
+  "articleTitle": "Henry Highland Garnet",
+  "articleUrl": "https://en.wikipedia.org/wiki/Henry_Highland_Garnet",
+  "image": {
+    "full": "people/henry-highland-garnet/full.jpg",
+    "thumb": "people/henry-highland-garnet/thumb.jpg",
+    "file": "Henry_Highland_Garnet_by_James_U._Stead_crop.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henry_Highland_Garnet_by_James_U._Stead_crop.png",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Henry_Highland_Garnet_by_James_U._Stead_crop.png",
+    "originalWidth": 2376,
+    "originalHeight": 3004,
+    "artist": "Adam Cuerden",
+    "credit": "File:Henry Highland Garnet by James U. Stead.jpg",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

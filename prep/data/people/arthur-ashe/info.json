@@ -1,0 +1,27 @@
+{
+  "order": 96,
+  "listIndex": 7,
+  "id": "arthur-ashe",
+  "name": "Arthur Ashe",
+  "born": 1943,
+  "died": 1993,
+  "circa": false,
+  "datesText": "1943–1993",
+  "description": "American tennis player (1943–1993)",
+  "summary": "Arthur Robert Ashe Jr. (July 10, 1943 – February 6, 1993) was an American professional tennis player. He won three Grand Slam titles in singles and two in doubles.",
+  "articleTitle": "Arthur Ashe",
+  "articleUrl": "https://en.wikipedia.org/wiki/Arthur_Ashe",
+  "image": {
+    "full": "people/arthur-ashe/full.jpg",
+    "thumb": "people/arthur-ashe/thumb.jpg",
+    "file": "Arthur_Ashe_(cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arthur_Ashe_(cropped).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/Arthur_Ashe_%28cropped%29.jpg",
+    "originalWidth": 559,
+    "originalHeight": 767,
+    "artist": "Rob Bogaerts for Anefo",
+    "credit": "Nationaal Archief Fotocollectie Anefo Item number 927-7839",
+    "license": "CC BY-SA 3.0 nl",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 15,
+  "listIndex": 30,
+  "id": "frederick-douglass",
+  "name": "Frederick Douglass",
+  "born": 1817,
+  "died": 1895,
+  "circa": false,
+  "datesText": "1817–1895",
+  "description": "American abolitionist (1818–1895)",
+  "summary": "Frederick Douglass (born Frederick Augustus Washington Bailey, c. February 14, 1818 – February 20, 1895) was an American social reformer, abolitionist, orator, writer, and statesman. He was \"the most important leader of the movement for African-American civil rights in the 19th century\".",
+  "articleTitle": "Frederick Douglass",
+  "articleUrl": "https://en.wikipedia.org/wiki/Frederick_Douglass",
+  "image": {
+    "full": "people/frederick-douglass/full.jpg",
+    "thumb": "people/frederick-douglass/thumb.jpg",
+    "file": "Frederick_Douglass_(circa_1879)_(cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frederick_Douglass_(circa_1879)_(cropped).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Frederick_Douglass_%28circa_1879%29_%28cropped%29.jpg",
+    "originalWidth": 2006,
+    "originalHeight": 2672,
+    "artist": "George Kendall Warren",
+    "credit": "This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 51,
+  "listIndex": 75,
+  "id": "paul-robeson",
+  "name": "Paul Robeson",
+  "born": 1898,
+  "died": 1978,
+  "circa": false,
+  "datesText": "1898–1978",
+  "description": "American singer, actor, political activist, and athlete (1898–1976)",
+  "summary": "Paul Leroy Robeson ( ROHB-sən; April 9, 1898 – January 23, 1976) was an American bass-baritone concert artist, actor, professional football player, and activist who became famous both for his cultural accomplishments and for his political stances.\nIn 1915, Robeson won an academic scholarship to Rutgers College in New Brunswick, New Jersey, where he was the only African-American student. While at Rutgers, he was twice named a consensus All-American in football and was elected class valedictorian.",
+  "articleTitle": "Paul Robeson",
+  "articleUrl": "https://en.wikipedia.org/wiki/Paul_Robeson",
+  "image": {
+    "full": "people/paul-robeson/full.jpg",
+    "thumb": "people/paul-robeson/thumb.jpg",
+    "file": "Paul_Robeson_1942_crop.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_Robeson_1942_crop.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Paul_Robeson_1942_crop.jpg",
+    "originalWidth": 9300,
+    "originalHeight": 11591,
+    "artist": "Gordon Parks, Office of War Information; cropped by Beyond My Ken (talk) 07:13, 3 February 2011 (UTC)",
+    "credit": "Library of Congress Prints and Photographs Division, Farm Security Administration - Office of War Information Photograph Collection. http://hdl.loc.gov/loc.pnp/fsa.8b14812",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

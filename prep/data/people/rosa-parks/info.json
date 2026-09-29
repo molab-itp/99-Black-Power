@@ -1,0 +1,27 @@
+{
+  "order": 68,
+  "listIndex": 70,
+  "id": "rosa-parks",
+  "name": "Rosa Parks",
+  "born": 1913,
+  "died": 2005,
+  "circa": false,
+  "datesText": "1913–2005",
+  "description": "American civil rights activist (1913–2005)",
+  "summary": "Rosa Louise McCauley Parks (February 4, 1913 – October 24, 2005) was an American civil rights activist. She is best known for her 1955 refusal to move from her seat on a bus in Montgomery, Alabama, in defiance of Jim Crow racial segregation laws, which sparked the Montgomery bus boycott. She is sometimes known as the \"mother of the civil rights movement\".",
+  "articleTitle": "Rosa Parks",
+  "articleUrl": "https://en.wikipedia.org/wiki/Rosa_Parks",
+  "image": {
+    "full": "people/rosa-parks/full.jpg",
+    "thumb": "people/rosa-parks/thumb.jpg",
+    "file": "Rosa_Parks,_November_1956_(cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Parks,_November_1956_(cropped).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Rosa_Parks%2C_November_1956_%28cropped%29.jpg",
+    "originalWidth": 2349,
+    "originalHeight": 3560,
+    "artist": "Unknown authorUnknown author",
+    "credit": "Retrieved from the Rosa Parks papers at the Library of Congress via https://www.loc.gov/resource/ppmsca.38464/. Previously published as early as May 24, 1957 in The Call (Kansas City, Missouri). Also published June 19, 1957 in The Morning Call (Paterson, New Jersey).",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

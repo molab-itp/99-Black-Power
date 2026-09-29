@@ -1,0 +1,27 @@
+{
+  "order": 44,
+  "listIndex": 63,
+  "id": "claude-mckay",
+  "name": "Claude McKay",
+  "born": 1890,
+  "died": 1948,
+  "circa": false,
+  "datesText": "1890–1948",
+  "description": "Jamaican American writer and poet (1890–1948)",
+  "summary": "Festus Claudius \"Claude\" McKay  (September 15, 1890 – May 22, 1948) was a Jamaican-American writer and poet. He was a central figure in the Harlem Renaissance.\nBorn in Jamaica, McKay first travelled to the United States to attend college, and encountered W. E. B. Du Bois's The Souls of Black Folk which stimulated McKay's interest in political involvement.",
+  "articleTitle": "Claude McKay",
+  "articleUrl": "https://en.wikipedia.org/wiki/Claude_McKay",
+  "image": {
+    "full": "people/claude-mckay/full.jpg",
+    "thumb": "people/claude-mckay/thumb.jpg",
+    "file": "Claude_McKay_James_L._Allen_Portrait_Edit.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_McKay_James_L._Allen_Portrait_Edit.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Claude_McKay_James_L._Allen_Portrait_Edit.jpg",
+    "originalWidth": 1280,
+    "originalHeight": 1696,
+    "artist": "James L. Allen",
+    "credit": "https://www.nytimes.com/2020/02/11/books/review/romance-in-marseilles-claude-mckay.html",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

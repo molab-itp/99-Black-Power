@@ -1,0 +1,27 @@
+{
+  "order": 85,
+  "listIndex": 42,
+  "id": "lorraine-hansberry",
+  "name": "Lorraine Hansberry",
+  "born": 1930,
+  "died": 1965,
+  "circa": false,
+  "datesText": "1930–1965",
+  "description": "African-American playwright and author (1930–1965)",
+  "summary": "Lorraine Vivian Hansberry (May 19, 1930 – January 12, 1965) was an American playwright and civil rights activist. She was the first Black American female author to have a play performed on Broadway.\nHansberry's best-known work, the play A Raisin in the Sun, highlights the lives of Black Americans in Chicago living under racial segregation.",
+  "articleTitle": "Lorraine Hansberry",
+  "articleUrl": "https://en.wikipedia.org/wiki/Lorraine_Hansberry",
+  "image": {
+    "full": "people/lorraine-hansberry/full.jpg",
+    "thumb": "people/lorraine-hansberry/thumb.jpg",
+    "file": "\"The_Sign_in_Sidney_Brustein's_Window\",_by_Lorraine_Hansberry_(cropped).tif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%22The_Sign_in_Sidney_Brustein%27s_Window%22,_by_Lorraine_Hansberry_(cropped).tif",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/%22The_Sign_in_Sidney_Brustein%27s_Window%22%2C_by_Lorraine_Hansberry_%28cropped%29.tif",
+    "originalWidth": 1051,
+    "originalHeight": 1361,
+    "artist": "Jacket design not credited",
+    "credit": "Scan via Penguin Random House (direct link)",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

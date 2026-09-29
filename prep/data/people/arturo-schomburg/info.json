@@ -1,0 +1,27 @@
+{
+  "order": 34,
+  "listIndex": 78,
+  "id": "arturo-schomburg",
+  "name": "Arturo Schomburg",
+  "born": 1874,
+  "died": 1938,
+  "circa": false,
+  "datesText": "1874–1938",
+  "description": "Puerto Rican historian and writer (1874–1938)",
+  "summary": "Arturo Alfonso Schomburg (January 24, 1874 – June 10, 1938), was a Puerto Rican historian, writer, curator, and activist, who wrote numerous books. Schomburg was a Puerto Rican of African and German descent. He moved to the United States in 1891, settling in New York City (at the age of 17) where he researched and raised awareness of the contributions that Afro-Latin Americans and African Americans have made to society.",
+  "articleTitle": "Arturo Alfonso Schomburg",
+  "articleUrl": "https://en.wikipedia.org/wiki/Arturo_Alfonso_Schomburg",
+  "image": {
+    "full": "people/arturo-schomburg/full.jpg",
+    "thumb": "people/arturo-schomburg/thumb.jpg",
+    "file": "Arturo_Alfonso_Schomburg.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arturo_Alfonso_Schomburg.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Arturo_Alfonso_Schomburg.jpg",
+    "originalWidth": 240,
+    "originalHeight": 291,
+    "artist": "Unknown authorUnknown author",
+    "credit": "\"Figuras Historicas De Puerto Rico, Vol. 2\" ; Eitor: Adolfo R. Lopez; Page 11; Publisher: Editorial Codillera, Inc.; ISBN 088495-188-X. Image dated 1910 and Courtesy of the \"Puerto Rican Institute of Culture\" which is a government institution.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

@@ -1,0 +1,10 @@
+_prompts.txt
+
+v1.1
+
+create a folder named prep and in it write a node js app
+to parse https://en.wikipedia.org/wiki/100_Greatest_African_Americans
+into json with folder for related image for each person
+sort the entries by earlies date in the listing
+create thumb and full size image
+include source url for articles

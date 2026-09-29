@@ -1,0 +1,27 @@
+{
+  "order": 67,
+  "listIndex": 69,
+  "id": "jesse-owens",
+  "name": "Jesse Owens",
+  "born": 1913,
+  "died": 1980,
+  "circa": false,
+  "datesText": "1913–1980",
+  "description": "American track and field athlete (1913–1980)",
+  "summary": "James Cleveland \"Jesse\" Owens (September 12, 1913 – March 31, 1980) was an American track and field athlete. He made history at the 1936 Olympic Games by winning four gold medals, setting individual Olympic records in each event, plus another as a member of the 400-meter relay. He is widely regarded as one of the greatest athletes in track and field history.",
+  "articleTitle": "Jesse Owens",
+  "articleUrl": "https://en.wikipedia.org/wiki/Jesse_Owens",
+  "image": {
+    "full": "people/jesse-owens/full.jpg",
+    "thumb": "people/jesse-owens/thumb.jpg",
+    "file": "Jesse_Owens_1936.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jesse_Owens_1936.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Jesse_Owens_1936.jpg",
+    "originalWidth": 659,
+    "originalHeight": 905,
+    "artist": "Acme News Photos",
+    "credit": "source front back",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

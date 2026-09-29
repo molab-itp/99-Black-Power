@@ -1,0 +1,27 @@
+{
+  "order": 72,
+  "listIndex": 37,
+  "id": "john-hope-franklin",
+  "name": "John Hope Franklin",
+  "born": 1915,
+  "died": 2009,
+  "circa": false,
+  "datesText": "1915–2009",
+  "description": "American historian (1915–2009)",
+  "summary": "John Hope Franklin (January 2, 1915 – March 25, 2009) was an American historian who focused on the history of the United States. He is best known for his work From Slavery to Freedom, first published in 1947 and continually updated. More than three million copies have been sold.",
+  "articleTitle": "John Hope Franklin",
+  "articleUrl": "https://en.wikipedia.org/wiki/John_Hope_Franklin",
+  "image": {
+    "full": "people/john-hope-franklin/full.jpg",
+    "thumb": "people/john-hope-franklin/thumb.jpg",
+    "file": "John_Hope_Franklin_2006.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Hope_Franklin_2006.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/John_Hope_Franklin_2006.jpg",
+    "originalWidth": 647,
+    "originalHeight": 863,
+    "artist": "Darryl Herring--NARA Staff",
+    "credit": "https://catalog.archives.gov/id/184340875",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

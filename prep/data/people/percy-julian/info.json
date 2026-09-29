@@ -1,0 +1,27 @@
+{
+  "order": 53,
+  "listIndex": 53,
+  "id": "percy-julian",
+  "name": "Percy Julian",
+  "born": 1899,
+  "died": 1975,
+  "circa": false,
+  "datesText": "1899–1975",
+  "description": "American research chemist (1899–1975)",
+  "summary": "Percy Lavon Julian (April 11, 1899 – April 19, 1975) was an American research chemist and a pioneer in the chemical synthesis of medicinal drugs from plants. Julian was the first person to synthesize the natural product physostigmine, and a pioneer in industrial large-scale chemical synthesis of the human hormones progesterone and testosterone from plant sterols such as stigmasterol and sitosterol. His work laid the foundation for the steroid drug industry's production of cortisone, other corticosteroids, and artificial hormones that led to birth control pills.",
+  "articleTitle": "Percy Lavon Julian",
+  "articleUrl": "https://en.wikipedia.org/wiki/Percy_Lavon_Julian",
+  "image": {
+    "full": "people/percy-julian/full.jpg",
+    "thumb": "people/percy-julian/thumb.jpg",
+    "file": "Percy_Lavon_Julian_(1899-1975)_portrait.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Percy_Lavon_Julian_(1899-1975)_portrait.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Percy_Lavon_Julian_%281899-1975%29_portrait.jpg",
+    "originalWidth": 430,
+    "originalHeight": 630,
+    "artist": "AnonymousUnknown author",
+    "credit": "https://www.invent.org/inductees/percy-lavon-julian",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

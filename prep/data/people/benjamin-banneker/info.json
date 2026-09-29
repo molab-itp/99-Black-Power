@@ -1,0 +1,27 @@
+{
+  "order": 2,
+  "listIndex": 10,
+  "id": "benjamin-banneker",
+  "name": "Benjamin Banneker",
+  "born": 1731,
+  "died": 1806,
+  "circa": false,
+  "datesText": "1731–1806",
+  "description": "American scientist, surveyor and farmer (1731–1806)",
+  "summary": "Benjamin Banneker (November 9, 1731 – October 19, 1806) was an American naturalist, mathematician, astronomer and almanac author. A landowner, he also worked as a surveyor and farmer.\nBorn in Baltimore County, Maryland, to a free African-American mother and a father who had formerly been enslaved, Banneker had little or no formal education and was largely self-taught.",
+  "articleTitle": "Benjamin Banneker",
+  "articleUrl": "https://en.wikipedia.org/wiki/Benjamin_Banneker",
+  "image": {
+    "full": "people/benjamin-banneker/full.jpg",
+    "thumb": "people/benjamin-banneker/thumb.jpg",
+    "file": "Benjamin_Banneker_woodcut,_age_64.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benjamin_Banneker_woodcut,_age_64.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Benjamin_Banneker_woodcut%2C_age_64.jpg",
+    "originalWidth": 339,
+    "originalHeight": 413,
+    "artist": "Unknown authorUnknown author",
+    "credit": "PBS: https://www.pbs.org/wgbh/aia/part2/2h68b.html",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

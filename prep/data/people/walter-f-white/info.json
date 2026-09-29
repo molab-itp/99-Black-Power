@@ -1,0 +1,27 @@
+{
+  "order": 46,
+  "listIndex": 92,
+  "id": "walter-f-white",
+  "name": "Walter F. White",
+  "born": 1893,
+  "died": 1955,
+  "circa": false,
+  "datesText": "1893–1955",
+  "description": "American civil rights activist (1893–1955)",
+  "summary": "Walter Francis White (July 1, 1893 – March 21, 1955) was an American civil rights activist who led the National Association for the Advancement of Colored People (NAACP) for a quarter of a century, from 1929 until 1955. He directed a broad program of legal challenges to racial segregation and disfranchisement. He was also a journalist, novelist, and essayist.",
+  "articleTitle": "Walter White (activist)",
+  "articleUrl": "https://en.wikipedia.org/wiki/Walter_White_(activist)",
+  "image": {
+    "full": "people/walter-f-white/full.jpg",
+    "thumb": "people/walter-f-white/thumb.jpg",
+    "file": "Walter_Francis_White_by_Clara_Sipprell.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Walter_Francis_White_by_Clara_Sipprell.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Walter_Francis_White_by_Clara_Sipprell.jpg",
+    "originalWidth": 3520,
+    "originalHeight": 4536,
+    "artist": "Clara Sipprell / Adam Cuerden",
+    "credit": "National Portrait Gallery (United States) Object number NPG.82.197.",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 12,
+  "listIndex": 79,
+  "id": "benjamin-pop-singleton",
+  "name": "Benjamin \"Pop\" Singleton",
+  "born": 1809,
+  "died": 1900,
+  "circa": false,
+  "datesText": "1809–1900",
+  "description": "American activist and businessman (1809–1900)",
+  "summary": "Benjamin \"Pap\" Singleton (August 15, 1809 – February 17, 1900) was an American activist and businessman best known for his role in establishing African American settlements in Kansas. A former slave from Tennessee who escaped to freedom in Ontario in 1846, he returned to the United States, settling for a period in Detroit. He became a noted abolitionist, community leader, and spokesman for African-American civil rights.",
+  "articleTitle": "Benjamin \"Pap\" Singleton",
+  "articleUrl": "https://en.wikipedia.org/wiki/Benjamin_%22Pap%22_Singleton",
+  "image": {
+    "full": "people/benjamin-pop-singleton/full.jpg",
+    "thumb": "people/benjamin-pop-singleton/thumb.jpg",
+    "file": "Benjamin_\"Pap\"_Singleton.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benjamin_%22Pap%22_Singleton.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Benjamin_%22Pap%22_Singleton.jpg",
+    "originalWidth": 459,
+    "originalHeight": 596,
+    "artist": "Unknown (Life time: 1892)",
+    "credit": "Original publication: Unknown Immediate source: http://www.kshs.org/kansapedia/benjamin-pap-singleton/12205",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 80,
+  "listIndex": 21,
+  "id": "shirley-chisholm",
+  "name": "Shirley Chisholm",
+  "born": 1924,
+  "died": 2005,
+  "circa": false,
+  "datesText": "1924–2005",
+  "description": "American politician (1924–2005)",
+  "summary": "Shirley Anita Chisholm ( CHIZ-əm; née St. Hill; November 30, 1924 – January 1, 2005) was an American politician who, in 1968, became the first black woman to be elected to the United States Congress. Chisholm represented New York's 12th congressional district, a district centered in Bedford–Stuyvesant, Brooklyn for seven terms from 1969 to 1983.",
+  "articleTitle": "Shirley Chisholm",
+  "articleUrl": "https://en.wikipedia.org/wiki/Shirley_Chisholm",
+  "image": {
+    "full": "people/shirley-chisholm/full.jpg",
+    "thumb": "people/shirley-chisholm/thumb.jpg",
+    "file": "Shirley_Chisholm.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shirley_Chisholm.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/Shirley_Chisholm.jpg",
+    "originalWidth": 3014,
+    "originalHeight": 4492,
+    "artist": "Adam Cuerden",
+    "credit": "This image is available from the United States Library of Congress's Prints and Photographs division under the digital ID ds.07135.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

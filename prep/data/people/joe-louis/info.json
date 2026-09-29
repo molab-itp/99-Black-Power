@@ -1,0 +1,27 @@
+{
+  "order": 69,
+  "listIndex": 59,
+  "id": "joe-louis",
+  "name": "Joe Louis",
+  "born": 1914,
+  "died": 1981,
+  "circa": false,
+  "datesText": "1914–1981",
+  "description": "American boxer (1914–1981)",
+  "summary": "Joseph Louis Barrow (May 13, 1914 – April 12, 1981) was an American professional boxer who competed from 1934 to 1951. Nicknamed \"the Brown Bomber\", Louis is widely regarded as one of the greatest and most influential boxers of all time. He reigned as the world heavyweight champion from 1937 until his temporary retirement in 1949.",
+  "articleTitle": "Joe Louis",
+  "articleUrl": "https://en.wikipedia.org/wiki/Joe_Louis",
+  "image": {
+    "full": "people/joe-louis/full.jpg",
+    "thumb": "people/joe-louis/thumb.jpg",
+    "file": "Joe_Louis_by_van_Vechten.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joe_Louis_by_van_Vechten.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Joe_Louis_by_van_Vechten.jpg",
+    "originalWidth": 2358,
+    "originalHeight": 3174,
+    "artist": "Carl Van Vechten",
+    "credit": "Van Vechten Collection at Library of Congress",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

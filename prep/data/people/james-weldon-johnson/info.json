@@ -1,0 +1,27 @@
+{
+  "order": 31,
+  "listIndex": 51,
+  "id": "james-weldon-johnson",
+  "name": "James Weldon Johnson",
+  "born": 1871,
+  "died": 1938,
+  "circa": false,
+  "datesText": "1871–1938",
+  "description": "American writer and activist (1871–1938)",
+  "summary": "James Weldon Johnson (June 17, 1871 – June 26, 1938) was an African American author, politician, diplomat, critic, journalist, poet, anthologist, educator, lawyer, songwriter and early civil rights activist. He was married to civil rights activist Grace Nail Johnson.\nJohnson was a leader of the National Association for the Advancement of Colored People (NAACP), where he started working in 1917.",
+  "articleTitle": "James Weldon Johnson",
+  "articleUrl": "https://en.wikipedia.org/wiki/James_Weldon_Johnson",
+  "image": {
+    "full": "people/james-weldon-johnson/full.jpg",
+    "thumb": "people/james-weldon-johnson/thumb.jpg",
+    "file": "(Portrait_of_James_Weldon_Johnson)_(LOC)_-_Flickr_-_The_Library_of_Congress.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:(Portrait_of_James_Weldon_Johnson)_(LOC)_-_Flickr_-_The_Library_of_Congress.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/%28Portrait_of_James_Weldon_Johnson%29_%28LOC%29_-_Flickr_-_The_Library_of_Congress.jpg",
+    "originalWidth": 712,
+    "originalHeight": 1024,
+    "artist": "The Library of Congress from Washington, DC, United States",
+    "credit": "[Portrait of James Weldon Johnson] (LOC)",
+    "license": "No restrictions",
+    "licenseUrl": "https://www.flickr.com/commons/usage/"
+  }
+}

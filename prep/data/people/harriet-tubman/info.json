@@ -1,0 +1,27 @@
+{
+  "order": 17,
+  "listIndex": 83,
+  "id": "harriet-tubman",
+  "name": "Harriet Tubman",
+  "born": 1822,
+  "died": 1913,
+  "circa": false,
+  "datesText": "1822–1913",
+  "description": "American abolitionist (1822–1913)",
+  "summary": "Harriet Tubman (born Araminta Ross, c. March 1822 – March 10, 1913) was an American abolitionist and social activist. After escaping slavery, Tubman made some 13 missions to rescue approximately 70 enslaved people, including her family and friends, using the network of antislavery activists and safe houses known collectively as the Underground Railroad. During the American Civil War, she served as an armed scout and spy for the Union Army.",
+  "articleTitle": "Harriet Tubman",
+  "articleUrl": "https://en.wikipedia.org/wiki/Harriet_Tubman",
+  "image": {
+    "full": "people/harriet-tubman/full.jpg",
+    "thumb": "people/harriet-tubman/thumb.jpg",
+    "file": "Carte-de-visite_portrait_of_Harriet_Tubman_(cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carte-de-visite_portrait_of_Harriet_Tubman_(cropped).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Carte-de-visite_portrait_of_Harriet_Tubman_%28cropped%29.jpg",
+    "originalWidth": 1622,
+    "originalHeight": 2162,
+    "artist": "Powelson, Benjamin F. 1823 - 1885",
+    "credit": "Collection of the National Museum of African American History and Culture shared with the Library of Congress",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

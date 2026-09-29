@@ -1,0 +1,27 @@
+{
+  "order": 38,
+  "listIndex": 50,
+  "id": "jack-johnson",
+  "name": "Jack Johnson",
+  "born": 1878,
+  "died": 1946,
+  "circa": false,
+  "datesText": "1878–1946",
+  "description": "American boxer (1878–1946)",
+  "summary": "John Arthur Johnson (March 31, 1878 – June 10, 1946), nicknamed the \"Galveston Giant\", was an American boxer who, at the height of the Jim Crow era, became the first black world heavyweight boxing champion (1908–1915). His 1910 fight against James J. Jeffries was dubbed the \"fight of the century\". Johnson defeated Jeffries, who was white, triggering dozens of race riots across the U.S. According to filmmaker Ken Burns, \"for more than thirteen years, Jack Johnson was the most famous and the most notorious African American on Earth\".",
+  "articleTitle": "Jack Johnson",
+  "articleUrl": "https://en.wikipedia.org/wiki/Jack_Johnson",
+  "image": {
+    "full": "people/jack-johnson/full.jpg",
+    "thumb": "people/jack-johnson/thumb.jpg",
+    "file": "Jack_Johnson,_1915_(edit).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jack_Johnson,_1915_(edit).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Jack_Johnson%2C_1915_%28edit%29.jpg",
+    "originalWidth": 1089,
+    "originalHeight": 1383,
+    "artist": "File:Jack Johnson LCCN2001704425.jpg: George Grantham Bain Collection",
+    "credit": "This file was derived from: Jack Johnson LCCN2001704425.jpg:",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

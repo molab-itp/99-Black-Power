@@ -1,0 +1,27 @@
+{
+  "order": 74,
+  "listIndex": 17,
+  "id": "gwendolyn-brooks",
+  "name": "Gwendolyn Brooks",
+  "born": 1917,
+  "died": 2000,
+  "circa": false,
+  "datesText": "1917–2000",
+  "description": "American writer (1917–2000)",
+  "summary": "Gwendolyn Elizabeth Brooks (June 7, 1917 – December 3, 2000) was an American poet, author, and teacher. Her work often dealt with the personal celebrations and struggles of ordinary people in her community. She won the Pulitzer Prize for Poetry on May 1, 1950, for Annie Allen, making her the first African American to receive a Pulitzer Prize.",
+  "articleTitle": "Gwendolyn Brooks",
+  "articleUrl": "https://en.wikipedia.org/wiki/Gwendolyn_Brooks",
+  "image": {
+    "full": "people/gwendolyn-brooks/full.jpg",
+    "thumb": "people/gwendolyn-brooks/thumb.jpg",
+    "file": "Gwendolyn_Brooks_ACME_1950.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gwendolyn_Brooks_ACME_1950.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Gwendolyn_Brooks_ACME_1950.jpg",
+    "originalWidth": 1936,
+    "originalHeight": 2592,
+    "artist": "ACME Newspictures",
+    "credit": "The San Francisco News Elmira Star-Gazette The Sphere",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

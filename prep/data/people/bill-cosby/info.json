@@ -1,0 +1,27 @@
+{
+  "order": 90,
+  "listIndex": 25,
+  "id": "bill-cosby",
+  "name": "Bill Cosby",
+  "born": 1937,
+  "died": null,
+  "circa": false,
+  "datesText": "born 1937",
+  "description": "American entertainer (born 1937)",
+  "summary": "William Henry Cosby Jr. ( KOZ-bee; born July 12, 1937) is an American former comedian, actor, and media personality. Often deemed a trailblazer for African Americans in the entertainment industry, Cosby was well known in the United States for his stand-up comedy routines and television career before achieving global recognition for his portrayal of Cliff Huxtable in the sitcom The Cosby Show (1984–1992).",
+  "articleTitle": "Bill Cosby",
+  "articleUrl": "https://en.wikipedia.org/wiki/Bill_Cosby",
+  "image": {
+    "full": "people/bill-cosby/full.jpg",
+    "thumb": "people/bill-cosby/thumb.jpg",
+    "file": "The_World_Affairs_Council_and_Girard_College_present_Bill_Cosby_(6343666943)_(cropped_to_Cosby).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_World_Affairs_Council_and_Girard_College_present_Bill_Cosby_(6343666943)_(cropped_to_Cosby).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/The_World_Affairs_Council_and_Girard_College_present_Bill_Cosby_%286343666943%29_%28cropped_to_Cosby%29.jpg",
+    "originalWidth": 1358,
+    "originalHeight": 1914,
+    "artist": "The World Affairs Council of Philadelphia",
+    "credit": "The World Affairs Council and Girard College present Bill Cosby",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  }
+}

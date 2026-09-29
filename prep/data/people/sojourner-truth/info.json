@@ -1,0 +1,27 @@
+{
+  "order": 8,
+  "listIndex": 82,
+  "id": "sojourner-truth",
+  "name": "Sojourner Truth",
+  "born": 1797,
+  "died": 1883,
+  "circa": true,
+  "datesText": "1797–1883",
+  "description": "American abolitionist (c. 1797–1883)",
+  "summary": "Sojourner Truth (; born Isabella Bomefree; c. 1797 – November 26, 1883) was an American abolitionist and activist for African-American civil rights, women's rights, and alcohol temperance. Truth was born into slavery in Swartekill, New York, but escaped with her infant daughter to freedom in 1826. After going to court to recover her son in 1828, she became the first Black woman to win such a case against a white man.",
+  "articleTitle": "Sojourner Truth",
+  "articleUrl": "https://en.wikipedia.org/wiki/Sojourner_Truth",
+  "image": {
+    "full": "people/sojourner-truth/full.jpg",
+    "thumb": "people/sojourner-truth/thumb.jpg",
+    "file": "Sojourner_Truth,_1870_(cropped,_restored).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sojourner_Truth,_1870_(cropped,_restored).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Sojourner_Truth%2C_1870_%28cropped%2C_restored%29.jpg",
+    "originalWidth": 3035,
+    "originalHeight": 4210,
+    "artist": "Randall Studio",
+    "credit": "This is a retouched picture, which means that it has been digitally altered from its original version. Modifications: Cropped. Cleaned image of spots and other imperfections. Adjusted levels and exposure to reduce overblown highlights'. The original can be viewed here: Sojourner Truth, 1870.tif: '. Modifications made by Coffeeandcrumbs.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

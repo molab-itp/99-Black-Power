@@ -1,0 +1,27 @@
+{
+  "order": 95,
+  "listIndex": 14,
+  "id": "guion-bluford",
+  "name": "Guion Bluford",
+  "born": 1942,
+  "died": null,
+  "circa": false,
+  "datesText": "born 1942",
+  "description": "First African-American in space (born 1942)",
+  "summary": "Guion Stewart Bluford Jr. (born November 22, 1942) is an American aerospace engineer, retired United States Air Force (USAF) officer and fighter pilot, and former NASA astronaut, in which capacity he became the first African American to go to space. While assigned to NASA, he remained a USAF officer rising to the rank of colonel.",
+  "articleTitle": "Guion Bluford",
+  "articleUrl": "https://en.wikipedia.org/wiki/Guion_Bluford",
+  "image": {
+    "full": "people/guion-bluford/full.jpg",
+    "thumb": "people/guion-bluford/thumb.jpg",
+    "file": "Guion_Bluford.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guion_Bluford.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Guion_Bluford.jpg",
+    "originalWidth": 6625,
+    "originalHeight": 8281,
+    "artist": "NASA; retouched by Cofeeandcrumbs",
+    "credit": "description page [ direct link ] (older source description page)",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

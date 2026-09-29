@@ -1,0 +1,27 @@
+{
+  "order": 79,
+  "listIndex": 9,
+  "id": "james-baldwin",
+  "name": "James Baldwin",
+  "born": 1924,
+  "died": 1987,
+  "circa": false,
+  "datesText": "1924–1987",
+  "description": "American writer and activist (1924–1987)",
+  "summary": "James Arthur Baldwin (né Jones; August 2, 1924 – December 1, 1987) was an American writer and civil rights activist who garnered acclaim for his essays, novels, plays, and poems. His 1953 novel Go Tell It on the Mountain has been ranked by Time magazine as one of the top 100 English-language novels. His 1955 essay collection Notes of a Native Son helped establish his reputation as a voice for human equality.",
+  "articleTitle": "James Baldwin",
+  "articleUrl": "https://en.wikipedia.org/wiki/James_Baldwin",
+  "image": {
+    "full": "people/james-baldwin/full.jpg",
+    "thumb": "people/james-baldwin/thumb.jpg",
+    "file": "James_Baldwin_37_Allan_Warren_(cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:James_Baldwin_37_Allan_Warren_(cropped).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/James_Baldwin_37_Allan_Warren_%28cropped%29.jpg",
+    "originalWidth": 2255,
+    "originalHeight": 3015,
+    "artist": "Allan warren",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 32,
+  "listIndex": 33,
+  "id": "paul-laurence-dunbar",
+  "name": "Paul Laurence Dunbar",
+  "born": 1872,
+  "died": 1906,
+  "circa": false,
+  "datesText": "1872–1906",
+  "description": "African-American writer (1872–1906)",
+  "summary": "Paul Laurence Dunbar (June 27, 1872 – February 9, 1906) was an American poet, novelist, and short story writer of the late 19th and early 20th centuries. Born in Dayton, Ohio, to parents who had been enslaved in Kentucky before the American Civil War, Dunbar began writing stories and verse when he was a child. He published his first poems at the age of 16 in a Dayton newspaper, and served as president of his high school's literary society.",
+  "articleTitle": "Paul Laurence Dunbar",
+  "articleUrl": "https://en.wikipedia.org/wiki/Paul_Laurence_Dunbar",
+  "image": {
+    "full": "people/paul-laurence-dunbar/full.jpg",
+    "thumb": "people/paul-laurence-dunbar/thumb.jpg",
+    "file": "Paul_Laurence_Dunbar_circa_1890.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_Laurence_Dunbar_circa_1890.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Paul_Laurence_Dunbar_circa_1890.jpg",
+    "originalWidth": 250,
+    "originalHeight": 289,
+    "artist": "The African-American Experience in Ohio, 1850-1920,",
+    "credit": "Ohio Historical Society, Library of Congress",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

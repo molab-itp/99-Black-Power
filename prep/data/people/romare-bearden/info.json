@@ -1,0 +1,27 @@
+{
+  "order": 64,
+  "listIndex": 12,
+  "id": "romare-bearden",
+  "name": "Romare Bearden",
+  "born": 1911,
+  "died": 1988,
+  "circa": false,
+  "datesText": "1911–1988",
+  "description": "American artist, author, and songwriter (1911–1988)",
+  "summary": "Romare Howard Bearden (, ROH-mə-ree) (September 2, 1911 – March 12, 1988) was an American artist, author, and songwriter. He worked with many types of media including cartoons, oils, and collages. Born in Charlotte, North Carolina, Bearden grew up in New York City and Pittsburgh, Pennsylvania, and graduated from New York University in 1935.",
+  "articleTitle": "Romare Bearden",
+  "articleUrl": "https://en.wikipedia.org/wiki/Romare_Bearden",
+  "image": {
+    "full": "people/romare-bearden/full.jpg",
+    "thumb": "people/romare-bearden/thumb.jpg",
+    "file": "Portrait_of_Romare_Bearden_LCCN2004662578.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Romare_Bearden_LCCN2004662578.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Portrait_of_Romare_Bearden_LCCN2004662578.jpg",
+    "originalWidth": 1108,
+    "originalHeight": 1536,
+    "artist": "Carl Van Vechten",
+    "credit": "Library of Congress Catalog: http://lccn.loc.gov/2004662578 Image download: https://cdn.loc.gov/service/pnp/van/5a51000/5a51700/5a51708r.jpg Original url: http://hdl.loc.gov/loc.pnp/van.5a51708",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

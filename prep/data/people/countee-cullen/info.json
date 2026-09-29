@@ -1,0 +1,27 @@
+{
+  "order": 57,
+  "listIndex": 27,
+  "id": "countee-cullen",
+  "name": "Countee Cullen",
+  "born": 1903,
+  "died": 1946,
+  "circa": false,
+  "datesText": "1903–1946",
+  "description": "American author (1903–1946)",
+  "summary": "Countee Cullen (born Countee LeRoy Porter; May 30, 1903 – January 9, 1946) was an American poet, novelist, children's writer, and playwright, particularly well known during the Harlem Renaissance.",
+  "articleTitle": "Countee Cullen",
+  "articleUrl": "https://en.wikipedia.org/wiki/Countee_Cullen",
+  "image": {
+    "full": "people/countee-cullen/full.jpg",
+    "thumb": "people/countee-cullen/thumb.jpg",
+    "file": "Countee_Cullen_headshot.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Countee_Cullen_headshot.png",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Countee_Cullen_headshot.png",
+    "originalWidth": 1164,
+    "originalHeight": 1812,
+    "artist": "R. W. Bullock",
+    "credit": "In spite of handicaps : brief biographical sketches with discussion outlines of outstanding Negroes now living who are achieving distinction in various lines of endeavor.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 78,
+  "listIndex": 16,
+  "id": "edward-w-brooke",
+  "name": "Edward W. Brooke",
+  "born": 1919,
+  "died": 2015,
+  "circa": false,
+  "datesText": "1919–2015",
+  "description": "American politician (1919–2015)",
+  "summary": "Edward William Brooke III (October 26, 1919 – January 3, 2015) was an American lawyer and Republican Party politician who represented Massachusetts in the United States Senate from 1967 to 1979. He was the first African American elected to the United States Senate by popular vote. Prior to serving in the Senate, he served as the Attorney General of the Commonwealth of Massachusetts from 1963 until 1967.",
+  "articleTitle": "Edward Brooke",
+  "articleUrl": "https://en.wikipedia.org/wiki/Edward_Brooke",
+  "image": {
+    "full": "people/edward-w-brooke/full.jpg",
+    "thumb": "people/edward-w-brooke/thumb.jpg",
+    "file": "Edward_brooke_senator.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edward_brooke_senator.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Edward_brooke_senator.jpg",
+    "originalWidth": 1762,
+    "originalHeight": 2237,
+    "artist": "U.S. Congress",
+    "credit": "Black Americans in Congress. Office of the Clerk, U.S. House of Representatives",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

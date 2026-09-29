@@ -1,0 +1,27 @@
+{
+  "order": 100,
+  "listIndex": 97,
+  "id": "tiger-woods",
+  "name": "Tiger Woods",
+  "born": 1975,
+  "died": null,
+  "circa": false,
+  "datesText": "born 1975",
+  "description": "American professional golfer (born 1975)",
+  "summary": "Eldrick Tont \"Tiger\" Woods (born December 30, 1975) is an American professional golfer. He is widely regarded as one of the greatest golfers of all time and as one of the most famous athletes in modern history. Woods is tied for first in PGA Tour wins, ranks second in men's major championships, holds numerous golf records, and is an inductee of the World Golf Hall of Fame.",
+  "articleTitle": "Tiger Woods",
+  "articleUrl": "https://en.wikipedia.org/wiki/Tiger_Woods",
+  "image": {
+    "full": "people/tiger-woods/full.jpg",
+    "thumb": "people/tiger-woods/thumb.jpg",
+    "file": "President_Donald_Trump_hosts_a_reception_honoring_Black_History_Month_(54341713089)_(cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_Donald_Trump_hosts_a_reception_honoring_Black_History_Month_(54341713089)_(cropped).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/President_Donald_Trump_hosts_a_reception_honoring_Black_History_Month_%2854341713089%29_%28cropped%29.jpg",
+    "originalWidth": 806,
+    "originalHeight": 1126,
+    "artist": "The White House",
+    "credit": "https://www.flickr.com/photos/202101414@N05/54341713089/",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

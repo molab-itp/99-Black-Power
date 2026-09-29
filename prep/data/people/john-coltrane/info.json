@@ -1,0 +1,27 @@
+{
+  "order": 82,
+  "listIndex": 24,
+  "id": "john-coltrane",
+  "name": "John Coltrane",
+  "born": 1926,
+  "died": 1967,
+  "circa": false,
+  "datesText": "1926–1967",
+  "description": "American jazz saxophonist (1926–1967)",
+  "summary": "John William Coltrane (September 23, 1926 – July 17, 1967) was an American jazz saxophonist, bandleader, and composer. He is among the most influential and acclaimed figures in the history of jazz and 20th-century music.\nBorn and raised in North Carolina, Coltrane moved to Philadelphia after high school, where he immersed himself in the local jazz scene, studied music, and served in the Navy toward the end of World War II before making his professional debut in 1945.",
+  "articleTitle": "John Coltrane",
+  "articleUrl": "https://en.wikipedia.org/wiki/John_Coltrane",
+  "image": {
+    "full": "people/john-coltrane/full.jpg",
+    "thumb": "people/john-coltrane/thumb.jpg",
+    "file": "John_Coltrane_1963_cropped_ver2.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Coltrane_1963_cropped_ver2.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/John_Coltrane_1963_cropped_ver2.jpg",
+    "originalWidth": 1400,
+    "originalHeight": 1865,
+    "artist": "Gelderen, Hugo van / Anefo",
+    "credit": "[1] Dutch National Archives, The Hague, Fotocollectie Algemeen Nederlands Persbureau (ANeFo), 1945-1989, Nummer toegang 2.24.01.05 Bestanddeelnummer 915-6748",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  }
+}

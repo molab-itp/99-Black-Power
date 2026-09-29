@@ -1,0 +1,27 @@
+{
+  "order": 50,
+  "listIndex": 5,
+  "id": "marian-anderson",
+  "name": "Marian Anderson",
+  "born": 1897,
+  "died": 1993,
+  "circa": false,
+  "datesText": "1897–1993",
+  "description": "African-American contralto (1897–1993)",
+  "summary": "Marian Anderson, born Marian Elina-Blanche Anderson (February 27, 1897 – April 8, 1993) was an American contralto. She performed a wide range of music, from opera to spirituals. Anderson performed with renowned orchestras in major concert and recital venues throughout the United States and Europe between 1925 and 1965.",
+  "articleTitle": "Marian Anderson",
+  "articleUrl": "https://en.wikipedia.org/wiki/Marian_Anderson",
+  "image": {
+    "full": "people/marian-anderson/full.jpg",
+    "thumb": "people/marian-anderson/thumb.jpg",
+    "file": "Marian_Anderson_by_Carl_Van_Vechten_(cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marian_Anderson_by_Carl_Van_Vechten_(cropped).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Marian_Anderson_by_Carl_Van_Vechten_%28cropped%29.jpg",
+    "originalWidth": 2924,
+    "originalHeight": 3761,
+    "artist": "Carl Van Vechten",
+    "credit": "https://collections.library.yale.edu/catalog/2018443",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

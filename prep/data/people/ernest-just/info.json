@@ -1,0 +1,27 @@
+{
+  "order": 39,
+  "listIndex": 54,
+  "id": "ernest-just",
+  "name": "Ernest Just",
+  "born": 1883,
+  "died": 1941,
+  "circa": false,
+  "datesText": "1883–1941",
+  "description": "American biologist (1883–1941)",
+  "summary": "Ernest Everett Just (August 14, 1883 – October 27, 1941) was an American biologist, academic and science writer. Just's primary legacy is his recognition of the fundamental role of the cell surface in the development of organisms. In his work within marine biology, cytology and parthenogenesis, he advocated the study of whole cells under normal conditions, rather than simply breaking them apart in a laboratory setting.",
+  "articleTitle": "Ernest Everett Just",
+  "articleUrl": "https://en.wikipedia.org/wiki/Ernest_Everett_Just",
+  "image": {
+    "full": "people/ernest-just/full.jpg",
+    "thumb": "people/ernest-just/thumb.jpg",
+    "file": "ErnestEverettJust1925.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ErnestEverettJust1925.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/ErnestEverettJust1925.jpg",
+    "originalWidth": 355,
+    "originalHeight": 570,
+    "artist": "Unknown, but a different U Chicago post of the photo shows a caption dating the photo to 1925 https://www.uchicagomedicine.org/forefront/biological-sciences-articles/pioneering-biologist-ernest-everett-just",
+    "credit": "https://www.lib.uchicago.edu/collex/exhibits/shared-past-shared-future-marine-biological-laboratory-and-university-chicago/ernest-everett-just/",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

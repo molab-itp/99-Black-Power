@@ -1,0 +1,27 @@
+{
+  "order": 86,
+  "listIndex": 67,
+  "id": "toni-morrison",
+  "name": "Toni Morrison",
+  "born": 1931,
+  "died": 2019,
+  "circa": false,
+  "datesText": "1931–2019",
+  "description": "American novelist and editor (1931–2019)",
+  "summary": "Chloe Anthony Wofford \"Toni\" Morrison (born Chloe Ardelia Wofford; February 18, 1931 – August 5, 2019) was an American novelist and editor. She was awarded the Nobel Prize in Literature in 1993. Her first novel, The Bluest Eye, was published in 1970.",
+  "articleTitle": "Toni Morrison",
+  "articleUrl": "https://en.wikipedia.org/wiki/Toni_Morrison",
+  "image": {
+    "full": "people/toni-morrison/full.jpg",
+    "thumb": "people/toni-morrison/thumb.jpg",
+    "file": "Toni_Morrison.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toni_Morrison.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Toni_Morrison.jpg",
+    "originalWidth": 1540,
+    "originalHeight": 2195,
+    "artist": "John Mathew Smith (celebrity-photos.com)",
+    "credit": "Flickr (archive)",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  }
+}

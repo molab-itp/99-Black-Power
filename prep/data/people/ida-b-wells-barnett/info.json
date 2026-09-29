@@ -1,0 +1,27 @@
+{
+  "order": 25,
+  "listIndex": 90,
+  "id": "ida-b-wells-barnett",
+  "name": "Ida B. Wells-Barnett",
+  "born": 1862,
+  "died": 1931,
+  "circa": false,
+  "datesText": "1862–1931",
+  "description": "American journalist and civil rights activist (1862–1931)",
+  "summary": "Ida Bell Wells-Barnett (July 16, 1862 – March 25, 1931) was an American investigative journalist, sociologist, educator, and early leader in the civil rights movement. She was one of the founders of the National Association for the Advancement of Colored People (NAACP). Wells dedicated her career to combating prejudice and violence, and advocating for African-American equality—especially for women.",
+  "articleTitle": "Ida B. Wells",
+  "articleUrl": "https://en.wikipedia.org/wiki/Ida_B._Wells",
+  "image": {
+    "full": "people/ida-b-wells-barnett/full.jpg",
+    "thumb": "people/ida-b-wells-barnett/thumb.jpg",
+    "file": "Mary_Garrity_-_Ida_B._Wells-Barnett_-_Google_Art_Project_-_restoration_crop.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Garrity_-_Ida_B._Wells-Barnett_-_Google_Art_Project_-_restoration_crop.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Mary_Garrity_-_Ida_B._Wells-Barnett_-_Google_Art_Project_-_restoration_crop.jpg",
+    "originalWidth": 2673,
+    "originalHeight": 3818,
+    "artist": "Adam Cuerden",
+    "credit": "Based on image originally from Google Arts &amp; Culture — NAEMVZELXQV2iw",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

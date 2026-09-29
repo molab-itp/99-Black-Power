@@ -1,0 +1,27 @@
+{
+  "order": 27,
+  "listIndex": 20,
+  "id": "george-washington-carver",
+  "name": "George Washington Carver",
+  "born": 1864,
+  "died": 1943,
+  "circa": false,
+  "datesText": "1864–1943",
+  "description": "American botanist and inventor (1864–1943)",
+  "summary": "George Washington Carver (c. 1864 – January 5, 1943) was an American agricultural scientist and inventor who promoted alternative crops to cotton and methods to prevent soil depletion. He was one of the most prominent Black scientists of the early 20th century.",
+  "articleTitle": "George Washington Carver",
+  "articleUrl": "https://en.wikipedia.org/wiki/George_Washington_Carver",
+  "image": {
+    "full": "people/george-washington-carver/full.jpg",
+    "thumb": "people/george-washington-carver/thumb.jpg",
+    "file": "George_Washington_Carver_c1910_-_Restoration.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:George_Washington_Carver_c1910_-_Restoration.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/George_Washington_Carver_c1910_-_Restoration.jpg",
+    "originalWidth": 2700,
+    "originalHeight": 3379,
+    "artist": "Adam Cuerden",
+    "credit": "Tuskegee University Archives/Museum",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

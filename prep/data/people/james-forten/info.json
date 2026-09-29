@@ -1,0 +1,27 @@
+{
+  "order": 6,
+  "listIndex": 36,
+  "id": "james-forten",
+  "name": "James Forten",
+  "born": 1766,
+  "died": 1842,
+  "circa": false,
+  "datesText": "1766–1842",
+  "description": "American activist, businessman and abolitionist (1766–1842)",
+  "summary": "James Forten (September 2, 1766 – March 4, 1842) was an American abolitionist, activist and businessman in Philadelphia, Pennsylvania. An early Black Patriot, and a staunch supporter of American independence, he was perhaps one of the most prominent Black leaders of the post colonial era. \nBorn to free parents in 1766, he became a sailmaker after serving in the American Revolutionary War.",
+  "articleTitle": "James Forten",
+  "articleUrl": "https://en.wikipedia.org/wiki/James_Forten",
+  "image": {
+    "full": "people/james-forten/full.jpg",
+    "thumb": "people/james-forten/thumb.jpg",
+    "file": "James_Forten_(cropped).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:James_Forten_(cropped).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/James_Forten_%28cropped%29.jpg",
+    "originalWidth": 513,
+    "originalHeight": 713,
+    "artist": "Probably by Robert Douglass Jr.",
+    "credit": "http://www.librarycompany.org/blackfounders/section9.htm",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

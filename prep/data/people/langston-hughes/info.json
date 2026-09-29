@@ -1,0 +1,27 @@
+{
+  "order": 54,
+  "listIndex": 46,
+  "id": "langston-hughes",
+  "name": "Langston Hughes",
+  "born": 1901,
+  "died": 1967,
+  "circa": false,
+  "datesText": "1901–1967",
+  "description": "American writer and social activist (1901–1967)",
+  "summary": "James Mercer Langston Hughes (February 1, 1901 – May 22, 1967) was an American poet, social activist, novelist, playwright, and columnist from Joplin, Missouri. An early innovator of jazz poetry, Hughes is best known as a leader of the Harlem Renaissance.\nGrowing up in the Midwest, Hughes became a prolific writer at an early age.",
+  "articleTitle": "Langston Hughes",
+  "articleUrl": "https://en.wikipedia.org/wiki/Langston_Hughes",
+  "image": {
+    "full": "people/langston-hughes/full.jpg",
+    "thumb": "people/langston-hughes/thumb.jpg",
+    "file": "Langston_Hughes_by_Carl_Van_Vechten_Trim.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Langston_Hughes_by_Carl_Van_Vechten_Trim.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Langston_Hughes_by_Carl_Van_Vechten_Trim.jpg",
+    "originalWidth": 3423,
+    "originalHeight": 5007,
+    "artist": "Carl Van Vechten",
+    "credit": "https://collections.library.yale.edu/catalog/2018583",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "order": 9,
+  "listIndex": 77,
+  "id": "john-russwurm",
+  "name": "John Russwurm",
+  "born": 1799,
+  "died": 1851,
+  "circa": false,
+  "datesText": "1799–1851",
+  "description": "Americo-Liberian politician (1799–1851)",
+  "summary": "John Brown Russwurm (October 1, 1799 – June 9, 1851) was a Jamaican-born American abolitionist, newspaper publisher, and colonist of Liberia, where he moved from the United States. He was born in Jamaica to an English father and enslaved mother. As a child he traveled to the United States with his father and received a formal education, becoming the first black person to graduate from Hebron Academy and Bowdoin College.",
+  "articleTitle": "John Brown Russwurm",
+  "articleUrl": "https://en.wikipedia.org/wiki/John_Brown_Russwurm",
+  "image": {
+    "full": "people/john-russwurm/full.jpg",
+    "thumb": "people/john-russwurm/thumb.jpg",
+    "file": "John_Russwurm_Smithsonian.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Russwurm_Smithsonian.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/John_Russwurm_Smithsonian.jpg",
+    "originalWidth": 3102,
+    "originalHeight": 4000,
+    "artist": "Unidentified Artist",
+    "credit": "https://www.si.edu/object/john-russwurm:npg_NPG.79.252",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  }
+}

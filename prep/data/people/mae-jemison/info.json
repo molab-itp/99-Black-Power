@@ -1,0 +1,27 @@
+{
+  "order": 99,
+  "listIndex": 49,
+  "id": "mae-jemison",
+  "name": "Mae Jemison",
+  "born": 1956,
+  "died": null,
+  "circa": false,
+  "datesText": "born 1956",
+  "description": "American astronaut, doctor and engineer (born 1956)",
+  "summary": "Mae Carol Jemison (born October 17, 1956) is an American engineer, physician, and former NASA astronaut. She became the first African-American woman to travel into space when she served as a mission specialist aboard the Space Shuttle Endeavour in 1992. Jemison joined NASA's astronaut corps in 1987 and was selected for the STS-47 mission, during which the Endeavour orbited the Earth for nearly eight days on September 12–20, 1992.",
+  "articleTitle": "Mae Jemison",
+  "articleUrl": "https://en.wikipedia.org/wiki/Mae_Jemison",
+  "image": {
+    "full": "people/mae-jemison/full.jpg",
+    "thumb": "people/mae-jemison/thumb.jpg",
+    "file": "Mae_Carol_Jemison.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mae_Carol_Jemison.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Mae_Carol_Jemison.jpg",
+    "originalWidth": 6204,
+    "originalHeight": 7755,
+    "artist": "NASA",
+    "credit": "NASA Image and Video Library (file)",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

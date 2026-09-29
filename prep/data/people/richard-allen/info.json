@@ -1,0 +1,27 @@
+{
+  "order": 5,
+  "listIndex": 4,
+  "id": "richard-allen",
+  "name": "Richard Allen",
+  "born": 1760,
+  "died": 1831,
+  "circa": false,
+  "datesText": "1760–1831",
+  "description": "American educator, author, minister, and black leader (1760–1831)",
+  "summary": "Richard Allen (February 14, 1760 – March 26, 1831) was an American minister, educator, writer, and one of the United States' most active and influential black leaders. In 1794, he founded the African Methodist Episcopal Church (AME), the first independent Black denomination in the United States. He opened his first AME church in 1794 in Philadelphia.",
+  "articleTitle": "Richard Allen (bishop)",
+  "articleUrl": "https://en.wikipedia.org/wiki/Richard_Allen_(bishop)",
+  "image": {
+    "full": "people/richard-allen/full.jpg",
+    "thumb": "people/richard-allen/thumb.jpg",
+    "file": "Richard_Allen_crop.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Richard_Allen_crop.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Richard_Allen_crop.jpg",
+    "originalWidth": 353,
+    "originalHeight": 433,
+    "artist": "Daniel A. Payne",
+    "credit": "Richard Allen, from the frontispiece of History of the African Methodist Episcopal Church (1891)",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

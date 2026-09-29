@@ -1,0 +1,27 @@
+{
+  "order": 81,
+  "listIndex": 100,
+  "id": "malcolm-x",
+  "name": "Malcolm X",
+  "born": 1925,
+  "died": 1965,
+  "circa": false,
+  "datesText": "1925–1965",
+  "description": "American civil rights activist (1925–1965)",
+  "summary": "Malcolm X (born Malcolm Little, later el-Hajj Malik el-Shabazz; May 19, 1925 – February 21, 1965) was an African American revolutionary, civil rights activist, and Muslim minister who was a prominent figure during the civil rights movement until his assassination in 1965. He discovered the new religious movement the Nation of Islam while in prison and served as a spokesperson from 1952 until he transitioned to Sunni Islam in 1964. He is often regarded as one of the most significant Muslim figures in the history of the United States.",
+  "articleTitle": "Malcolm X",
+  "articleUrl": "https://en.wikipedia.org/wiki/Malcolm_X",
+  "image": {
+    "full": "people/malcolm-x/full.jpg",
+    "thumb": "people/malcolm-x/thumb.jpg",
+    "file": "Malcolm_X_1964_press_photo_(cropped)_(lighting_diff).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malcolm_X_1964_press_photo_(cropped)_(lighting_diff).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Malcolm_X_1964_press_photo_%28cropped%29_%28lighting_diff%29.jpg",
+    "originalWidth": 1650,
+    "originalHeight": 2200,
+    "artist": "Eddie Adams",
+    "credit": "[1], [2]",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

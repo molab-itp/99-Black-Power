@@ -1,0 +1,27 @@
+{
+  "order": 94,
+  "listIndex": 3,
+  "id": "muhammad-ali",
+  "name": "Muhammad Ali",
+  "born": 1942,
+  "died": 2016,
+  "circa": false,
+  "datesText": "1942–2016",
+  "description": "American boxer and activist (1942–2016)",
+  "summary": "Muhammad Ali ( ah-LEE; born Cassius Marcellus Clay Jr.; January 17, 1942 – June 3, 2016) was an American professional boxer and activist. A global cultural icon, widely known by the nickname \"the Greatest\", he is often regarded as the greatest heavyweight boxer of all time. He held the Ring magazine heavyweight title from 1964 to 1970, was the undisputed champion from 1974 to 1978, and was the WBA and Ring heavyweight champion from 1978 to 1979.",
+  "articleTitle": "Muhammad Ali",
+  "articleUrl": "https://en.wikipedia.org/wiki/Muhammad_Ali",
+  "image": {
+    "full": "people/muhammad-ali/full.jpg",
+    "thumb": "people/muhammad-ali/thumb.jpg",
+    "file": "Muhammad_Ali_NYWTS.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muhammad_Ali_NYWTS.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Muhammad_Ali_NYWTS.jpg",
+    "originalWidth": 2932,
+    "originalHeight": 3669,
+    "artist": "Ira Rosenberg",
+    "credit": "This image is available from the United States Library of Congress's Prints and Photographs division under the digital ID cph.3c15435.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}

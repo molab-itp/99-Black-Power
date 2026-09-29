@@ -1,0 +1,27 @@
+{
+  "order": 10,
+  "listIndex": 86,
+  "id": "nat-turner",
+  "name": "Nat Turner",
+  "born": 1800,
+  "died": 1831,
+  "circa": false,
+  "datesText": "1800–1831",
+  "description": "American slave rebellion leader (1800–1831)",
+  "summary": "Nat Turner (October 2, 1800 – November 11, 1831) was an enslaved Black carpenter and preacher who led a four-day rebellion of both slave and free Black people in Southampton County, Virginia, in August 1831.\nNat Turner's Rebellion resulted in the death of 55 White people before state militias suppressed the uprising. At the same time, as many as 120 Black men, women, and children, many of whom were not involved in the revolt, were killed by soldiers and local mobs in retaliation.",
+  "articleTitle": "Nat Turner",
+  "articleUrl": "https://en.wikipedia.org/wiki/Nat_Turner",
+  "image": {
+    "full": "people/nat-turner/full.jpg",
+    "thumb": "people/nat-turner/thumb.jpg",
+    "file": "Nat_Turner_captured.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nat_Turner_captured.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Nat_Turner_captured.jpg",
+    "originalWidth": 750,
+    "originalHeight": 720,
+    "artist": "William Henry Shelton (1840–1932)[1][4]",
+    "credit": "Image was found on Encyclopedia Virginia. The print is in the Bettman Archive.[1] The image has been printed on p. 321 of 1882's A Popular History of the United States,[2] and p. 154 of 1894's History of the United States from the Earliest Discovery of America to the Present Day.[3]",
+    "license": "Public domain",
+    "licenseUrl": null
+  }
+}
