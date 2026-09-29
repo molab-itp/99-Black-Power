@@ -1,0 +1,52 @@
+# Deploy web apps in web/ plus shared data in prep/data/ to GitHub Pages.
+# Paths are preserved so apps use the same relative data path locally and deployed:
+#   _site/web/<app>/  →  ../../prep/data/people.json
+# One-time setup: Settings → Pages → Source = "GitHub Actions".
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+    paths: ['web/**', 'prep/data/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site/prep
+          cp -R web _site/web
+          cp -R prep/data _site/prep/data
+          # Apps with a package.json build step publish their dist/ instead of sources
+          for pkg in web/*/package.json; do
+            [ -f "$pkg" ] || continue
+            app=$(dirname "$pkg")
+            (cd "$app" && npm ci && npm run build)
+            rm -rf "_site/$app" && cp -R "$app/dist" "_site/$app"
+          done
+          # Site root redirects to the app index
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=web/">' > _site/index.html
+          touch _site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

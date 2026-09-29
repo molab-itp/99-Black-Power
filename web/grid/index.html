@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>99 Black Power: Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="../">99 Black Power</a></h1>
+    <p id="subtitle"></p>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search name or description" aria-label="Search">
+      <select id="sort" aria-label="Sort">
+        <option value="born">Birth year</option>
+        <option value="name">Name</option>
+      </select>
+      <span id="count"></span>
+    </div>
+  </header>
+
+  <main id="grid"></main>
+
+  <footer>
+    <p>Data: <a id="source" href="https://en.wikipedia.org/wiki/100_Greatest_African_Americans">Wikipedia</a>.
+      Images from Wikimedia Commons; credits in each detail view.</p>
+  </footer>
+
+  <dialog id="detail">
+    <button class="close" aria-label="Close">×</button>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

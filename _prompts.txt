@@ -8,3 +8,25 @@ into json with folder for related image for each person
 sort the entries by earlies date in the listing
 create thumb and full size image
 include source url for articles
+
+v1.2
+
+Plan: dont build anything yet.
+Give alternatives to build a web app 
+to browser the 100 in prep/data/people.json
+to be hosted on github pages
+suggest minimal frameworks
+and support deploy of multipe web apps from this repo
+
+>>
+Recommendation
+Hosting: Option A.
+First app: web/grid/, written in vanilla JS or Alpine with no build step. It would have:
+a thumbnail grid sorted by birth year
+search by name or description
+a detail view with the full image, summary, Wikipedia link and image credit
+#<id> hash links so each person has a shareable URL
+Second app: something different, such as web/timeline/ (1723 to the present) in p5.js or plain SVG.
+Local dev: run npx serve . from the repo root and open /web/grid/.
+
+Go with Hosting Option A, first app in vanilla js, ok for urls to include /web/, show image credits in detail view
