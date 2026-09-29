@@ -1,5 +1,5 @@
 //
-//  BllackPower.swift
+//  BlackPower.swift
 //  Black-Power
 //
 //  Created by jht2 on 9/27/26.
@@ -7,31 +7,33 @@
 
 import SwiftUI
 
-let animInterval = 0.10; // update very tenth of a second
+fileprivate let animInterval = 0.10; // update very tenth of a second
 
-struct BllackPower: View {
+struct BlackPowerTimeline: View {
   @State private var angle: CGFloat = .pi
   var body: some View {
-    Text("Black Power taking up space")
-      .font(.system(size: 28))
-      .bold()
-    TimelineView(.animation(minimumInterval: animInterval)) {
-      context in
-      BlackPowerCanvasView(startingAngle: angle)
-        .onChange(of: context.date) { _, _ in
-          angle += .pi / 180
-        }
+    VStack {
+      Text("Black Power taking up space")
+        .font(.system(size: 28))
+        .bold()
+      TimelineView(.animation(minimumInterval: animInterval)) {
+        context in
+        BlackPowerCanvasView(startingAngle: angle)
+          .onChange(of: context.date) { _, _ in
+            angle += .pi / 180
+          }
+      }
+      Text("...more")
+        .font(.largeTitle)
     }
     .onAppear {
-      print("onAppear")
+      print("BlackPowerTimeline onAppear")
     }
-    Text("...more")
-      .font(.largeTitle)
   }
 }
 
 #Preview {
-  BllackPower()
+  BlackPowerTimeline()
 }
 
 struct BlackPowerCanvasView: View {
