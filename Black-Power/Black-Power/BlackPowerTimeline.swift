@@ -52,29 +52,29 @@ func drawBlackPower(
   size: CGSize,
   startingAngle: CGFloat )
 {
+  // Fill to the width of size
   let dim: CGFloat = min(size.width, size.height)
-  let size: CGSize = .init(width: dim, height: dim)
-  let box = CGRect(origin: .zero, size: size)
+  let nsize: CGSize = .init(width: dim, height: dim)
+  // Center horizontal
+  let org:CGPoint = .init(x: 0, y: (size.height - dim)/2)
+  let box = CGRect(origin: org, size: nsize)
   let center = CGPoint(x: box.midX, y: box.midY)
   let radius = box.width / 2
   let deltaAngle = Double.pi * 2 / 3
   let marginAngle = deltaAngle / 10
   var startAngle = startingAngle - CGFloat.pi / 2 + marginAngle / 2
   var endAngle = startAngle + deltaAngle
-  
   // Draw outer black circle
   context.fill(
     Path(ellipseIn: box),
     with: .color(.black)
   )
-  
   // Draw red segment
   context.fill(
     segmentPath(center: center, radius: radius,
                 startAngle: startAngle, endAngle: endAngle - marginAngle),
     with: .color(.red)
   )
-  
   // Draw green segment
   startAngle += deltaAngle
   endAngle += deltaAngle
@@ -83,7 +83,6 @@ func drawBlackPower(
                 startAngle: startAngle, endAngle: endAngle - marginAngle),
     with: .color(.green)
   )
-  
   // Draw gold segment
   startAngle += deltaAngle
   endAngle += deltaAngle
@@ -92,7 +91,6 @@ func drawBlackPower(
                 startAngle: startAngle, endAngle: endAngle - marginAngle),
     with: .color(.gold)
   )
-  
   // Draw inner black circle
   let dx = box.width / 3.5
   let ibox = box.insetBy(dx: dx, dy: dx)

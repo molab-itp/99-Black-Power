@@ -23,8 +23,9 @@ struct BlackFont8View: View {
           Text(str)
             .font(.system(size: 20, design: .monospaced))
             .foregroundStyle(.primary),
-          at: CGPoint(x: size.width / 2, y: size.height * 0.60),
-          anchor: .bottom
+//          at: CGPoint(x: size.width / 2, y: size.height * 0.60),
+          at: CGPoint(x: size.width/2, y: size.height/2),
+//          anchor: .bottom
         )
       }
       .onChange(of: context.date) { _, _ in
