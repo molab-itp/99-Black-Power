@@ -48,3 +48,76 @@ with approximate time cost
 ### Response
 
 Appended this entry.
+
+## 2026-09-29 12:43 EDT — web: GitHub Pages hosting and grid app
+
+Approximate time cost: ~10 min (plan ~3 min, build and local test ~5 min, plus this log entry)
+
+### Prompt
+
+```
+Plan: dont build anything yet.
+Give alternatives to build a web app
+to browser the 100 in prep/data/people.json
+to be hosted on github pages
+suggest minimal frameworks
+and support deploy of multipe web apps from this repo
+```
+
+### Response
+
+Plan only; nothing built.
+
+- Hosting options:
+  - A. GitHub Actions: apps in `web/<app>/`; the workflow copies `web/` and `prep/data/`
+    into `_site/` with the same paths, so apps fetch `../../prep/data/people.json` both
+    locally and deployed. The Xcode project isn't published. An app can have its own build
+    step later.
+  - B. Deploy from the branch root with `.nojekyll`: no CI, but publishes the whole repo.
+  - C. Deploy from `/docs`: data would have to be copied in, since Pages doesn't follow
+    symlinks. The weakest option.
+- Frameworks, from lightest: vanilla JS, Alpine.js, Preact + htm, Lit, p5.js (all without a
+  build step), then Vite + Svelte and Eleventy (with a build step).
+- Recommended: Option A, and a vanilla or Alpine grid app first.
+
+### Prompt
+
+```
+Go with Hosting Option A, first app in vanilla js, ok for urls to include /web/,
+show image credits in detail view
+```
+
+### Response
+
+Built these files (not committed):
+
+- `.github/workflows/pages.yml`: puts `web/` and `prep/data/` into `_site/`. It runs when
+  those folders change on `main`, or by hand. If an app has a `package.json`, it builds it
+  and publishes its `dist/` instead. The site root redirects to `web/`.
+- `web/index.html`: landing page that links to each app
+- `web/grid/` (`index.html`, `style.css`, `app.js`):
+  - thumbnail grid sorted by birth year or name, with search by name or description
+  - detail view (`<dialog>`) with the full image, summary, Wikipedia link, and image credit
+    (file, artist, license link, credit)
+  - a shareable link for each person (`#<id>`); prev/next follow the current filter
+  - an initials placeholder for the 4 people without an image
+  - colours are the plum `#1e131d` and orange `#fba414` from the README notes
+
+Tested: `node --check` passed. A copy of the site assembled locally returned HTTP 200 for the
+pages, data and images. I didn't open it in a browser, and the workflow hasn't run yet.
+
+To deploy: set Settings → Pages → Source to "GitHub Actions", then merge into `main`. The app
+will be at https://molab-itp.github.io/99-Black-Power/web/grid/
+
+Local dev: run `npx serve .` from the repo root, then open `/web/grid/`.
+
+### Prompt
+
+```
+append this chat to Log.md with date and time stamp
+with approximate time cost
+```
+
+### Response
+
+Appended this entry.

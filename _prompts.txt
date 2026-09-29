@@ -30,3 +30,5 @@ Second app: something different, such as web/timeline/ (1723 to the present) in 
 Local dev: run npx serve . from the repo root and open /web/grid/.
 
 Go with Hosting Option A, first app in vanilla js, ok for urls to include /web/, show image credits in detail view
+
+v1.3
