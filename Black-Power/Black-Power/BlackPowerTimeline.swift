@@ -50,14 +50,19 @@ struct BlackPowerCanvasView: View {
 func drawBlackPower(
   context: GraphicsContext,
   size: CGSize,
-  startingAngle: CGFloat )
+  startingAngle: CGFloat,
+  innerRect: CGRect? = nil
+  )
 {
   // Fill to the width of size
   let dim: CGFloat = min(size.width, size.height)
   let nsize: CGSize = .init(width: dim, height: dim)
   // Center horizontal
   let org:CGPoint = .init(x: 0, y: (size.height - dim)/2)
-  let box = CGRect(origin: org, size: nsize)
+  var box = CGRect(origin: org, size: nsize)
+  if let innerRect {
+    box = innerRect
+  }
   let center = CGPoint(x: box.midX, y: box.midY)
   let radius = box.width / 2
   let deltaAngle = Double.pi * 2 / 3
@@ -92,12 +97,19 @@ func drawBlackPower(
     with: .color(.gold)
   )
   // Draw inner black circle
-  let dx = box.width / 3.5
+  let dx = box.width / 3.0
   let ibox = box.insetBy(dx: dx, dy: dx)
   context.fill(
     Path(ellipseIn: ibox),
     with: .color(.black)
   )
+  if innerRect == nil {
+    // Inner circle
+    drawBlackPower(context: context,
+                   size: ibox.size,
+                   startingAngle: startingAngle + Double.pi,
+                   innerRect: ibox)
+  }
 }
 
 // Helper function to create a pie-slice path

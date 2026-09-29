@@ -18,10 +18,10 @@ struct BlackFont8View: View {
                        startingAngle: angle)
         //      Text(buildFont8String("Q", scale: 2).joined(separator: "\n"))
         //        .font(.system(.body, design: .monospaced))
-        let str = buildFont8String("US", scale: 2).joined(separator: "\n")
+        let str = buildFont8String("HOS", scale: 2).joined(separator: "\n")
         context.draw(
           Text(str)
-            .font(.system(size: 20, design: .monospaced))
+            .font(.system(size: 28, design: .monospaced))
             .foregroundStyle(.primary),
 //          at: CGPoint(x: size.width / 2, y: size.height * 0.60),
           at: CGPoint(x: size.width/2, y: size.height/2),
