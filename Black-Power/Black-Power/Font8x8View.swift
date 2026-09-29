@@ -11,7 +11,7 @@ struct Font8x8View: View {
     var body: some View {
       VStack {
         Text("Hello, World!a")
-        Text(buildString("Food", scale: 1).joined(separator: "\n"))
+        Text(buildFont8String("Q", scale: 2).joined(separator: "\n"))
           .font(.system(.body, design: .monospaced))
 //          .font(.system(size: 12, design: .monospaced))
       }
@@ -60,7 +60,7 @@ func createScreen(_ str: String) -> Screen {
   return charScreen
 }
 
-func buildString(_ str:String, scale: Int) -> [String] {
+func buildFont8String(_ str:String, scale: Int) -> [String] {
   var outs:[String] = []
   let charScreen = createScreen(str)
   let n = charScreen[0].count;
