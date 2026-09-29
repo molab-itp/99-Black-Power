@@ -22,6 +22,7 @@
     "artist": "Acme News Photos",
     "credit": "source front back",
     "license": "Public domain",
-    "licenseUrl": null
+    "licenseUrl": null,
+    "note": null
   }
 }

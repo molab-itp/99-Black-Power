@@ -52,6 +52,8 @@ function card(p) {
 function credit(image) {
   const license = image.licenseUrl ? el('a', { href: image.licenseUrl }, image.license) : image.license;
   return el('p', { class: 'credit' },
+    image.note ? image.note : null,
+    image.note ? el('br') : null,
     'Image: ', el('a', { href: image.sourceUrl }, image.file),
     image.artist ? ` by ${image.artist}` : null,
     '. License: ', license, '.',

@@ -23,6 +23,26 @@ const THUMB_WIDTH = 256; // width of thumbnail
 
 const force = process.argv.includes('--force');
 
+// Hand-picked images for entries whose article has no lead image.
+// Keyed by person id (slug); note explains images that are not a portrait.
+const IMAGE_OVERRIDES = {
+  'david-walker': {
+    file: 'David_Walker_Appeal.jpg',
+    note: "Frontispiece of Walker's Appeal (1830); no authenticated portrait of Walker is known.",
+  },
+  'kenneth-b-clark': {
+    file: 'Kenneth_and_Mamie_Clark_1958_(cropped).jpg',
+    note: 'Kenneth Clark (left) with Mamie Phipps Clark, 1958.',
+  },
+  'john-henrik-clarke': {
+    file: 'John_Henrik_Clarke_Africana_Library,_2023.jpg',
+    note: 'The John Henrik Clarke Africana Library at Cornell University; no freely licensed portrait of Clarke is available.',
+  },
+  'august-wilson': {
+    file: 'August_wilson.jpg', // non-free, used under fair use on English Wikipedia
+  },
+};
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function fetchWithRetry(url, tries = 5) {
@@ -194,7 +214,8 @@ async function main() {
   console.log(`Parsed ${people.length} entries`);
 
   const pageInfo = await getPageInfo(people);
-  const fileNames = [...new Set([...pageInfo.values()].map((pg) => pg?.pageimage).filter(Boolean))];
+  const imageFile = (p) => IMAGE_OVERRIDES[slugify(p.name)]?.file || pageInfo.get(p.title)?.pageimage;
+  const fileNames = [...new Set(people.map(imageFile).filter(Boolean))];
   const imageInfo = await getImageInfo(fileNames);
 
   // Sort by earliest date in the listing (birth year), then death year, then name
@@ -214,7 +235,8 @@ async function main() {
     const dir = path.join(PEOPLE_DIR, slug);
     await fs.mkdir(dir, { recursive: true });
 
-    const ii = pg?.pageimage ? imageInfo.get(pg.pageimage) : null;
+    const file = imageFile(p);
+    const ii = file ? imageInfo.get(file) : null;
     const meta = ii?.extmetadata || {};
     let image = null;
     if (ii) {
@@ -223,7 +245,7 @@ async function main() {
       image = {
         full: `people/${slug}/full.jpg`,
         thumb: `people/${slug}/thumb.jpg`,
-        file: pg.pageimage,
+        file,
         sourceUrl: ii.descriptionurl,
         originalUrl: ii.url.split('?')[0],
         originalWidth: ii.width,
@@ -232,6 +254,7 @@ async function main() {
         credit: stripHtml(meta.Credit?.value) || null,
         license: meta.LicenseShortName?.value || null,
         licenseUrl: meta.LicenseUrl?.value || null,
+        note: IMAGE_OVERRIDES[slug]?.note || null,
       };
     } else {
       console.log(`${String(i + 1).padStart(3)} ${p.name} — no image`);

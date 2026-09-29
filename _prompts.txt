@@ -32,3 +32,17 @@ Local dev: run npx serve . from the repo root and open /web/grid/.
 Go with Hosting Option A, first app in vanilla js, ok for urls to include /web/, show image credits in detail view
 
 v1.3
+
+in web/index.html
+include image from https://en.wikipedia.org/wiki/100_Greatest_African_Americans
+
+Find open source or fair use images for
+August Wilson
+Kenneth B. Clark
+John Henrik Clarke
+David Walker
+and add to prep/data
+
+>> in prep/
+npm run build
+

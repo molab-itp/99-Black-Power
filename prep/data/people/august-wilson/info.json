@@ -11,5 +11,18 @@
   "summary": "August Wilson (né Frederick August Kittel Jr.; April 27, 1945 – October 2, 2005) was an American playwright. He has been referred to as the \"theater's poet of Black America\". He is best known for a series of 10 plays, collectively called The Pittsburgh Cycle (or The Century Cycle), which chronicle the experiences and heritage of the African-American community in the 20th century.",
   "articleTitle": "August Wilson",
   "articleUrl": "https://en.wikipedia.org/wiki/August_Wilson",
-  "image": null
+  "image": {
+    "full": "people/august-wilson/full.jpg",
+    "thumb": "people/august-wilson/thumb.jpg",
+    "file": "August_wilson.jpg",
+    "sourceUrl": "https://en.wikipedia.org/wiki/File:August_wilson.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/en/f/fa/August_wilson.jpg",
+    "originalWidth": 186,
+    "originalHeight": 252,
+    "artist": null,
+    "credit": "Copy found at Artist's Network of Refuse &amp; Resist",
+    "license": "Fair use",
+    "licenseUrl": null,
+    "note": null
+  }
 }
