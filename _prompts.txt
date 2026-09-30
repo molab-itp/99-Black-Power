@@ -49,3 +49,10 @@ npm run build
 v1.4
 
 adjust thumb for Prince Hall
+
+v1.5
+
+in BubbleLevel/BubbleLevel.swift
+produce a plan to add to canvas
+a draw layer that is saved and loaded from local storage
+via load save button

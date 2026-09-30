@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ABD70D2829A33AF90038BCDB"
-               BuildableName = "BubbleLevel.app"
-               BlueprintName = "BubbleLevel"
-               ReferencedContainer = "container:BubbleLevel.xcodeproj">
+               BuildableName = "BubbleCanvas.app"
+               BlueprintName = "BubbleCanvas"
+               ReferencedContainer = "container:BubbleCanvas.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ABD70D2829A33AF90038BCDB"
-            BuildableName = "BubbleLevel.app"
-            BlueprintName = "BubbleLevel"
-            ReferencedContainer = "container:BubbleLevel.xcodeproj">
+            BuildableName = "BubbleCanvas.app"
+            BlueprintName = "BubbleCanvas"
+            ReferencedContainer = "container:BubbleCanvas.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ABD70D2829A33AF90038BCDB"
-            BuildableName = "BubbleLevel.app"
-            BlueprintName = "BubbleLevel"
-            ReferencedContainer = "container:BubbleLevel.xcodeproj">
+            BuildableName = "BubbleCanvas.app"
+            BlueprintName = "BubbleCanvas"
+            ReferencedContainer = "container:BubbleCanvas.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

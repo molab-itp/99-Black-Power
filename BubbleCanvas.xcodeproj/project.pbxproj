@@ -11,7 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ABD70D2929A33AF90038BCDB /* BubbleLevel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleLevel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD70D2929A33AF90038BCDB /* BubbleCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD70D3B29A33B7D0038BCDB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ABD70D3E29A33B7D0038BCDB /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,7 +44,7 @@
 		ABD70D2A29A33AF90038BCDB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ABD70D2929A33AF90038BCDB /* BubbleLevel.app */,
+				ABD70D2929A33AF90038BCDB /* BubbleCanvas.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,9 +52,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ABD70D2829A33AF90038BCDB /* BubbleLevel */ = {
+		ABD70D2829A33AF90038BCDB /* BubbleCanvas */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ABD70D3729A33AFA0038BCDB /* Build configuration list for PBXNativeTarget "BubbleLevel" */;
+			buildConfigurationList = ABD70D3729A33AFA0038BCDB /* Build configuration list for PBXNativeTarget "BubbleCanvas" */;
 			buildPhases = (
 				ABD70D2529A33AF90038BCDB /* Sources */,
 				ABD70D2629A33AF90038BCDB /* Frameworks */,
@@ -67,9 +67,9 @@
 			fileSystemSynchronizedGroups = (
 				AB33F022306D8D7B0008DEF6 /* BubbleLevel */,
 			);
-			name = BubbleLevel;
+			name = BubbleCanvas;
 			productName = BubbleLevel;
-			productReference = ABD70D2929A33AF90038BCDB /* BubbleLevel.app */;
+			productReference = ABD70D2929A33AF90038BCDB /* BubbleCanvas.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -87,7 +87,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ABD70D2429A33AF90038BCDB /* Build configuration list for PBXProject "BubbleLevel" */;
+			buildConfigurationList = ABD70D2429A33AF90038BCDB /* Build configuration list for PBXProject "BubbleCanvas" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -100,7 +100,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ABD70D2829A33AF90038BCDB /* BubbleLevel */,
+				ABD70D2829A33AF90038BCDB /* BubbleCanvas */,
 			);
 		};
 /* End PBXProject section */
@@ -306,7 +306,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ABD70D2429A33AF90038BCDB /* Build configuration list for PBXProject "BubbleLevel" */ = {
+		ABD70D2429A33AF90038BCDB /* Build configuration list for PBXProject "BubbleCanvas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABD70D3529A33AFA0038BCDB /* Debug */,
@@ -315,7 +315,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABD70D3729A33AFA0038BCDB /* Build configuration list for PBXNativeTarget "BubbleLevel" */ = {
+		ABD70D3729A33AFA0038BCDB /* Build configuration list for PBXNativeTarget "BubbleCanvas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ABD70D3829A33AFA0038BCDB /* Debug */,

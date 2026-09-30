@@ -121,3 +121,57 @@ with approximate time cost
 ### Response
 
 Appended this entry.
+
+## 2026-09-30 17:54 EDT — BubbleLevel: bubble trail as a PNG image layer
+
+Approximate time cost: ~10 min (plan, revised plan, implementation and simulator build)
+
+### Prompt
+
+```
+in BubbleLevel/BubbleLevel.swift
+produce a plan to add to canvas
+a draw layer that is saved and loaded from local storage
+via load save button
+```
+
+```
+modify plan to have the write the bubble trail to an image layer that is saved as a png
+```
+
+```
+implement and document changes in Log.md
+```
+
+### Response
+
+Changed `BubbleLevel/BubbleLevel.swift`: the bubble trail now builds up in a bitmap image
+layer that can be saved to and loaded from a PNG file.
+
+- `trailImage: UIImage?` is the image layer, shown with `Image(uiImage:)` under the live `Canvas`
+- `data` is now a buffer of pending points. The `Canvas` draws them live, and every
+  `flushCount` (100) points `flushTrail()` draws them into `trailImage` with
+  `UIGraphicsImageRenderer` (display scale, transparent background) and empties the buffer.
+  This replaces the 1000-point `maxData` cap, so the trail can grow without limit.
+- Save / Load / Clear buttons (`.bordered`) below the level:
+  - Save runs `flushTrail()`, then writes `trailImage.pngData()` to
+    `Documents/bubble-trail.png`
+  - Load reads the PNG with `UIImage(data:scale: displayScale)`, so a @3x file still maps
+    to the 300-point level
+  - Clear empties the buffer and the image
+- The bubble and crosshair now draw on top of the trail layers. Before, the trail covered
+  the bubble.
+- Removed the unused `myOnUpdate()`. Moved the level into its own `level` view and added
+  a `dotRect(_:)` helper that the Canvas and the flush share.
+
+Tested: `xcodebuild` for the iOS Simulator succeeded. I haven't run it on a device, so
+Save → Clear → Load and loading after relaunch are untested.
+
+Notes:
+
+- The PNG has only the black dots on a transparent background, not the gray circle or
+  the crosshair.
+- The file is in the app's Documents folder. To see it in the Files app, add
+  `UIFileSharingEnabled` and `LSSupportsOpeningDocumentsInPlace` to Info.plist.
+- The trail isn't loaded automatically at launch. Tap Load.
+- The button row makes the view taller. `LevelView`'s `.padding(.top, 80)` may need reducing.
