@@ -56,3 +56,8 @@ in BubbleLevel/BubbleLevel.swift
 produce a plan to add to canvas
 a draw layer that is saved and loaded from local storage
 via load save button
+
+v1.6
+
+rename
+change needed in Development Assets

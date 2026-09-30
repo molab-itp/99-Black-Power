@@ -17,7 +17,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AB33F022306D8D7B0008DEF6 /* BubbleLevel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BubbleLevel; sourceTree = "<group>"; };
+		AB33F022306D8D7B0008DEF6 /* BubbleCanvas */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BubbleCanvas; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +35,7 @@
 			isa = PBXGroup;
 			children = (
 				ABD70D3B29A33B7D0038BCDB /* README.md */,
-				AB33F022306D8D7B0008DEF6 /* BubbleLevel */,
+				AB33F022306D8D7B0008DEF6 /* BubbleCanvas */,
 				ABD70D3E29A33B7D0038BCDB /* License.txt */,
 				ABD70D2A29A33AF90038BCDB /* Products */,
 			);
@@ -65,7 +65,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				AB33F022306D8D7B0008DEF6 /* BubbleLevel */,
+				AB33F022306D8D7B0008DEF6 /* BubbleCanvas */,
 			);
 			name = BubbleCanvas;
 			productName = BubbleLevel;
@@ -250,7 +250,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BubbleLevel/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BubbleCanvas/Preview Content\"";
 				DEVELOPMENT_TEAM = 3RCW2SSL8G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -280,7 +280,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BubbleLevel/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BubbleCanvas/Preview Content\"";
 				DEVELOPMENT_TEAM = 3RCW2SSL8G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
