@@ -9,7 +9,7 @@ struct LevelView: View {
 
   var body: some View {
     VStack {
-      BubbleLevel( )
+      BubbleCanvas( )
       OrientationDataView()
         .padding(.top, 80)
     }

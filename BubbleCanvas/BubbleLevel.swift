@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-struct BubbleLevel: View {
+struct BubbleCanvas: View {
   @Environment(MotionDetector.self) var detector
   @Environment(\.displayScale) var displayScale
   // Pending trail points, drawn live by the Canvas until baked into trailImage
@@ -92,7 +92,7 @@ struct BubbleLevel: View {
         }
       )
       .onAppear {
-        print("BubbleLevel onAppear")
+        print("BubbleCanvas onAppear")
         detector.onUpdate = {
           let pt = CGPoint(x: bubbleXPosition,
                            y: bubbleYPosition)
@@ -160,6 +160,6 @@ struct BubbleLevel: View {
 }
 
 #Preview {
-  BubbleLevel()
+  BubbleCanvas()
     .environment(MotionDetector(updateInterval: 0.01).started())
 }
