@@ -23,7 +23,6 @@
 		ABD70D0E29A335E20038BCDB /* GaugeBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaugeBackground.swift; sourceTree = "<group>"; };
 		ABD70D0F29A335E20038BCDB /* NeedleSeismometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleSeismometer.swift; sourceTree = "<group>"; };
 		ABD70D1029A335E20038BCDB /* MotionDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionDetector.swift; sourceTree = "<group>"; };
-		ABD70D1129A335E20038BCDB /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		ABD70D1229A335E20038BCDB /* LineGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		ABD70D1329A335E30038BCDB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ABD70D1429A335E30038BCDB /* GraphSeismometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSeismometer.swift; sourceTree = "<group>"; };
@@ -50,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				ABD70D1329A335E30038BCDB /* README.md */,
-				ABD70D1129A335E20038BCDB /* License.txt */,
 				ABD9BA8529A3345E00D68987 /* Seismometer */,
 				ABD9BA8429A3345E00D68987 /* Products */,
 			);
