@@ -13,19 +13,15 @@ struct BlackFont8View: View {
     TimelineView(.animation(minimumInterval: 0.1)) {
       context in
       Canvas { context, size in
-        drawBlackPower(context: context,
-                       size: size,
-                       startingAngle: angle)
-        //      Text(buildFont8String("Q", scale: 2).joined(separator: "\n"))
-        //        .font(.system(.body, design: .monospaced))
-        let str = buildFont8String("HOS", scale: 2).joined(separator: "\n")
+//        drawBlackPower(context: context,
+//                       size: size,
+//                       startingAngle: angle)
+        let str = buildFont8String("BKP", scale: 2).joined(separator: "\n")
         context.draw(
           Text(str)
-            .font(.system(size: 28, design: .monospaced))
+            .font(.system(size: 26, design: .monospaced))
             .foregroundStyle(.primary),
-//          at: CGPoint(x: size.width / 2, y: size.height * 0.60),
           at: CGPoint(x: size.width/2, y: size.height/2),
-//          anchor: .bottom
         )
       }
       .onChange(of: context.date) { _, _ in
