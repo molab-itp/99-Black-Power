@@ -14,16 +14,17 @@ struct BubbleCanvas: View {
   let flushCount = 100
   let dotSize: CGFloat = 20
   let range = Double.pi
-  let levelSize: CGFloat = 300
+  // Measured size of the level view, fills space above the buttons
+  @State private var levelSize: CGSize = .zero
   var bubbleXPosition: CGFloat {
     let zeroBasedRoll = detector.roll + range / 2
     let rollAsFraction = zeroBasedRoll / range
-    return rollAsFraction * levelSize
+    return rollAsFraction * levelSize.width
   }
   var bubbleYPosition: CGFloat {
     let zeroBasedPitch = detector.pitch + range / 2
     let pitchAsFraction = zeroBasedPitch / range
-    return pitchAsFraction * levelSize
+    return pitchAsFraction * levelSize.height
   }
   var verticalLine: some View {
     Rectangle()
@@ -45,20 +46,25 @@ struct BubbleCanvas: View {
         Button("Clear", action: clearTrail)
       }
       .buttonStyle(.bordered)
-      .padding(.top, 20)
+      .padding(.top, 10)
     }
   }
   var level: some View {
-    Circle()
+    RoundedRectangle(cornerRadius: 20)
       .foregroundStyle(Color.secondary.opacity(0.25))
-      .frame(width: levelSize, height: levelSize)
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .onGeometryChange(for: CGSize.self) { proxy in
+        proxy.size
+      } action: { newSize in
+        levelSize = newSize
+      }
       .overlay(
         ZStack {
           // Image layer: trail baked so far
           if let trailImage {
             Image(uiImage: trailImage)
               .resizable()
-              .frame(width: levelSize, height: levelSize)
+              .frame(width: levelSize.width, height: levelSize.height)
           }
 
           // Draw pending points in data as black circles
@@ -82,13 +88,13 @@ struct BubbleCanvas: View {
           verticalLine
           horizontalLine
           verticalLine
-            .position(x: levelSize / 2, y: 0)
+            .position(x: levelSize.width / 2, y: 0)
           verticalLine
-            .position(x: levelSize / 2, y: levelSize)
+            .position(x: levelSize.width / 2, y: levelSize.height)
           horizontalLine
-            .position(x: 0, y: levelSize / 2)
+            .position(x: 0, y: levelSize.height / 2)
           horizontalLine
-            .position(x: levelSize, y: levelSize / 2)
+            .position(x: levelSize.width, y: levelSize.height / 2)
         }
       )
       .onAppear {
@@ -111,11 +117,11 @@ struct BubbleCanvas: View {
 
   // Bake pending points into trailImage, transparent background
   func flushTrail() {
-    guard !data.isEmpty else { return }
+    guard !data.isEmpty, levelSize != .zero else { return }
     let format = UIGraphicsImageRendererFormat()
     format.scale = displayScale
     format.opaque = false
-    let size = CGSize(width: levelSize, height: levelSize)
+    let size = levelSize
     let renderer = UIGraphicsImageRenderer(size: size, format: format)
     let points = data
     trailImage = renderer.image { ctx in
@@ -148,7 +154,7 @@ struct BubbleCanvas: View {
       return
     }
     data.removeAll()
-    // Keep the saved pixel scale so the image maps back to levelSize points
+    // Keep the saved pixel scale; image is stretched to the current levelSize
     trailImage = UIImage(data: png, scale: displayScale)
   }
 
