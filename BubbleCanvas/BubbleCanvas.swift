@@ -34,13 +34,14 @@ struct BubbleCanvas: View {
   let range = Double.pi
   // Measured size of the level view, fills space above the buttons
   @State private var levelSize: CGSize = .zero
+  // swap roll / pitch
   var bubbleXPosition: CGFloat {
-    let zeroBasedRoll = detector.roll + range / 2
+    let zeroBasedRoll = detector.pitch  + range / 2
     let rollAsFraction = zeroBasedRoll / range
     return rollAsFraction * levelSize.width
   }
   var bubbleYPosition: CGFloat {
-    let zeroBasedPitch = detector.pitch + range / 2
+    let zeroBasedPitch = detector.roll + range / 2
     let pitchAsFraction = zeroBasedPitch / range
     return pitchAsFraction * levelSize.height
   }

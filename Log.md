@@ -175,3 +175,64 @@ Notes:
   `UIFileSharingEnabled` and `LSSupportsOpeningDocumentsInPlace` to Info.plist.
 - The trail isn't loaded automatically at launch. Tap Load.
 - The button row makes the view taller. `LevelView`'s `.padding(.top, 80)` may need reducing.
+
+## 2026-10-01 00:32 EDT — BubbleCanvas: translucent dots, skip duplicates, cycling palette
+
+Approximate time cost: ~6 min (two edits, simulator build and this log entry)
+
+### Prompt
+
+```
+in BubbleCanvas draw dot with %50 alpha
+```
+
+### Response
+
+Changed `BubbleCanvas/BubbleCanvas.swift` so the trail dots draw at 50% alpha. I changed both
+places that draw dots, so they look the same before and after they're saved into the trail image:
+
+- Live dots in the `Canvas`: `.black.opacity(0.5)`
+- `flushTrail()`: `UIColor.black.withAlphaComponent(0.5)`
+
+Where dots overlap they add up and get darker. Not built or run at this step.
+
+### Prompt
+
+```
+in BubbleCanvas only append point to data if different from last point
+cycle every second to colors in the palete red, gree, gold, black
+```
+
+### Response
+
+The alpha had since been changed to a top-level `dotAlpha = 0.02`. Changes to
+`BubbleCanvas/BubbleCanvas.swift`:
+
+- Skipping repeated points: `@State lastPoint: CGPoint?` holds the last point added. The
+  update handler returns early if the new point is the same, so no point is added when the
+  bubble hasn't moved. `lastPoint` is kept when a batch is saved into the image, so this
+  still works right after a save. `clearTrail()` resets it.
+- Color cycling: added a top-level `palette` with red, green, gold (`1.0, 0.84, 0.0`) and
+  black, plus `currentColor()`, which picks `palette[second % 4]` using
+  `Date().timeIntervalSinceReferenceDate`. The color changes on whole seconds of the clock,
+  not one second after the screen opens.
+- Each dot keeps its own color: `data` is now `[TrailDot]` (`pt` and `color`), because a
+  batch of 100 waiting to be saved can span a color change. The `Canvas` and `flushTrail()`
+  both fill each dot with `dot.color` at `dotAlpha`.
+
+Tested: `xcodebuild` for the iOS Simulator succeeded with no errors. I haven't run the app.
+
+Note: at `dotAlpha = 0.02` the colors are very faint until dots pile up.
+
+### Prompt
+
+```
+append this chat to Log.md with date and time stamp
+with approximate time cost
+```
+
+### Response
+
+Added this entry.
+
+Model: Claude Opus 5.5 (`claude-opus-5-5`), Claude Code in VS Code — 2026-10-01 00:34 EDT

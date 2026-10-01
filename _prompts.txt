@@ -87,3 +87,13 @@ v1.10
 
 in BubbleCanvas only append point to data if different from last point
 cycle every second to colors in the palete red, gree, gold, black
+
+v1.11
+
+append this chat to Log.md with date and time stamp
+with approximate time cost
+
+append your ai model version and data + time stamp to Log.md
+
+>> not prompted: swapped roll / pitch
+
