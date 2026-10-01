@@ -11,7 +11,7 @@ import SwiftUI
 struct Black_PowerApp: App {
     var body: some Scene {
         WindowGroup {
-          BlackFont8View()
+          BlackPowerTimeline()
         }
     }
 }
