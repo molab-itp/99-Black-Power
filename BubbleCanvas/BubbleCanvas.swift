@@ -94,8 +94,9 @@ struct BubbleCanvas: View {
             }
           }
 
+          // Donut: ring width 12.5 leaves a see-thru hole 50% of the diameter
           Circle()
-            .foregroundColor(.accentColor)
+            .strokeBorder(Color.accentColor, lineWidth: 12.5)
             .frame(width: 50, height: 50)
             .position(
               x: bubbleXPosition,

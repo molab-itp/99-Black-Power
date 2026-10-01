@@ -97,3 +97,8 @@ append your ai model version and data + time stamp to Log.md
 
 >> not prompted: swapped roll / pitch
 
+v1.11
+
+in BubbleCanvas make the make the circle
+that is tracking bubbleXPosition, bubbleYPosition
+a donut shape so that %50 of the inside is see thru
