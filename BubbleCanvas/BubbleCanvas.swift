@@ -34,13 +34,17 @@ struct BubbleCanvas: View {
   let range = Double.pi
   // Measured size of the level view, fills space above the buttons
   @State private var levelSize: CGSize = .zero
+  // Touch location while dragging, overrides the motion position
+  @State private var dragPoint: CGPoint?
   // swap roll / pitch
   var bubbleXPosition: CGFloat {
+    if let dragPoint { return dragPoint.x }
     let zeroBasedRoll = detector.pitch  + range / 2
     let rollAsFraction = zeroBasedRoll / range
     return rollAsFraction * levelSize.width
   }
   var bubbleYPosition: CGFloat {
+    if let dragPoint { return dragPoint.y }
     let zeroBasedPitch = detector.roll + range / 2
     let pitchAsFraction = zeroBasedPitch / range
     return pitchAsFraction * levelSize.height
@@ -117,20 +121,39 @@ struct BubbleCanvas: View {
             .position(x: levelSize.width, y: levelSize.height / 2)
         }
       )
+      // Touch and drag moves the tracking circle, released returns to motion
+      .contentShape(Rectangle())
+      .gesture(
+        DragGesture(minimumDistance: 0)
+          .onChanged { value in
+            dragPoint = CGPoint(
+              x: min(max(value.location.x, 0), levelSize.width),
+              y: min(max(value.location.y, 0), levelSize.height))
+            // Draw while tracking the touch, even without motion updates
+            addDot(dragPoint!)
+          }
+          .onEnded { _ in
+            dragPoint = nil
+          }
+      )
       .onAppear {
         print("BubbleCanvas onAppear")
         detector.onUpdate = {
-          let pt = CGPoint(x: bubbleXPosition,
-                           y: bubbleYPosition)
-          // Skip if the bubble hasn't moved
-          guard pt != lastPoint else { return }
-          lastPoint = pt
-          data.append( TrailDot(pt: pt, color: currentColor()) )
-          if data.count >= flushCount {
-            flushTrail()
-          }
+          addDot(CGPoint(x: bubbleXPosition,
+                         y: bubbleYPosition))
         }
       }
+  }
+
+  // Append a trail dot at pt, flushing to trailImage when full
+  func addDot(_ pt: CGPoint) {
+    // Skip if the bubble hasn't moved
+    guard pt != lastPoint else { return }
+    lastPoint = pt
+    data.append( TrailDot(pt: pt, color: currentColor()) )
+    if data.count >= flushCount {
+      flushTrail()
+    }
   }
 
   func dotRect(_ pt: CGPoint) -> CGRect {
