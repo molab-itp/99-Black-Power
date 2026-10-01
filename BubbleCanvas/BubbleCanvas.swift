@@ -6,11 +6,27 @@ import SwiftUI
 
 let dotAlpha = 0.02;
 
+// Dot colors, cycled once per second
+let palette: [UIColor] = [
+  .red,
+  .green,
+  UIColor(red: 1.0, green: 0.84, blue: 0.0, alpha: 1.0), // gold
+  .black,
+]
+
+// A trail point with the color it was recorded in
+struct TrailDot {
+  let pt: CGPoint
+  let color: UIColor
+}
+
 struct BubbleCanvas: View {
   @Environment(MotionDetector.self) var detector
   @Environment(\.displayScale) var displayScale
-  // Pending trail points, drawn live by the Canvas until baked into trailImage
-  @State private var data = [CGPoint]()
+  // Pending trail dots, drawn live by the Canvas until baked into trailImage
+  @State private var data = [TrailDot]()
+  // Last point appended, kept across flushes to skip duplicates
+  @State private var lastPoint: CGPoint?
   // Accumulated bubble trail, saved and loaded as a png
   @State private var trailImage: UIImage?
   let flushCount = 100
@@ -69,11 +85,11 @@ struct BubbleCanvas: View {
               .frame(width: levelSize.width, height: levelSize.height)
           }
 
-          // Draw pending points in data as 50% alpha black circles
+          // Draw pending dots in data as translucent circles
           Canvas { context, size in
-            for pt in data {
-              context.fill( Path(ellipseIn: dotRect(pt)),
-                            with: .color(.black.opacity(dotAlpha)))
+            for dot in data {
+              context.fill( Path(ellipseIn: dotRect(dot.pt)),
+                            with: .color(Color(uiColor: dot.color).opacity(dotAlpha)))
             }
           }
 
@@ -104,7 +120,10 @@ struct BubbleCanvas: View {
         detector.onUpdate = {
           let pt = CGPoint(x: bubbleXPosition,
                            y: bubbleYPosition)
-          data.append( pt )
+          // Skip if the bubble hasn't moved
+          guard pt != lastPoint else { return }
+          lastPoint = pt
+          data.append( TrailDot(pt: pt, color: currentColor()) )
           if data.count >= flushCount {
             flushTrail()
           }
@@ -117,6 +136,12 @@ struct BubbleCanvas: View {
            width: dotSize, height: dotSize)
   }
 
+  // Palette color for the current second
+  func currentColor() -> UIColor {
+    let second = Int(Date().timeIntervalSinceReferenceDate)
+    return palette[second % palette.count]
+  }
+
   // Bake pending points into trailImage, transparent background
   func flushTrail() {
     guard !data.isEmpty, levelSize != .zero else { return }
@@ -125,12 +150,12 @@ struct BubbleCanvas: View {
     format.opaque = false
     let size = levelSize
     let renderer = UIGraphicsImageRenderer(size: size, format: format)
-    let points = data
+    let dots = data
     trailImage = renderer.image { ctx in
       trailImage?.draw(in: CGRect(origin: .zero, size: size))
-      UIColor.black.withAlphaComponent(dotAlpha).setFill()
-      for pt in points {
-        ctx.cgContext.fillEllipse(in: dotRect(pt))
+      for dot in dots {
+        dot.color.withAlphaComponent(dotAlpha).setFill()
+        ctx.cgContext.fillEllipse(in: dotRect(dot.pt))
       }
     }
     data.removeAll()
@@ -162,6 +187,7 @@ struct BubbleCanvas: View {
 
   func clearTrail() {
     data.removeAll()
+    lastPoint = nil
     trailImage = nil
   }
 

@@ -82,3 +82,8 @@ https://fatbobman.com/en/snippet/how-to-obtain-view-dimensions-in-swiftui/
 v1.9
 
 in BubbleCanvas draw dot with %50 alpha
+
+v1.10
+
+in BubbleCanvas only append point to data if different from last point
+cycle every second to colors in the palete red, gree, gold, black
