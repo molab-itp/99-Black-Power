@@ -16,7 +16,7 @@ struct BlackFont8View: View {
 //        drawBlackPower(context: context,
 //                       size: size,
 //                       startingAngle: angle)
-        let str = buildFont8String("BKP", scale: 2).joined(separator: "\n")
+        let str = buildFont8String("Usr", scale: 2).joined(separator: "\n")
         context.draw(
           Text(str)
             .font(.system(size: 26, design: .monospaced))
