@@ -67,3 +67,18 @@ v1.7
 in BubbleCanvas replace levelSize to have view take up 
 full space above save/load/clear buttons
  and horizontal and veritical reports .
+
+v1.8
+
+locate apple docs for swiftui onGeometryChange
+https://developer.apple.com/documentation/swiftui/view/ongeometrychange(for:of:action:)
+
+locate apple sample code for onGeometryChange
+
+https://www.hackingwithswift.com/quick-start/swiftui/how-to-detect-when-the-size-or-position-of-a-view-changes
+
+https://fatbobman.com/en/snippet/how-to-obtain-view-dimensions-in-swiftui/
+
+v1.9
+
+in BubbleCanvas draw dot with %50 alpha

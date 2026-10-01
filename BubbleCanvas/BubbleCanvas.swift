@@ -4,6 +4,8 @@
 
 import SwiftUI
 
+let dotAlpha = 0.02;
+
 struct BubbleCanvas: View {
   @Environment(MotionDetector.self) var detector
   @Environment(\.displayScale) var displayScale
@@ -67,11 +69,11 @@ struct BubbleCanvas: View {
               .frame(width: levelSize.width, height: levelSize.height)
           }
 
-          // Draw pending points in data as black circles
+          // Draw pending points in data as 50% alpha black circles
           Canvas { context, size in
             for pt in data {
               context.fill( Path(ellipseIn: dotRect(pt)),
-                            with: .color(.black))
+                            with: .color(.black.opacity(dotAlpha)))
             }
           }
 
@@ -126,7 +128,7 @@ struct BubbleCanvas: View {
     let points = data
     trailImage = renderer.image { ctx in
       trailImage?.draw(in: CGRect(origin: .zero, size: size))
-      UIColor.black.setFill()
+      UIColor.black.withAlphaComponent(dotAlpha).setFill()
       for pt in points {
         ctx.cgContext.fillEllipse(in: dotRect(pt))
       }
