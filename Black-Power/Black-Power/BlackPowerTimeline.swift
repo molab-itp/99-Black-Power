@@ -51,7 +51,8 @@ func drawBlackPower(
   context: GraphicsContext,
   size: CGSize,
   startingAngle: CGFloat,
-  innerRect: CGRect? = nil
+  innerRect: CGRect? = nil,
+  ninner: Int? = nil
   )
 {
   // Fill to the width of size
@@ -97,18 +98,21 @@ func drawBlackPower(
     with: .color(.gold)
   )
   // Draw inner black circle
-  let dx = box.width / 3.0
+  let dx = box.width / 12
   let ibox = box.insetBy(dx: dx, dy: dx)
   context.fill(
     Path(ellipseIn: ibox),
     with: .color(.black)
   )
-  if innerRect == nil {
+  var n = ninner ?? 16;
+  if innerRect == nil ||  n > 0 {
     // Inner circle
     drawBlackPower(context: context,
                    size: ibox.size,
-                   startingAngle: startingAngle + Double.pi,
-                   innerRect: ibox)
+                   startingAngle: startingAngle + Double.pi * 0.6,
+//                   startingAngle: startingAngle ,
+                   innerRect: ibox,
+                   ninner: n - 1)
   }
 }
 
