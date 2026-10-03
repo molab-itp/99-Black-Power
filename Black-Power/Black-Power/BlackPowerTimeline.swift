@@ -109,7 +109,7 @@ func drawBlackPower(
     // Inner circle
     drawBlackPower(context: context,
                    size: ibox.size,
-                   startingAngle: startingAngle + Double.pi * 0.1,
+                   startingAngle: startingAngle + Double.pi * 0.06,
                    innerRect: ibox,
                    ninner: n - 1)
   }
