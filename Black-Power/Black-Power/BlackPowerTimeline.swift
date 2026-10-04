@@ -67,7 +67,7 @@ func drawBlackPower(
   let center = CGPoint(x: box.midX, y: box.midY)
   let radius = box.width / 2
   let deltaAngle = Double.pi * 2 / 3
-  let marginAngle = deltaAngle / 10
+  let marginAngle = deltaAngle / 4
   var startAngle = startingAngle - CGFloat.pi / 2 + marginAngle / 2
   var endAngle = startAngle + deltaAngle
   // Draw outer black circle
@@ -98,7 +98,7 @@ func drawBlackPower(
     with: .color(.gold)
   )
   // Draw inner black circle
-  let dx = box.width / 12
+  let dx = box.width / 4
   let ibox = box.insetBy(dx: dx, dy: dx)
   context.fill(
     Path(ellipseIn: ibox),
