@@ -111,3 +111,7 @@ to move the tracking circle
 it also draw when tracking the touch
 and jump back to detector position 
 when touch is released
+
+v1.13
+
+in BubbleCanvas
