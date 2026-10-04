@@ -4,8 +4,6 @@
 
 import SwiftUI
 
-let dotAlpha = 0.02;
-
 // Dot colors, cycled once per second
 let palette: [UIColor] = [
   .red,
@@ -14,10 +12,11 @@ let palette: [UIColor] = [
   .black,
 ]
 
-// A trail point with the color it was recorded in
+// A trail point with the color and alpha it was recorded in
 struct TrailDot {
   let pt: CGPoint
   let color: UIColor
+  let alpha: Double
 }
 
 struct BubbleCanvas: View {
@@ -29,6 +28,8 @@ struct BubbleCanvas: View {
   @State private var lastPoint: CGPoint?
   // Accumulated bubble trail, saved and loaded as a png
   @State private var trailImage: UIImage?
+  // Opacity of new trail dots, set by the slider
+  @State private var dotAlpha = 0.02
   let flushCount = 100
   let dotSize: CGFloat = 20
   let range = Double.pi
@@ -64,6 +65,12 @@ struct BubbleCanvas: View {
     VStack {
       level
       HStack {
+        Text("Alpha \(dotAlpha, specifier: "%.2f")")
+          .monospacedDigit()
+        Slider(value: $dotAlpha, in: 0.01...1.0)
+      }
+      .padding(.top, 10)
+      HStack {
         Button("Save", action: saveTrail)
         Button("Load", action: loadTrail)
         Button("Clear", action: clearTrail)
@@ -94,7 +101,7 @@ struct BubbleCanvas: View {
           Canvas { context, size in
             for dot in data {
               context.fill( Path(ellipseIn: dotRect(dot.pt)),
-                            with: .color(Color(uiColor: dot.color).opacity(dotAlpha)))
+                            with: .color(Color(uiColor: dot.color).opacity(dot.alpha)))
             }
           }
 
@@ -150,7 +157,7 @@ struct BubbleCanvas: View {
     // Skip if the bubble hasn't moved
     guard pt != lastPoint else { return }
     lastPoint = pt
-    data.append( TrailDot(pt: pt, color: currentColor()) )
+    data.append( TrailDot(pt: pt, color: currentColor(), alpha: dotAlpha) )
     if data.count >= flushCount {
       flushTrail()
     }
@@ -179,7 +186,7 @@ struct BubbleCanvas: View {
     trailImage = renderer.image { ctx in
       trailImage?.draw(in: CGRect(origin: .zero, size: size))
       for dot in dots {
-        dot.color.withAlphaComponent(dotAlpha).setFill()
+        dot.color.withAlphaComponent(dot.alpha).setFill()
         ctx.cgContext.fillEllipse(in: dotRect(dot.pt))
       }
     }

@@ -115,3 +115,4 @@ when touch is released
 v1.13
 
 in BubbleCanvas
+add a slider for dotAlpha
