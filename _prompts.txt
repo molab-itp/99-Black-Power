@@ -117,3 +117,9 @@ v1.13
 in BubbleCanvas
 add a slider for dotAlpha
 
+v1.14
+
+in FaceMeshUI/FaceMeshUI.xcodeproj
+use ARKit to show ARFaceTrackingConfiguration
+that can report features: smiling,
+blinking back to ConventView as text status
