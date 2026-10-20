@@ -123,3 +123,12 @@ in FaceMeshUI/FaceMeshUI.xcodeproj
 use ARKit to show ARFaceTrackingConfiguration
 that can report features: smiling,
 blinking back to ConventView as text status
+
+v1.15
+
+in FaceMeshUI/FaceMeshUI.xcodeproj
+add controls for:
+- hide video, show video 
+- hide/show mesh overlay, 
+- hide/show mesh triangles colored from the underlying video
+
