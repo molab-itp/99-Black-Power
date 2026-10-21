@@ -143,3 +143,9 @@ v1.16
 in FaceMeshUI/FaceMeshUI.xcodeproj
 - mask option should show video pixels in eyes and mouth area,
 which is now show as black
+
+v1.17
+
+in FaceMeshUI/FaceMeshUI.xcodeproj
+add Fill toggle that scales the entire mesh + mask
+to fill the screen

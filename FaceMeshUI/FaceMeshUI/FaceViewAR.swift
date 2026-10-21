@@ -14,6 +14,7 @@ nonisolated struct FaceLayers: Equatable {
     var showMesh = true
     var showColoredTriangles = false
     var maskVideo = false  // show camera pixels only inside the face mesh
+    var fillScreen = false  // center the face and scale it to fill the screen
 
     /// Full-screen camera background is drawn only when video is on and not masked.
     var showsBackground: Bool { showVideo && !maskVideo }
@@ -71,6 +72,11 @@ struct FaceViewAR: UIViewRepresentable {
         nonisolated private static let meshName = "mesh"
         nonisolated private static let colorName = "color"
         nonisolated private static let maskName = "mask"
+        nonisolated private static let contentName = "content"
+
+        // Face bounds in anchor space, measured once so Fill doesn't jitter as the face moves.
+        // Only touched on the SceneKit render thread.
+        nonisolated(unsafe) private var faceBounds: (min: SIMD3<Float>, max: SIMD3<Float>)?
 
         init(tracker: FaceTracker) {
             self.tracker = tracker
@@ -124,27 +130,37 @@ struct FaceViewAR: UIViewRepresentable {
             maskNode.renderingOrder = -1  // draw video-textured face under the other layers
             maskNode.isHidden = !layers.maskVideo
 
+            // Holds all layers so Fill can move and scale them together.
+            let contentNode = SCNNode()
+            contentNode.name = Self.contentName
+            contentNode.addChildNode(maskNode)
+            contentNode.addChildNode(colorNode)
+            contentNode.addChildNode(meshNode)
+
             let faceNode = SCNNode()
-            faceNode.addChildNode(maskNode)
-            faceNode.addChildNode(colorNode)
-            faceNode.addChildNode(meshNode)
+            faceNode.addChildNode(contentNode)
             return faceNode
         }
 
         nonisolated func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
             guard let faceAnchor = anchor as? ARFaceAnchor else { return }
-            if let meshNode = node.childNode(withName: Self.meshName, recursively: false) {
+            if let meshNode = node.childNode(withName: Self.meshName, recursively: true) {
                 (meshNode.geometry as? ARSCNFaceGeometry)?.update(from: faceAnchor.geometry)
             }
             if layers.showColoredTriangles,
-               let colorNode = node.childNode(withName: Self.colorName, recursively: false),
+               let colorNode = node.childNode(withName: Self.colorName, recursively: true),
                let frame = session?.currentFrame {
                 colorNode.geometry = TriangleColorizer.geometry(for: faceAnchor, in: frame)
             }
             if layers.maskVideo,
-               let maskNode = node.childNode(withName: Self.maskName, recursively: false),
+               let maskNode = node.childNode(withName: Self.maskName, recursively: true),
                let frame = session?.currentFrame {
                 maskNode.geometry = FaceVideoMask.geometry(for: faceAnchor, in: frame)
+            }
+            if let contentNode = node.childNode(withName: Self.contentName, recursively: false) {
+                contentNode.simdTransform = layers.fillScreen
+                    ? fillTransform(for: faceAnchor, camera: renderer.pointOfView)
+                    : matrix_identity_float4x4
             }
 
             let blendShapes = faceAnchor.blendShapes
@@ -161,6 +177,40 @@ struct FaceViewAR: UIViewRepresentable {
         nonisolated func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
             guard anchor is ARFaceAnchor else { return }
             Task { @MainActor [tracker] in tracker.faceLost() }
+        }
+
+        /// Transform, relative to the anchor, that places the face centered in front of the
+        /// camera, keeping its rotation relative to the camera, scaled to fit the screen.
+        nonisolated private func fillTransform(for anchor: ARFaceAnchor, camera: SCNNode?) -> simd_float4x4 {
+            guard let camera, let projection = camera.camera?.projectionTransform else {
+                return matrix_identity_float4x4
+            }
+            let bounds = faceBounds ?? anchor.geometry.vertices.reduce(
+                (min: SIMD3<Float>(repeating: .greatestFiniteMagnitude),
+                 max: SIMD3<Float>(repeating: -.greatestFiniteMagnitude))
+            ) { (min: simd_min($0.min, $1), max: simd_max($0.max, $1)) }
+            faceBounds = bounds
+            let size = bounds.max - bounds.min
+            let center = (bounds.max + bounds.min) / 2
+
+            // Visible width and height at `distance` in front of the camera.
+            let distance: Float = 0.5
+            let visibleWidth = 2 * distance / Float(projection.m11)
+            let visibleHeight = 2 * distance / Float(projection.m22)
+            let scale = min(visibleWidth / size.x, visibleHeight / size.y)
+
+            let cameraTransform = camera.simdWorldTransform
+            var rotation = cameraTransform.inverse * anchor.transform
+            rotation.columns.3 = SIMD4<Float>(0, 0, 0, 1)
+
+            var translate = matrix_identity_float4x4
+            translate.columns.3 = SIMD4<Float>(0, 0, -distance, 1)
+            var recenter = matrix_identity_float4x4
+            recenter.columns.3 = SIMD4<Float>(-center, 1)
+            let scaling = simd_float4x4(diagonal: SIMD4<Float>(scale, scale, scale, 1))
+
+            let world = cameraTransform * translate * rotation * scaling * recenter
+            return anchor.transform.inverse * world
         }
 
         // MARK: ARSessionDelegate

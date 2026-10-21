@@ -33,6 +33,7 @@ struct ContentView: View {
                     layerToggle("Mesh", systemImage: "circle.grid.cross", isOn: $layers.showMesh)
                     layerToggle("Color", systemImage: "triangle.fill", isOn: $layers.showColoredTriangles)
                     layerToggle("Mask", systemImage: "theatermasks", isOn: $layers.maskVideo)
+                    layerToggle("Fill", systemImage: "arrow.up.left.and.arrow.down.right", isOn: $layers.fillScreen)
                 }
                 .padding(.top, 4)
             }
@@ -50,6 +51,8 @@ struct ContentView: View {
         }
         .toggleStyle(.button)
         .tint(.cyan)
+        .controlSize(.small)
+        .font(.caption)
     }
 }
 
