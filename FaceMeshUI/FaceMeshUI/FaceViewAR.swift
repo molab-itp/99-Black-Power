@@ -4,6 +4,7 @@
 //
 
 import ARKit
+import CoreImage
 import SceneKit
 import SwiftUI
 
@@ -12,11 +13,16 @@ nonisolated struct FaceLayers: Equatable {
     var showVideo = true
     var showMesh = true
     var showColoredTriangles = false
+    var maskVideo = false  // show camera pixels only inside the face mesh
+
+    /// Full-screen camera background is drawn only when video is on and not masked.
+    var showsBackground: Bool { showVideo && !maskVideo }
 }
 
 /// Front-camera AR view running ARFaceTrackingConfiguration.
 /// Draws a wireframe face mesh and reports blend shapes to a FaceTracker.
-/// Optionally draws the face triangles filled with colors sampled from the camera image.
+/// Optionally draws the face triangles filled with colors sampled from the camera image,
+/// or masks the video so only the camera pixels covered by the face mesh are shown.
 struct FaceViewAR: UIViewRepresentable {
     let tracker: FaceTracker
     var layers = FaceLayers()
@@ -64,6 +70,7 @@ struct FaceViewAR: UIViewRepresentable {
 
         nonisolated private static let meshName = "mesh"
         nonisolated private static let colorName = "color"
+        nonisolated private static let maskName = "mask"
 
         init(tracker: FaceTracker) {
             self.tracker = tracker
@@ -74,11 +81,11 @@ struct FaceViewAR: UIViewRepresentable {
             session = view.session
 
             let background = view.scene.background
-            if !newLayers.showVideo && !videoHidden {
+            if !newLayers.showsBackground && !videoHidden {
                 savedBackground = background.contents
                 background.contents = UIColor.black
                 videoHidden = true
-            } else if newLayers.showVideo && videoHidden {
+            } else if newLayers.showsBackground && videoHidden {
                 background.contents = savedBackground
                 savedBackground = nil
                 videoHidden = false
@@ -88,6 +95,7 @@ struct FaceViewAR: UIViewRepresentable {
             view.scene.rootNode.enumerateHierarchy { node, _ in
                 if node.name == Self.meshName { node.isHidden = !newLayers.showMesh }
                 if node.name == Self.colorName { node.isHidden = !newLayers.showColoredTriangles }
+                if node.name == Self.maskName { node.isHidden = !newLayers.maskVideo }
             }
         }
 
@@ -111,7 +119,13 @@ struct FaceViewAR: UIViewRepresentable {
             colorNode.name = Self.colorName
             colorNode.isHidden = !layers.showColoredTriangles
 
+            let maskNode = SCNNode()
+            maskNode.name = Self.maskName
+            maskNode.renderingOrder = -1  // draw video-textured face under the other layers
+            maskNode.isHidden = !layers.maskVideo
+
             let faceNode = SCNNode()
+            faceNode.addChildNode(maskNode)
             faceNode.addChildNode(colorNode)
             faceNode.addChildNode(meshNode)
             return faceNode
@@ -126,6 +140,11 @@ struct FaceViewAR: UIViewRepresentable {
                let colorNode = node.childNode(withName: Self.colorName, recursively: false),
                let frame = session?.currentFrame {
                 colorNode.geometry = TriangleColorizer.geometry(for: faceAnchor, in: frame)
+            }
+            if layers.maskVideo,
+               let maskNode = node.childNode(withName: Self.maskName, recursively: false),
+               let frame = session?.currentFrame {
+                maskNode.geometry = FaceVideoMask.geometry(for: faceAnchor, in: frame)
             }
 
             let blendShapes = faceAnchor.blendShapes
@@ -244,5 +263,57 @@ nonisolated enum TriangleColorizer {
     private static func linear(_ c: Float) -> Float {
         let c = min(max(c, 0), 1)
         return c <= 0.04045 ? c / 12.92 : pow((c + 0.055) / 1.055, 2.4)
+    }
+}
+
+/// Builds a face geometry textured with the part of the camera image the face covers,
+/// so drawing it over a black background shows the video only inside the face mesh.
+nonisolated enum FaceVideoMask {
+    private static let context = CIContext(options: [.cacheIntermediates: false])
+
+    static func geometry(for anchor: ARFaceAnchor, in frame: ARFrame) -> SCNGeometry? {
+        let face = anchor.geometry
+        let pixelBuffer = frame.capturedImage
+        let width = CGFloat(CVPixelBufferGetWidth(pixelBuffer))
+        let height = CGFloat(CVPixelBufferGetHeight(pixelBuffer))
+
+        // Project every vertex into the camera image (native landscape-right orientation).
+        let viewport = CGSize(width: width, height: height)
+        let transform = anchor.transform
+        let points = face.vertices.map { v -> CGPoint in
+            let world = transform * SIMD4<Float>(v, 1)
+            return frame.camera.projectPoint(SIMD3<Float>(world.x, world.y, world.z),
+                                             orientation: .landscapeRight,
+                                             viewportSize: viewport)
+        }
+
+        // Only convert the region of the image around the face.
+        let minX = max(points.map(\.x).min() ?? 0, 0)
+        let minY = max(points.map(\.y).min() ?? 0, 0)
+        let maxX = min(points.map(\.x).max() ?? width, width)
+        let maxY = min(points.map(\.y).max() ?? height, height)
+        let crop = CGRect(x: minX, y: minY, width: maxX - minX, height: maxY - minY).integral
+        guard crop.width > 1, crop.height > 1 else { return nil }
+
+        // CIImage has a bottom-left origin, projected points a top-left origin.
+        let ciRect = CGRect(x: crop.minX, y: height - crop.maxY, width: crop.width, height: crop.height)
+        guard let image = context.createCGImage(CIImage(cvPixelBuffer: pixelBuffer), from: ciRect)
+        else { return nil }
+
+        let texcoords = points.map {
+            CGPoint(x: ($0.x - crop.minX) / crop.width, y: ($0.y - crop.minY) / crop.height)
+        }
+
+        let vertexSource = SCNGeometrySource(vertices: face.vertices.map { SCNVector3($0) })
+        let texSource = SCNGeometrySource(textureCoordinates: texcoords)
+        let element = SCNGeometryElement(indices: face.triangleIndices, primitiveType: .triangles)
+        let geometry = SCNGeometry(sources: [vertexSource, texSource], elements: [element])
+
+        let material = SCNMaterial()
+        material.diffuse.contents = image
+        material.lightingModel = .constant
+        material.writesToDepthBuffer = false  // keep the mesh and color layers on top
+        geometry.firstMaterial = material
+        return geometry
     }
 }

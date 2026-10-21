@@ -132,3 +132,8 @@ add controls for:
 - hide/show mesh overlay, 
 - hide/show mesh triangles colored from the underlying video
 
+v1.15
+
+in FaceMeshUI/FaceMeshUI.xcodeproj
+add control:
+- mask video so only pixels in facemesh area visible

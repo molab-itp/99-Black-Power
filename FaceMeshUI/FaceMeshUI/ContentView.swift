@@ -32,6 +32,7 @@ struct ContentView: View {
                     layerToggle("Video", systemImage: "video", isOn: $layers.showVideo)
                     layerToggle("Mesh", systemImage: "circle.grid.cross", isOn: $layers.showMesh)
                     layerToggle("Color", systemImage: "triangle.fill", isOn: $layers.showColoredTriangles)
+                    layerToggle("Mask", systemImage: "theatermasks", isOn: $layers.maskVideo)
                 }
                 .padding(.top, 4)
             }
