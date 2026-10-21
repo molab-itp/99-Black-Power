@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tracker = FaceTracker()
+    @State private var layers = FaceLayers()
 
     var body: some View {
         ZStack(alignment: .bottom) {
             if tracker.isSupported {
-                FaceViewAR(tracker: tracker)
+                FaceViewAR(tracker: tracker, layers: layers)
                     .ignoresSafeArea()
             } else {
                 Color.black.ignoresSafeArea()
@@ -27,6 +28,12 @@ struct ContentView: View {
                                 tracker.smile, tracker.blinkLeft, tracker.blinkRight))
                         .font(.caption.monospacedDigit())
                 }
+                HStack {
+                    layerToggle("Video", systemImage: "video", isOn: $layers.showVideo)
+                    layerToggle("Mesh", systemImage: "circle.grid.cross", isOn: $layers.showMesh)
+                    layerToggle("Color", systemImage: "triangle.fill", isOn: $layers.showColoredTriangles)
+                }
+                .padding(.top, 4)
             }
             .foregroundStyle(.white)
             .padding()
@@ -34,6 +41,14 @@ struct ContentView: View {
             .background(.black.opacity(0.5), in: RoundedRectangle(cornerRadius: 12))
             .padding()
         }
+    }
+
+    private func layerToggle(_ title: String, systemImage: String, isOn: Binding<Bool>) -> some View {
+        Toggle(isOn: isOn) {
+            Label(title, systemImage: systemImage)
+        }
+        .toggleStyle(.button)
+        .tint(.cyan)
     }
 }
 
