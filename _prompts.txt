@@ -137,3 +137,9 @@ v1.15
 in FaceMeshUI/FaceMeshUI.xcodeproj
 add control:
 - mask video so only pixels in facemesh area visible
+
+v1.16
+
+in FaceMeshUI/FaceMeshUI.xcodeproj
+- mask option should show video pixels in eyes and mouth area,
+which is now show as black

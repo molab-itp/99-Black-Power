@@ -268,11 +268,59 @@ nonisolated enum TriangleColorizer {
 
 /// Builds a face geometry textured with the part of the camera image the face covers,
 /// so drawing it over a black background shows the video only inside the face mesh.
+/// The eye and mouth openings in the mesh are filled so the video shows there too.
 nonisolated enum FaceVideoMask {
     private static let context = CIContext(options: [.cacheIntermediates: false])
 
+    // Vertex loops around the eye and mouth openings; the face topology never changes,
+    // so they are found once. Only touched on the SceneKit render thread.
+    nonisolated(unsafe) private static var holeLoops: [[Int]]?
+
+    /// Finds the mesh's open edge loops (edges used by one triangle only),
+    /// dropping the longest one, which is the outer edge of the face.
+    private static func findHoleLoops(_ indices: [Int16]) -> [[Int]] {
+        var edges = Set<[Int]>()
+        for t in stride(from: 0, to: indices.count, by: 3) {
+            let a = Int(indices[t]), b = Int(indices[t + 1]), c = Int(indices[t + 2])
+            edges.formUnion([[a, b], [b, c], [c, a]])
+        }
+        var next: [Int: Int] = [:]
+        for e in edges where !edges.contains([e[1], e[0]]) {
+            next[e[0]] = e[1]
+        }
+        var loops: [[Int]] = []
+        while let start = next.keys.first {
+            var loop: [Int] = []
+            var v = start
+            while let n = next.removeValue(forKey: v) {
+                loop.append(v)
+                v = n
+            }
+            if loop.count > 2 { loops.append(loop) }
+        }
+        loops.sort { $0.count > $1.count }
+        return Array(loops.dropFirst())
+    }
+
     static func geometry(for anchor: ARFaceAnchor, in frame: ARFrame) -> SCNGeometry? {
         let face = anchor.geometry
+        let loops = holeLoops ?? findHoleLoops(face.triangleIndices)
+        holeLoops = loops
+
+        // Add a center vertex to each hole and close it with a triangle fan.
+        // Reversing each open edge keeps the fill facing the same way as the face.
+        var vertices = face.vertices
+        var indices = face.triangleIndices
+        for loop in loops {
+            let center = loop.reduce(SIMD3<Float>()) { $0 + vertices[$1] } / Float(loop.count)
+            let c = Int16(vertices.count)
+            vertices.append(center)
+            for (i, a) in loop.enumerated() {
+                let b = loop[(i + 1) % loop.count]
+                indices += [Int16(b), Int16(a), c]
+            }
+        }
+
         let pixelBuffer = frame.capturedImage
         let width = CGFloat(CVPixelBufferGetWidth(pixelBuffer))
         let height = CGFloat(CVPixelBufferGetHeight(pixelBuffer))
@@ -280,7 +328,7 @@ nonisolated enum FaceVideoMask {
         // Project every vertex into the camera image (native landscape-right orientation).
         let viewport = CGSize(width: width, height: height)
         let transform = anchor.transform
-        let points = face.vertices.map { v -> CGPoint in
+        let points = vertices.map { v -> CGPoint in
             let world = transform * SIMD4<Float>(v, 1)
             return frame.camera.projectPoint(SIMD3<Float>(world.x, world.y, world.z),
                                              orientation: .landscapeRight,
@@ -304,9 +352,9 @@ nonisolated enum FaceVideoMask {
             CGPoint(x: ($0.x - crop.minX) / crop.width, y: ($0.y - crop.minY) / crop.height)
         }
 
-        let vertexSource = SCNGeometrySource(vertices: face.vertices.map { SCNVector3($0) })
+        let vertexSource = SCNGeometrySource(vertices: vertices.map { SCNVector3($0) })
         let texSource = SCNGeometrySource(textureCoordinates: texcoords)
-        let element = SCNGeometryElement(indices: face.triangleIndices, primitiveType: .triangles)
+        let element = SCNGeometryElement(indices: indices, primitiveType: .triangles)
         let geometry = SCNGeometry(sources: [vertexSource, texSource], elements: [element])
 
         let material = SCNMaterial()
