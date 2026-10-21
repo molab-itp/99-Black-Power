@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var tracker = FaceTracker()
     @State private var layers = FaceLayers()
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -47,7 +48,12 @@ struct ContentView: View {
 
     private func layerToggle(_ title: String, systemImage: String, isOn: Binding<Bool>) -> some View {
         Toggle(isOn: isOn) {
-            Label(title, systemImage: systemImage)
+            // Icons only on compact (iPhone) widths; the title stays as the accessibility label.
+            if sizeClass == .compact {
+                Label(title, systemImage: systemImage).labelStyle(.iconOnly)
+            } else {
+                Label(title, systemImage: systemImage)
+            }
         }
         .toggleStyle(.button)
         .tint(.cyan)
