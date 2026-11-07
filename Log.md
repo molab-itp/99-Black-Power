@@ -279,3 +279,48 @@ and approximate time cost
 Added this entry.
 
 Model: Claude Opus 5.5 (`claude-opus-5-5`), Claude Code in VS Code — 2026-11-07 17:20 EST
+
+---
+
+## User (11/7/2026, 6:39:25 PM)
+
+```
+<ide_opened_file>The user opened the file /Users/jht2/Documents/projects/molab/99-Black-Power/_prompts.txt in the IDE. This may or may not be related to the current task.</ide_opened_file>
+update tools/log-turn.js
+ to include cost
+```
+
+## Assistant
+
+Nothing ran. I'll redo it without the cleanup step and write the test output to a new filename.
+
+The shell check is flagging the heredoc, so I'll make the edits with the Edit tool.
+
+Now testing it against a previous session's transcript, writing to a scratch file:
+
+I updated [tools/log-turn.js](tools/log-turn.js) so each exchange in `Log.md` now ends with a cost line. I ran it on a previous session's transcript (writing to a scratch file, not `Log.md`) and it produced:
+
+```
+*Cost: $0.4251 (input 16, output 5.7k, cache write 30.0k, cache read 358.0k) · session $0.4251*
+```
+
+The line shows the cost of that exchange, its token counts, and the running total for the session so far.
+
+**How it's calculated:**
+- **Source:** the token counts come from the session transcript. Claude Code writes the same message several times there, so each message is counted once.
+- **Prices:** a table of API list prices per model (Opus 5.5 is $4 per million input tokens and $20 per million output). Cached input is priced as follows:
+  - Saving to the cache costs 1.25× the input price for 5-minute entries and 2× for 1-hour entries.
+  - Reading from the cache costs 0.1× the input price, except for models with their own read price ($0.20 for Opus 5.5 and Sonnet 5.5, $0.25 for Fable 5.1).
+- **Fast mode** is counted at double the price.
+- **Unknown models** are named on the line as "no price for …" instead of being counted as $0.
+
+**Limitations:**
+- These are API list prices. If you're on a Pro or Max plan, the figure is what the usage would cost on the API, not what you're actually charged.
+- Subagent usage is only counted if it's recorded in the main transcript.
+- Haiku 5.5 costs more for prompts over 100K tokens, and the table only has the lower price.
+
+Exchanges already in `Log.md` won't get a cost line. Only new ones will.
+
+I first tried to make the edit through the shell, but a built-in safety check blocked that command, so nothing ran. I then made the same changes with the Edit tool.
+
+*Cost: $0.7725 (input 16, output 8.2k, cache write 64.8k, cache read 445.2k) · session $0.7725*

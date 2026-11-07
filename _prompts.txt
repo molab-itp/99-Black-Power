@@ -186,3 +186,11 @@ to be able to build it and other future web versions
 of the other apps here
 introduce a landing page to selec the web app
 currently only greatest-100
+
+ bin/publish.sh 
+
+ v1.22
+
+ update tools/log-turn.js
+ to include cost
+ 
