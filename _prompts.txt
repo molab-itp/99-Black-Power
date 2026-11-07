@@ -162,3 +162,5 @@ asked Chat by accident
 opportunity to compare Chat vs. Claude Code
 
 append this chat to Log.md
+
+>> chat: needed to confirm several prompts to run bash
