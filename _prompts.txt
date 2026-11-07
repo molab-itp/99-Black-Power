@@ -166,3 +166,14 @@ model used,
 and approximate time cost
 
 v1.21
+
+add a README.md with these goals
+create and track code for building a black power movement
+apps:
+    Black-Power
+    BubbleCanvas
+    FaceMeshMash
+    RandomSampes
+    Seismometer
+    web
+
