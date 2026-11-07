@@ -236,3 +236,43 @@ with approximate time cost
 Added this entry.
 
 Model: Claude Opus 5.5 (`claude-opus-5-5`), Claude Code in VS Code — 2026-10-01 00:34 EDT
+
+## 2026-11-07 17:12 EST — FaceMeshMash: rename from FaceMeshUI
+
+Approximate time cost: ~4 min (rename, reference updates, and this log entry)
+
+### Prompt
+
+```
+rename FaceMeshUI/FaceMeshUI.xcodeproj
+FaceMeshMash/FaceMeshMash.xcodeproj
+```
+
+### Response
+
+Renamed the project with `git mv` to preserve history:
+
+- `FaceMeshUI/` → `FaceMeshMash/`, `FaceMeshUI/FaceMeshUI/` → `FaceMeshMash/FaceMeshMash/`,
+  `FaceMeshUI.xcodeproj` → `FaceMeshMash.xcodeproj`, `FaceMeshUIApp.swift` →
+  `FaceMeshMashApp.swift`
+- `project.pbxproj`: replaced all `FaceMeshUI` occurrences (target/product name, file
+  references, group paths, bundle identifier `com.jht1900.FaceMeshUI-1` →
+  `com.jht1900.FaceMeshMash-1`)
+- Swift sources: `@main struct FaceMeshUIApp` → `FaceMeshMashApp` in
+  `FaceMeshMashApp.swift`, plus the `//  FaceMeshUI` header comment in `ContentView.swift`,
+  `FaceTracker.swift`, `FaceViewAR.swift` and `FaceMeshMashApp.swift`
+
+`project.xcworkspace/contents.xcworkspacedata` had no name references, so nothing to change
+there. Not built; just the rename and text substitution.
+
+### Prompt
+
+```
+append this chat to Log.md
+```
+
+### Response
+
+Added this entry.
+
+Model: Claude Sonnet 5 (`claude-sonnet-5`), GitHub Copilot Chat in VS Code — 2026-11-07 17:12 EST

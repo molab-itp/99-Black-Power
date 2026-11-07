@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		ABE607E330828E0700C3630B /* FaceMeshUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceMeshUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABE607E330828E0700C3630B /* FaceMeshMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceMeshMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		ABE607E530828E0700C3630B /* FaceMeshUI */ = {
+		ABE607E530828E0700C3630B /* FaceMeshMash */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FaceMeshUI;
+			path = FaceMeshMash;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -30,7 +30,7 @@
 		ABE607DA30828E0700C3630B = {
 			isa = PBXGroup;
 			children = (
-				ABE607E530828E0700C3630B /* FaceMeshUI */,
+				ABE607E530828E0700C3630B /* FaceMeshMash */,
 				ABE607E430828E0700C3630B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,7 +38,7 @@
 		ABE607E430828E0700C3630B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ABE607E330828E0700C3630B /* FaceMeshUI.app */,
+				ABE607E330828E0700C3630B /* FaceMeshMash.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,9 +46,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ABE607E230828E0700C3630B /* FaceMeshUI */ = {
+		ABE607E230828E0700C3630B /* FaceMeshMash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ABE607EE30828E0800C3630B /* Build configuration list for PBXNativeTarget "FaceMeshUI" */;
+			buildConfigurationList = ABE607EE30828E0800C3630B /* Build configuration list for PBXNativeTarget "FaceMeshMash" */;
 			buildPhases = (
 				ABE607DF30828E0700C3630B /* Sources */,
 				ABE607E030828E0700C3630B /* Frameworks */,
@@ -57,11 +57,11 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				ABE607E530828E0700C3630B /* FaceMeshUI */,
+				ABE607E530828E0700C3630B /* FaceMeshMash */,
 			);
-			name = FaceMeshUI;
-			productName = FaceMeshUI;
-			productReference = ABE607E330828E0700C3630B /* FaceMeshUI.app */;
+			name = FaceMeshMash;
+			productName = FaceMeshMash;
+			productReference = ABE607E330828E0700C3630B /* FaceMeshMash.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -79,7 +79,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ABE607DE30828E0700C3630B /* Build configuration list for PBXProject "FaceMeshUI" */;
+			buildConfigurationList = ABE607DE30828E0700C3630B /* Build configuration list for PBXProject "FaceMeshMash" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,7 +93,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ABE607E230828E0700C3630B /* FaceMeshUI */,
+				ABE607E230828E0700C3630B /* FaceMeshMash */,
 			);
 		};
 /* End PBXProject section */
@@ -115,7 +115,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		ABE607EC30828E0800C3630B /* Debug configuration for PBXProject "FaceMeshUI" */ = {
+		ABE607EC30828E0800C3630B /* Debug configuration for PBXProject "FaceMeshMash" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -179,7 +179,7 @@
 			};
 			name = Debug;
 		};
-		ABE607ED30828E0800C3630B /* Release configuration for PBXProject "FaceMeshUI" */ = {
+		ABE607ED30828E0800C3630B /* Release configuration for PBXProject "FaceMeshMash" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -236,7 +236,7 @@
 			};
 			name = Release;
 		};
-		ABE607EF30828E0800C3630B /* Debug configuration for PBXNativeTarget "FaceMeshUI" */ = {
+		ABE607EF30828E0800C3630B /* Debug configuration for PBXNativeTarget "FaceMeshMash" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -258,7 +258,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jht1900.FaceMeshUI-1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jht1900.FaceMeshMash-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -270,7 +270,7 @@
 			};
 			name = Debug;
 		};
-		ABE607F030828E0800C3630B /* Release configuration for PBXNativeTarget "FaceMeshUI" */ = {
+		ABE607F030828E0800C3630B /* Release configuration for PBXNativeTarget "FaceMeshMash" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -292,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jht1900.FaceMeshUI-1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jht1900.FaceMeshMash-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -307,19 +307,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ABE607DE30828E0700C3630B /* Build configuration list for PBXProject "FaceMeshUI" */ = {
+		ABE607DE30828E0700C3630B /* Build configuration list for PBXProject "FaceMeshMash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ABE607EC30828E0800C3630B /* Debug configuration for PBXProject "FaceMeshUI" */,
-				ABE607ED30828E0800C3630B /* Release configuration for PBXProject "FaceMeshUI" */,
+				ABE607EC30828E0800C3630B /* Debug configuration for PBXProject "FaceMeshMash" */,
+				ABE607ED30828E0800C3630B /* Release configuration for PBXProject "FaceMeshMash" */,
 			);
 			defaultConfigurationName = Release;
 		};
-		ABE607EE30828E0800C3630B /* Build configuration list for PBXNativeTarget "FaceMeshUI" */ = {
+		ABE607EE30828E0800C3630B /* Build configuration list for PBXNativeTarget "FaceMeshMash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ABE607EF30828E0800C3630B /* Debug configuration for PBXNativeTarget "FaceMeshUI" */,
-				ABE607F030828E0800C3630B /* Release configuration for PBXNativeTarget "FaceMeshUI" */,
+				ABE607EF30828E0800C3630B /* Debug configuration for PBXNativeTarget "FaceMeshMash" */,
+				ABE607F030828E0800C3630B /* Release configuration for PBXNativeTarget "FaceMeshMash" */,
 			);
 			defaultConfigurationName = Release;
 		};
