@@ -1,13 +1,25 @@
-# Deploy web apps in web/ plus shared data in prep/data/ to GitHub Pages.
-# Paths are preserved so apps use the same relative data path locally and deployed:
-#   _site/web/<app>/  →  ../../prep/data/people.json
+# Deploy every web app in this repo to GitHub Pages, plus the root landing page.
+#
+# Convention: a top-level folder <app>/ has a web version when it contains <app>/web/.
+#   <app>/web/        → published as  _site/<app>/web/
+#   <app>/prep/data/  → published as  _site/<app>/prep/data/   (if present)
+# Paths are preserved so apps use the same relative data paths locally and deployed,
+# e.g. greatest-100/web/grid/ loads ../../prep/data/people.json.
+# A web sub-app with a package.json (<app>/web/<sub>/package.json) is built and its
+# dist/ is published in place of its sources.
+# index.html at the repo root is the landing page that links to each app.
+#
 # One-time setup: Settings → Pages → Source = "GitHub Actions".
 name: Deploy Pages
 
 on:
   push:
     branches: [main]
-    paths: ['web/**', 'prep/data/**', '.github/workflows/pages.yml']
+    paths:
+      - '*/web/**'
+      - '*/prep/data/**'
+      - 'index.html'
+      - '.github/workflows/pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -30,18 +42,34 @@ jobs:
 
       - name: Assemble site
         run: |
-          mkdir -p _site/prep
-          cp -R web _site/web
-          cp -R prep/data _site/prep/data
-          # Apps with a package.json build step publish their dist/ instead of sources
-          for pkg in web/*/package.json; do
-            [ -f "$pkg" ] || continue
-            app=$(dirname "$pkg")
-            (cd "$app" && npm ci && npm run build)
-            rm -rf "_site/$app" && cp -R "$app/dist" "_site/$app"
+          set -euo pipefail
+          mkdir -p _site
+          cp index.html _site/index.html
+
+          for webdir in */web/; do
+            [ -d "$webdir" ] || continue
+            app=${webdir%%/*}
+            echo "Publishing $app"
+            mkdir -p "_site/$app"
+            cp -R "$app/web" "_site/$app/web"
+            if [ -d "$app/prep/data" ]; then
+              mkdir -p "_site/$app/prep"
+              cp -R "$app/prep/data" "_site/$app/prep/data"
+            fi
+            # Sub-apps with a package.json build step publish their dist/ instead of sources
+            for pkg in "$app"/web/*/package.json; do
+              [ -f "$pkg" ] || continue
+              sub=$(dirname "$pkg")
+              (cd "$sub" && npm ci && npm run build)
+              rm -rf "_site/$sub" && cp -R "$sub/dist" "_site/$sub"
+            done
           done
-          # Site root redirects to the app index
-          echo '<!doctype html><meta http-equiv="refresh" content="0; url=web/">' > _site/index.html
+
+          # Redirects from the old URLs (before apps moved under greatest-100/)
+          mkdir -p _site/web/grid
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=../greatest-100/web/">' > _site/web/index.html
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=../../greatest-100/web/grid/">' > _site/web/grid/index.html
+
           touch _site/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3

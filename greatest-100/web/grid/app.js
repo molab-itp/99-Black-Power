@@ -1,4 +1,4 @@
-// Browse the 100 in prep/data/people.json.
+// Browse the 100 in greatest-100/prep/data/people.json.
 // Same relative path works locally (repo root served) and on GitHub Pages.
 const DATA_DIR = '../../prep/data/';
 

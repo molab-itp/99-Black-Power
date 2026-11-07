@@ -177,3 +177,12 @@ apps:
     Seismometer
     web
 
+v1.21
+
+re-org folders prep and web
+into folder greatest-100
+adjust .github/workflows/pages.yml
+to be able to build it and other future web versions 
+of the other apps here
+introduce a landing page to selec the web app
+currently only greatest-100
