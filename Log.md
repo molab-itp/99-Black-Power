@@ -236,3 +236,46 @@ with approximate time cost
 Added this entry.
 
 Model: Claude Opus 5.5 (`claude-opus-5-5`), Claude Code in VS Code — 2026-10-01 00:34 EDT
+
+## 2026-11-07 17:20 EST — Rename FaceMeshUI to FaceMeshMash
+
+Approximate time cost: ~4 min (rename, check with xcodebuild, generic iOS build, and this log entry)
+
+### Prompt
+
+```
+rename FaceMeshUI/FaceMeshUI.xcodeproj
+FaceMeshMash/FaceMeshMash.xcodeproj
+```
+
+### Response
+
+A `FaceMeshMash/` folder already existed, but it held only Xcode window and scheme
+settings that git ignores, probably left from an earlier rename attempt. It was moved to
+the session scratchpad rather than deleted. Then, using `git mv`:
+
+- `FaceMeshUI/` → `FaceMeshMash/`
+- `FaceMeshUI.xcodeproj` → `FaceMeshMash.xcodeproj`
+- source folder `FaceMeshUI/` → `FaceMeshMash/`
+- `FaceMeshUIApp.swift` → `FaceMeshMashApp.swift`; the struct is now `FaceMeshMashApp`
+
+Every `FaceMeshUI` in `project.pbxproj` and the Swift header comments became
+`FaceMeshMash` (target, product, scheme). The bundle ID also changed, to
+`com.jht1900.FaceMeshMash-1`.
+
+Tested: `xcodebuild -list` shows the target and scheme `FaceMeshMash`. A generic iOS build
+with code signing turned off succeeded.
+
+### Prompt
+
+```
+append this chat to Log.md with date and time stamp,
+model used,
+and approximate time cost
+```
+
+### Response
+
+Added this entry.
+
+Model: Claude Opus 5.5 (`claude-opus-5-5`), Claude Code in VS Code — 2026-11-07 17:20 EST

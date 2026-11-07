@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  FaceMeshUI
+//  FaceMeshMash
 //
 //  Created by jht2 on 10/16/26.
 //

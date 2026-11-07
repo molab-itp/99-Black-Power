@@ -155,3 +155,12 @@ v1.18
 in FaceMeshUI/FaceMeshUI.xcodeproj
 on small mobile screens like iphone
 only show icons in controls, drop the text label
+
+v1.20
+
+claude: rename FaceMeshUI/FaceMeshUI.xcodeproj
+FaceMeshMash/FaceMeshMash.xcodeproj
+
+append this chat to Log.md with date and time stamp,
+model used,
+and approximate time cost
