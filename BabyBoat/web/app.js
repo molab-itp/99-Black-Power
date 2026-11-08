@@ -159,27 +159,75 @@
 
   const SKIN = ['#3a2418', '#4a2e1e', '#2e1d14', '#5a3826', '#43291b', '#35201a'];
 
-  // two boats side by side, people along the rails; shared by "passing" and "fall"
-  function railScene(c, t) {
+  // the high, crowded ship on the left; the low, less crowded boat on the right;
+  // a ladder slopes down from the ship's rail to the boat. Shared by "ladder" and "fall".
+  function ladderScene(c, t) {
     sky(c, ['#4c5870', '#8d97a6', '#b9b7b0']);
-    const seaY = H * 0.7;
+    const seaY = H * 0.76;
     sea(c, seaY, t, '#3b5468', '#14202c', 3);
-    const s = H * 0.42;
-    const leftDeck = H * 0.66 + waveAt(W * 0.25, t, 3);
-    const rightDeck = H * 0.68 + waveAt(W * 0.75, t + 1.3, 3);
-    const lx = [0.07, 0.15, 0.23, 0.31, 0.4].map((v) => v * W);
-    const rx = [0.6, 0.69, 0.77, 0.85, 0.93].map((v) => v * W);
-    // hull edges
+    const s = H * 0.3;
+    const gapL = W * 0.42, gapR = W * 0.6;
+    const leftDeck = H * 0.4 + waveAt(W * 0.2, t, 2);
+    const rightDeck = H * 0.66 + waveAt(W * 0.8, t + 1.3, 3);
+    // ship side and boat side
     c.fillStyle = '#2a1a14';
-    c.fillRect(0, leftDeck, W * 0.45, H);
+    c.fillRect(0, leftDeck, gapL, H);
     c.fillStyle = '#3a271c';
-    c.fillRect(W * 0.55, rightDeck, W * 0.45, H);
+    c.fillRect(gapR, rightDeck, W - gapR, H);
     c.fillStyle = '#5a3a28';
-    c.fillRect(0, leftDeck - 4, W * 0.45, 4);
-    c.fillRect(W * 0.55, rightDeck - 4, W * 0.45, 4);
-    lx.forEach((x, i) => person(c, x, leftDeck, s * (0.9 + rnd(i) * 0.15), SKIN[i % SKIN.length]));
-    rx.forEach((x, i) => person(c, x, rightDeck, s * (0.9 + rnd(i + 7) * 0.15), SKIN[(i + 3) % SKIN.length]));
-    return { seaY, s, leftDeck, rightDeck, lx, rx };
+    c.fillRect(0, leftDeck - 4, gapL, 4);
+    c.fillRect(gapR, rightDeck - 4, W - gapR, 4);
+    // still crowded on the ship; a few already across
+    for (let i = 0; i < 11; i++) {
+      const x = W * (0.03 + i * 0.033) + rnd(i) * 6;
+      person(c, x, leftDeck, s * (0.85 + rnd(i + 20) * 0.2), SKIN[i % SKIN.length]);
+    }
+    [0.7, 0.8, 0.9].forEach((v, i) =>
+      person(c, W * v, rightDeck, s * (0.9 + rnd(i + 7) * 0.15), SKIN[(i + 3) % SKIN.length]));
+    // the ladder
+    const top = [gapL - W * 0.005, leftDeck - H * 0.01];
+    const bot = [gapR + W * 0.01, rightDeck];
+    const dx = bot[0] - top[0], dy = bot[1] - top[1];
+    const len = Math.hypot(dx, dy);
+    const nx = (-dy / len) * H * 0.018, ny = (dx / len) * H * 0.018;
+    c.strokeStyle = '#8a6a48';
+    c.lineCap = 'round';
+    c.lineWidth = Math.max(2, H * 0.008);
+    c.beginPath();
+    c.moveTo(top[0] + nx, top[1] + ny); c.lineTo(bot[0] + nx, bot[1] + ny);
+    c.moveTo(top[0] - nx, top[1] - ny); c.lineTo(bot[0] - nx, bot[1] - ny);
+    c.stroke();
+    c.lineWidth = Math.max(1.5, H * 0.005);
+    c.beginPath();
+    for (let k = 1; k < 9; k++) {
+      const x = top[0] + (dx * k) / 9, y = top[1] + (dy * k) / 9;
+      c.moveTo(x + nx, y + ny); c.lineTo(x - nx, y - ny);
+    }
+    c.stroke();
+    const at = (p) => [top[0] + dx * p, top[1] + dy * p];
+    return { seaY, s, leftDeck, rightDeck, gapL, gapR, at };
+  }
+
+  // stepwise progress: n rungs, a pause on each
+  function rungs(u, n) {
+    u = clamp01(u) * n;
+    const k = Math.floor(u);
+    return k >= n ? 1 : (k + smooth((u - k) * 1.4)) / n;
+  }
+
+  // the young mother on the ladder; returns where the baby is held
+  function climber(c, r, p, holding) {
+    const [x, y] = r.at(p);
+    const s = r.s;
+    person(c, x, y, s, '#5a3826');
+    const w = Math.max(3, H * 0.016);
+    const shoulder = [x, y - s * 0.62];
+    // one hand grips the ladder above
+    const [gx, gy] = r.at(Math.max(0, p - 0.12));
+    arm(c, shoulder[0], shoulder[1], gx, gy - s * 0.05, w);
+    const hold = [x + s * 0.16, y - s * 0.5];
+    if (holding) arm(c, shoulder[0], shoulder[1], hold[0], hold[1], w);
+    return hold;
   }
 
   function arm(c, x0, y0, x1, y1, w) {
@@ -513,36 +561,35 @@
           person(c, x2 - W * 0.1 + i * W * 0.04, d2, H * 0.09, SKIN[(i + 2) % SKIN.length]);
         }
         hull(c, x2, d2, W * 0.28, '#4a3020');
-        // people crossing over
-        for (let k = 0; k < 5; k++) {
-          const p = (t * 0.3 + k / 5) % 1;
-          const x = lerp(x1 + W * 0.16, x2 - W * 0.12, p);
-          const y = lerp(d1, d2, p) - Math.sin(p * Math.PI) * H * 0.1;
-          person(c, x, y, H * 0.09, SKIN[k % SKIN.length]);
+        // a ladder from the ship down to the boat; people climb down, one way only
+        const top = [x1 + W * 0.19, d1 - H * 0.005];
+        const bot = [x2 - W * 0.1, d2];
+        c.strokeStyle = '#8a6a48';
+        c.lineWidth = Math.max(1.5, H * 0.006);
+        c.beginPath();
+        c.moveTo(top[0], top[1]); c.lineTo(bot[0], bot[1]);
+        c.moveTo(top[0], top[1] - H * 0.02); c.lineTo(bot[0], bot[1] - H * 0.02);
+        for (let k = 1; k < 8; k++) {
+          const x = lerp(top[0], bot[0], k / 8), y = lerp(top[1], bot[1], k / 8);
+          c.moveTo(x, y); c.lineTo(x, y - H * 0.02);
+        }
+        c.stroke();
+        for (let k = 0; k < 3; k++) {
+          const p = rungs((t * 0.18 + k / 3) % 1, 8);
+          person(c, lerp(top[0], bot[0], p), lerp(top[1], bot[1], p), H * 0.09, SKIN[k % SKIN.length]);
         }
       },
     },
     {
       lines: [
-        { text: 'While crossing over to the new boat, the newborn baby was passed from one person to the next.' },
+        { text: 'While crossing over to the new boat, the newborn baby was carried down a ladder.' },
       ],
       draw(c, t) {
-        const r = railScene(c, t);
-        const pts = r.lx.map((x) => [x, r.leftDeck])
-          .concat(r.rx.map((x) => [x, r.rightDeck]));
-        // ping-pong along the line so the baby never vanishes
-        const span = pts.length - 1;
-        let f = (t * 0.7) % (span * 2);
-        if (f > span) f = span * 2 - f;
-        const seg = Math.min(span - 1, Math.floor(f));
-        const u = smooth((f - seg - 0.25) / 0.75);
-        const [ax, ay] = pts[seg], [bx, by] = pts[seg + 1];
-        const handY = (y) => y - r.s * 0.72;
-        const x = lerp(ax, bx, u);
-        const y = lerp(handY(ay), handY(by), u) - Math.sin(u * Math.PI) * H * 0.04;
-        const holder = u < 0.5 ? pts[seg] : pts[seg + 1];
-        arm(c, holder[0], holder[1] - r.s * 0.6, x, y, Math.max(3, H * 0.018));
-        bundle(c, x, y, H * 0.022);
+        const r = ladderScene(c, t);
+        // she climbs down slowly, rung by rung, and stops partway
+        const p = 0.45 * rungs(t / 5, 4);
+        const hold = climber(c, r, p, true);
+        bundle(c, hold[0], hold[1], H * 0.022);
       },
     },
     {
@@ -552,55 +599,41 @@
       ],
       captionGap: 3.2,
       draw(c, t) {
-        const r = railScene(c, t);
-        const handY = r.leftDeck - r.s * 0.72;
-        const pass = 3.2; // seconds to pass along the left boat
-        const reach = 0.8;
-        let x, y, visible = true, fallT = -1;
-        if (t < pass) {
-          const f = (t / pass) * (r.lx.length - 1);
-          const seg = Math.min(r.lx.length - 2, Math.floor(f));
-          const u = smooth((f - seg - 0.2) / 0.8);
-          x = lerp(r.lx[seg], r.lx[seg + 1], u);
-          y = handY - Math.sin(u * Math.PI) * H * 0.04;
-          const hx = u < 0.5 ? r.lx[seg] : r.lx[seg + 1];
-          arm(c, hx, r.leftDeck - r.s * 0.6, x, y, Math.max(3, H * 0.018));
-        } else if (t < pass + reach) {
-          const u = smooth((t - pass) / reach);
-          x = lerp(r.lx[4], W * 0.5, u);
-          y = handY - Math.sin(u * Math.PI) * H * 0.02;
-          arm(c, r.lx[4], r.leftDeck - r.s * 0.6, x, y, Math.max(3, H * 0.018));
-          arm(c, r.rx[0], r.rightDeck - r.s * 0.6, lerp(r.rx[0], W * 0.52, u), handY + H * 0.01, Math.max(3, H * 0.018));
-        } else {
-          fallT = t - pass - reach;
-          const g = H * 1.4;
-          const impact = Math.sqrt((2 * (r.seaY - handY)) / g);
-          x = W * 0.5;
-          y = handY + 0.5 * g * Math.min(fallT, impact) * Math.min(fallT, impact);
-          if (fallT >= impact) {
-            visible = false;
-            const after = fallT - impact;
-            c.save();
-            c.beginPath();
-            c.rect(W * 0.45, Math.min(r.leftDeck, r.rightDeck), W * 0.1, H);
-            c.clip();
-            for (let k = 0; k < 4; k++) {
-              const rr = (after - k * 0.6) * W * 0.03;
-              if (rr <= 0) continue;
-              const a = Math.max(0, 0.7 - after * 0.08 - k * 0.12);
-              c.strokeStyle = `rgba(240,240,255,${a})`;
-              c.lineWidth = 1.5;
-              c.beginPath();
-              c.ellipse(W * 0.5, r.seaY + 4, rr, rr * 0.22, 0, 0, TAU);
-              c.stroke();
-            }
-            c.restore();
-          }
-          // empty reaching hands
-          arm(c, r.lx[4], r.leftDeck - r.s * 0.6, W * 0.47, r.leftDeck - r.s * 0.35, Math.max(3, H * 0.018));
-          arm(c, r.rx[0], r.rightDeck - r.s * 0.6, W * 0.53, r.rightDeck - r.s * 0.35, Math.max(3, H * 0.018));
+        const r = ladderScene(c, t);
+        const slip = 2.6;
+        const p = 0.45 + 0.1 * rungs(Math.min(t, slip) / 2, 1);
+        if (t < slip) {
+          const hold = climber(c, r, p, true);
+          bundle(c, hold[0], hold[1], H * 0.022);
+          return;
         }
-        if (visible) bundle(c, x, y, H * 0.022);
+        const hold = climber(c, r, p, false);
+        const fallT = t - slip;
+        const g = H * 1.4;
+        const impact = Math.sqrt((2 * (r.seaY - hold[1])) / g);
+        const [sx, sy] = r.at(p);
+        // empty hand reaching down after the baby
+        arm(c, sx, sy - r.s * 0.62, hold[0] + r.s * 0.05, hold[1] + r.s * 0.25, Math.max(3, H * 0.016));
+        if (fallT < impact) {
+          bundle(c, hold[0], hold[1] + 0.5 * g * fallT * fallT, H * 0.022);
+          return;
+        }
+        const after = fallT - impact;
+        c.save();
+        c.beginPath();
+        c.rect(r.gapL, r.seaY - H * 0.05, r.gapR - r.gapL, H);
+        c.clip();
+        for (let k = 0; k < 4; k++) {
+          const rr = (after - k * 0.6) * W * 0.03;
+          if (rr <= 0) continue;
+          const a = Math.max(0, 0.7 - after * 0.08 - k * 0.12);
+          c.strokeStyle = `rgba(240,240,255,${a})`;
+          c.lineWidth = 1.5;
+          c.beginPath();
+          c.ellipse(hold[0], r.seaY + 4, rr, rr * 0.22, 0, 0, TAU);
+          c.stroke();
+        }
+        c.restore();
       },
     },
     {

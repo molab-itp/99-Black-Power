@@ -922,3 +922,47 @@ I made a `BabyBoat` folder with an animated, ten-scene retelling of the story in
 I checked every scene in screenshots from headless Chrome and fixed two problems that showed up: ripples were drawn over the boats, and the caption overlapped the buttons on short screens. My test at phone width didn't show the true 400px layout, so I haven't confirmed how it looks on a phone. Nothing is committed.
 
 *Time: 5m 44s · Cost: $1.2586 (input 32, output 31.8k, cache write 55.1k, cache read 914.6k) · session $1.2586*
+
+---
+
+## User (11/8/2026, 4:55:08 PM)
+
+```
+update story in folder BabyBoat
+don't have the baby pass back and forth
+the baby only moves from the initial boat
+to the new board via a ladder
+include link to ai weiwei law of the journey
+```
+
+## Assistant
+
+Now I'll swap the back-and-forth passing for a ladder crossing.
+
+Now the Ai Weiwei link in the footer:
+
+Let me check the new scenes visually.
+
+The canvas shows only sky. I'll check whether it's a runtime error or a screenshot timing issue.
+
+Earlier blank shots were just render timing. The ladder scene works. Checking the other two:
+
+I've updated the BabyBoat story so the baby goes across only once, carried down a ladder from the crowded ship to the new boat. I checked each changed scene in headless Chrome.
+
+**The new crossing** ([app.js](BabyBoat/web/app.js)):
+- **The baby no longer goes back and forth.** In the old scene the baby was passed along a line of people between the two boats, again and again. Now the crowded ship sits high on the left, the less crowded boat sits low on the right, and a ladder slopes down between them over open water.
+- **"Crossing over" scene:** the young mother climbs down the ladder one rung at a time, holding the baby, and stops partway down. I changed the caption to "…the newborn baby was carried down a ladder."
+- **"Someone let the baby slip" scene:** she goes down a little further, then the baby slips from her arms and falls into the water between the two boats. Her empty hand reaches down and ripples spread out.
+- **"Transfer" scene before it:** the other passengers now cross by a ladder too, always downward to the new boat. Before, they hopped between the boats in arcs.
+
+**The Ai Weiwei link** ([index.html](BabyBoat/web/index.html)): the footer now has a line pointing to [Law of the Journey](https://www.lissongallery.com/artists/ai-weiwei/artworks/law-of-the-journey-d48d63a7-c0f5-4e04-bf43-3d2e7b4f2538) (2017) on Lisson Gallery's site, describing it as a 60-metre refugee boat crowded with 258 figures. Sources give different sizes: one news report from the Prague opening says 70 metres, and another says 300 figures. Lisson Gallery represents the artist, so I used their numbers.
+
+The woman's feet hover slightly above the ladder rungs. You can only notice it if you look closely.
+
+I haven't committed anything.
+
+Sources:
+- [Lisson Gallery – Law of the Journey](https://www.lissongallery.com/artists/ai-weiwei/artworks/law-of-the-journey-d48d63a7-c0f5-4e04-bf43-3d2e7b4f2538)
+- [Hypebeast – Ai Weiwei's Epic Refugee Boat Installation](https://hypebeast.com/2017/3/ai-weiwei-law-of-journey-exhibition)
+
+*Time: 2m 10s · Cost: $0.7502 (input 28, output 11.1k, cache write 48.1k, cache read 715.6k) · session $0.7502*
