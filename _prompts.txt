@@ -288,4 +288,6 @@ v1.33
 
 for BubbleCanvas create web version
 
+bin/publish.sh
+
 # --
