@@ -250,6 +250,14 @@ Black_Power and BlackPower prefix
 in Black_Explore rename to
 BlackExplore
 
+v1.29
+
+in BlackExplore
+create new BlackBanderView
+that uses BlackFont8View
+that scrolls the text left to right in a loop
+
+
 # --
 
 nav to show JHT's art work

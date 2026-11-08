@@ -27,6 +27,11 @@ struct ContentView: View {
             .navigationTitle("Black Font 8")
             .navigationBarTitleDisplayMode(.inline)
         }
+        NavigationLink("Black Banner") {
+          BlackBanderView()
+            .navigationTitle("Black Banner")
+            .navigationBarTitleDisplayMode(.inline)
+        }
       }
       .navigationTitle("Black Power")
     }

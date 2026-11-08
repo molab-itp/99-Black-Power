@@ -621,3 +621,31 @@ Two things I left alone:
 - **Bundle identifier:** it's still `com.jht1900.Black-Explore`. Changing it would make the device treat this as a new app. I can change it to `BlackExplore` if you want.
 
 *Cost: $0.2049 (input 10, output 1.8k, cache write 16.6k, cache read 182.6k) · session $0.2049*
+
+---
+
+## User (11/8/2026, 12:45:59 AM)
+
+```
+in BlackExplore
+create new BlackBanderView
+that uses BlackFont8View
+that scrolls the text left to right in a loop
+```
+
+## Assistant
+
+I added `BlackBanderView`, which scrolls the `BlackFont8View` text left to right in a seamless loop. The project builds for the iOS Simulator, but I haven't run the app to watch the scrolling.
+
+**New file: [BlackBanderView.swift](BlackExplore/BlackBanderView.swift)**
+- It lays out enough copies of `BlackFont8View` side by side to fill the screen, plus one extra. It then shifts the row to the right over time, wrapping every one text width, so the loop has no visible jump.
+- It works out the text's width by measuring a hidden copy of the same text in the same font.
+- You can set `inputString` (default `"Black Power "`), `scale` (default 1), `fontSize` (default 16) and `speed` (default 60 points per second).
+
+**Changes to existing files:**
+- [BlackFont8View.swift](BlackExplore/BlackFont8View.swift): `inputString`, `scale` and `fontSize` are now settable. Their defaults (`"Lob!"`, 2, 31) are the old values, so the existing screen looks the same.
+- [ContentView.swift](BlackExplore/ContentView.swift): added a "Black Banner" link to the list.
+
+I set the banner to a smaller size than the existing screen (scale 1, font size 16). At scale 2 and font size 31, "Black Power" would be several thousand points wide and very tall.
+
+*Cost: $0.2584 (input 14, output 3.6k, cache write 16.7k, cache read 259.1k) · session $0.2584*

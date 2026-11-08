@@ -9,7 +9,9 @@ import SwiftUI
 
 struct BlackFont8View: View {
   @State private var angle: CGFloat = .pi
-  let inputString: String = "Lob!"
+  var inputString: String = "Lob!"
+  var scale: Int = 2
+  var fontSize: CGFloat = 31
   
   var body: some View {
     TimelineView(.animation(minimumInterval: 0.1)) {
@@ -18,10 +20,10 @@ struct BlackFont8View: View {
 //        drawBlackExplore(context: context,
 //                       size: size,
 //                       startingAngle: angle)
-        let str = buildFont8String(inputString, scale: 2).joined(separator: "\n")
+        let str = buildFont8String(inputString, scale: scale).joined(separator: "\n")
         context.draw(
           Text(str)
-            .font(.system(size: 31, design: .monospaced))
+            .font(.system(size: fontSize, design: .monospaced))
             .foregroundStyle(.primary),
           at: CGPoint(x: size.width/2, y: size.height/2),
         )
