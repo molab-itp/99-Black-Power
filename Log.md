@@ -529,3 +529,30 @@ The iOS app builds without errors, but I haven't run it on a phone. I also haven
 With no face, the video shows even if the **Video** toggle is off, since otherwise the screen would just be black. If you'd rather the Video toggle still hide it, that's a one-line change.
 
 *Cost: $0.4295 (input 18, output 3.2k, cache write 35.9k, cache read 385.2k) · session $0.4295*
+
+---
+
+## User (11/7/2026, 10:57:41 PM)
+
+```
+update Black-Power to top level 
+nav to show the variations
+BlackFont8View
+BlackPowerTimeline
+```
+
+## Assistant
+
+The Black-Power app now opens on a navigation list of its variations instead of going straight to the timeline. The simulator build succeeds; I haven't run the app.
+
+- **[ContentView.swift](Black-Power/ContentView.swift)**: was a "Hello world" placeholder. It's now a `NavigationStack` titled "Black Power" with three links:
+  - Black Power Timeline → `BlackPowerTimeline`
+  - Black Power Timer → `BlackPowerTimer` (you didn't list this one, but it's the same design driven by a timer instead of `TimelineView`; easy to remove)
+  - Black Font 8 → `BlackFont8View`
+- **[Black_PowerApp.swift](Black-Power/Black_PowerApp.swift)**: the app now starts on `ContentView()` instead of `BlackPowerTimeline()`.
+
+I didn't link `Font8x8View`, which is a test view.
+
+I also left the next line in `_prompts.txt`, "nav to show JHT's art work", for a separate step. If you want it, tell me which artwork views or files it should show.
+
+*Cost: $0.2471 (input 12, output 2.2k, cache write 20.0k, cache read 221.9k) · session $0.2471*
