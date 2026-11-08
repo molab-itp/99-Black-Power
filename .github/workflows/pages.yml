@@ -4,7 +4,7 @@
 #   <app>/web/        → published as  _site/<app>/web/
 #   <app>/prep/data/  → published as  _site/<app>/prep/data/   (if present)
 # Paths are preserved so apps use the same relative data paths locally and deployed,
-# e.g. greatest-100/web/grid/ loads ../../prep/data/people.json.
+# e.g. Greatest100/web/grid/ loads ../../prep/data/people.json.
 # A web sub-app with a package.json (<app>/web/<sub>/package.json) is built and its
 # dist/ is published in place of its sources.
 # index.html at the repo root is the landing page that links to each app.
@@ -65,10 +65,15 @@ jobs:
             done
           done
 
-          # Redirects from the old URLs (before apps moved under greatest-100/)
+          # Redirects from the old URLs (before apps moved under Greatest100/)
           mkdir -p _site/web/grid
-          echo '<!doctype html><meta http-equiv="refresh" content="0; url=../greatest-100/web/">' > _site/web/index.html
-          echo '<!doctype html><meta http-equiv="refresh" content="0; url=../../greatest-100/web/grid/">' > _site/web/grid/index.html
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=../Greatest100/web/">' > _site/web/index.html
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=../../Greatest100/web/grid/">' > _site/web/grid/index.html
+
+          # Redirects from the greatest-100/ URLs (before rename to Greatest100/)
+          mkdir -p _site/greatest-100/web/grid
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=../../Greatest100/web/">' > _site/greatest-100/web/index.html
+          echo '<!doctype html><meta http-equiv="refresh" content="0; url=../../../Greatest100/web/grid/">' > _site/greatest-100/web/grid/index.html
 
           touch _site/.nojekyll
 

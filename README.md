@@ -13,13 +13,13 @@
 | FaceMeshMash | [FaceMeshMash/](FaceMeshMash/) — web version at https://molab-itp.github.io/99-Black-Power/FaceMeshMash/web/ |
 | RandomShapes | [RandomShapes/](RandomShapes/) |
 | Seismometer | [Seismometer/](Seismometer/) |
-| 100 Greatest (web) | [greatest-100/](greatest-100/) — live at https://molab-itp.github.io/99-Black-Power/greatest-100/web/ |
+| 100 Greatest (web) | [Greatest100/](Greatest100/) — live at https://molab-itp.github.io/99-Black-Power/Greatest100/web/ |
 
 ## Other folders
 
 - [index.html](index.html) — landing page for all web apps, live at https://molab-itp.github.io/99-Black-Power/
-- [greatest-100/prep/](greatest-100/prep/) — Node.js app that builds `greatest-100/prep/data/people.json` and images
-- [greatest-100/web/](greatest-100/web/) — web app (grid) that reads `greatest-100/prep/data/`
+- [Greatest100/prep/](Greatest100/prep/) — Node.js app that builds `Greatest100/prep/data/people.json` and images
+- [Greatest100/web/](Greatest100/web/) — web app (grid) that reads `Greatest100/prep/data/`
 - [FaceMeshMash/web/](FaceMeshMash/web/) — browser version of FaceMeshMash using MediaPipe Face Landmarker
 - [.github/workflows/pages.yml](.github/workflows/pages.yml) — deploys every `<app>/web/` (plus `<app>/prep/data/`) and the landing page to GitHub Pages.
   To add a web version of another app, create `<App>/web/index.html` and add a card to `index.html`.

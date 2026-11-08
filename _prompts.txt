@@ -262,6 +262,11 @@ v1.29
 in BlackExplore BlackBanderView
 scroll right to left
 
+v1.30
+
+in greatest-100
+rename to Greatest100
+
 # --
 
 nav to show JHT's art work

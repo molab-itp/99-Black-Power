@@ -666,3 +666,29 @@ The banner in [BlackBanderView.swift](BlackExplore/BlackExplore/BlackBanderView.
 The offset changed from `phase - width` to `-phase`, so the strip starts flush at the left edge and moves left. When it has moved one copy's width, it jumps back to the start, and the next copy is already sitting in that spot, so the loop still looks seamless. There's still one more copy than the screen width needs, so there's no gap on the right. I also changed the header comment to say "right to left".
 
 *Cost: $0.1562 (input 10, output 848, cache write 13.1k, cache read 173.8k) · session $0.1562*
+
+---
+
+## User (11/8/2026, 12:55:19 AM)
+
+```
+in greatest-100
+rename to Greatest100
+```
+
+## Assistant
+
+I renamed `greatest-100/` to [Greatest100/](Greatest100/) with `git mv`, so git keeps each file's history. I didn't run the web app or the Pages workflow to test it.
+
+I also updated every place that pointed to the old folder:
+- [index.html](index.html): the landing page link and cover image.
+- [README.md](README.md): the app table, the live URL and the prep/web paths.
+- [Greatest100/web/index.html](Greatest100/web/index.html): the "Source on GitHub" link.
+- [Greatest100/web/grid/app.js](Greatest100/web/grid/app.js): a code comment.
+- [.github/workflows/pages.yml](.github/workflows/pages.yml): the comments and the existing redirects from the old `/web/` URLs.
+
+The live site address changes to `…/99-Black-Power/Greatest100/web/`. So that existing links to `…/greatest-100/web/` and `…/greatest-100/web/grid/` keep working, I added redirects to the new address in the Pages workflow.
+
+The rename is staged but not committed.
+
+*Cost: $0.1920 (input 10, output 1.7k, cache write 15.2k, cache read 178.9k) · session $0.1920*
