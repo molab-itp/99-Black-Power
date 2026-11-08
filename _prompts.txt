@@ -290,4 +290,9 @@ for BubbleCanvas create web version
 
 bin/publish.sh
 
+v1.34
+
+in BlackExplore BlackBanderView
+update to scale to height
+
 # --

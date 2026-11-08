@@ -163,23 +163,29 @@ function startBanner() {
   const input = $('bannerInput');
   const stage = $('bannerStage');
   const track = $('bannerTrack');
-  const fontSize = 16;
+  const baseFontSize = 16;
   const scale = 1;
-  const speed = 60; // px per second
+  const speed = 60; // px per second at the base font size
   let copyWidth = 0;
+  let k = 1; // scale factor so the banner's height fills the stage
   const start = performance.now();
 
   const build = () => {
     const text = buildFont8String(input.value || ' ', scale).join('\n');
     track.textContent = '';
-    const first = makePre(text);
+    // Measure at the base size, then scale the font so the height fills the stage
+    const first = makePre(text, baseFontSize);
     track.append(first);
+    const h = first.getBoundingClientRect().height;
+    k = h > 0 ? stage.clientHeight / h : 1;
+    const fontSize = baseFontSize * k;
+    first.style.fontSize = fontSize + 'px';
     copyWidth = first.getBoundingClientRect().width;
     // Enough copies to cover the stage plus one extra for wrap-around
     const copies = copyWidth > 0 ? Math.ceil(stage.clientWidth / copyWidth) + 1 : 1;
-    for (let i = 1; i < copies; i++) track.append(makePre(text));
+    for (let i = 1; i < copies; i++) track.append(makePre(text, fontSize));
   };
-  const makePre = (text) => {
+  const makePre = (text, fontSize) => {
     const pre = document.createElement('pre');
     pre.className = 'glyphs';
     pre.style.fontSize = fontSize + 'px';
@@ -190,7 +196,7 @@ function startBanner() {
   let raf;
   const frame = (t) => {
     const elapsed = (t - start) / 1000;
-    const phase = copyWidth > 0 ? (elapsed * speed) % copyWidth : 0;
+    const phase = copyWidth > 0 ? (elapsed * speed * k) % copyWidth : 0;
     track.style.transform = `translate(${-phase}px, -50%)`;
     raf = requestAnimationFrame(frame);
   };

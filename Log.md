@@ -839,3 +839,32 @@ I tested it in headless Chrome with a simulated drag. The trail drew in gold at 
 I also added a BubbleCanvas card to the root [index.html](index.html) and the web-version links to [README.md](README.md). Nothing is committed yet, so you can run `bin/publish.sh` when you're ready.
 
 *Time: 2m 15s · Cost: $0.7624 (input 28, output 14.4k, cache write 41.9k, cache read 698.1k) · session $0.7624*
+
+---
+
+## User (11/8/2026, 2:46:33 AM)
+
+```
+in BlackExplore BlackBanderView
+update to scale to height
+```
+
+## Assistant
+
+I'll update the Swift view, and mirror the change in the web version so they stay in sync.
+
+Now a quick compile check of the Swift change.
+
+The Black Banner now scales so its height fills the view. The iOS build compiles cleanly. I haven't run it in the simulator or opened the web page to check how it looks.
+
+**What changed in the Swift view** ([BlackBanderView.swift](BlackExplore/BlackExplore/BlackBanderView.swift)):
+- The hidden text still measures the banner at the base `fontSize` (16).
+- From that, it works out a scale factor: the view's height divided by the measured height.
+- The font size and each copy's width and height are multiplied by that factor, so the banner fills the height and the right number of copies still covers the width.
+- The scroll speed is multiplied by the same factor. Without that, a much larger banner would crawl at 60 points per second. If you'd rather keep a fixed 60 points per second, remove the `* k` from the `phase` line.
+
+**Web version:** I made the same change in [web/app.js](BlackExplore/web/app.js) so it matches the iOS app. It measures at 16px, sets the font size so the banner fills the stage's height, and scales the speed the same way.
+
+**One small glitch on the web:** resizing the window changes the scale factor, so the banner may jump to a new position once.
+
+*Time: 37s · Cost: $0.2990 (input 16, output 3.3k, cache write 21.6k, cache read 301.4k) · session $0.2990*
