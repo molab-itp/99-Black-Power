@@ -229,3 +229,5 @@ when no face is detected show video feed
 bin/publish.sh
 
 v1.27
+
+https://molab-itp.github.io/99-Black-Power/FaceMeshMash/web/
