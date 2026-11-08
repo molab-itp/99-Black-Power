@@ -225,3 +225,7 @@ v1.26
 
 in FacedMeshMash iOS and web
 when no face is detected show video feed
+
+bin/publish.sh
+
+v1.27
