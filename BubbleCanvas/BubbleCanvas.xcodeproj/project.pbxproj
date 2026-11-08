@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		AB5850D630A050E600F94206 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
 		ABD70D2929A33AF90038BCDB /* BubbleCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABD70D3B29A33B7D0038BCDB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -29,7 +29,7 @@
 		ABD70D2029A33AF90038BCDB = {
 			isa = PBXGroup;
 			children = (
-				ABD70D3B29A33B7D0038BCDB /* README.md */,
+				AB5850D630A050E600F94206 /* README.md */,
 				AB33F022306D8D7B0008DEF6 /* BubbleCanvas */,
 				ABD70D2A29A33AF90038BCDB /* Products */,
 			);
