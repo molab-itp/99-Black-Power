@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Scrolls a BlackFont8View banner left to right in a seamless loop
+// Scrolls a BlackFont8View banner right to left in a seamless loop
 struct BlackBanderView: View {
   var inputString: String = "Black Power "
   var scale: Int = 1
@@ -36,8 +36,8 @@ struct BlackBanderView: View {
           }
         }
         .fixedSize()
-        // Start one copy to the left and move right
-        .offset(x: phase - width)
+        // Start at zero and move left; wraps after one copy width
+        .offset(x: -phase)
         .frame(width: geo.size.width, height: geo.size.height, alignment: .leading)
         .clipped()
       }

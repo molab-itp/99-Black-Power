@@ -649,3 +649,20 @@ I added `BlackBanderView`, which scrolls the `BlackFont8View` text left to right
 I set the banner to a smaller size than the existing screen (scale 1, font size 16). At scale 2 and font size 31, "Black Power" would be several thousand points wide and very tall.
 
 *Cost: $0.2584 (input 14, output 3.6k, cache write 16.7k, cache read 259.1k) · session $0.2584*
+
+---
+
+## User (11/8/2026, 12:49:53 AM)
+
+```
+in BlackExplore BlackBanderView
+scroll right to left
+```
+
+## Assistant
+
+The banner in [BlackBanderView.swift](BlackExplore/BlackExplore/BlackBanderView.swift#L39-L40) now scrolls right to left. I haven't built or run it.
+
+The offset changed from `phase - width` to `-phase`, so the strip starts flush at the left edge and moves left. When it has moved one copy's width, it jumps back to the start, and the next copy is already sitting in that spot, so the loop still looks seamless. There's still one more copy than the screen width needs, so there's no gap on the right. I also changed the header comment to say "right to left".
+
+*Cost: $0.1562 (input 10, output 848, cache write 13.1k, cache read 173.8k) · session $0.1562*

@@ -257,6 +257,10 @@ create new BlackBanderView
 that uses BlackFont8View
 that scrolls the text left to right in a loop
 
+v1.29
+
+in BlackExplore BlackBanderView
+scroll right to left
 
 # --
 
