@@ -323,6 +323,11 @@ https://hypebeast.com/2017/3/ai-weiwei-law-of-journey-exhibition
 
 use OK link
 
+v1.38
+
+in BabyBoat
+the receiving boat should be bigger than the left boat
+
 # --
 
 use this api 

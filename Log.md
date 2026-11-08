@@ -995,3 +995,24 @@ I also changed the boat length in the footer from 60 metres to 70. The Hypebeast
 [Log.md](Log.md) still has the old Lisson link and the 60-metre note on lines 958 and 965. I didn't change them because they record what was done at the time.
 
 *Time: 21s · Cost: $0.1807 (input 12, output 1.5k, cache write 13.4k, cache read 214.0k) · session $0.1807*
+
+---
+
+## User (11/8/2026, 5:13:30 PM)
+
+```
+in BabyBoat
+the receiving boat should be bigger than the left boat
+```
+
+## Assistant
+
+In the transfer scene, the receiving boat on the right is now bigger than the crowded ship on the left. The changes are in the "passengers had to transfer to another, less crowded boat" scene in [app.js](BabyBoat/web/app.js). I checked that the JavaScript parses, but I haven't opened the page to look at it.
+
+- **Receiving boat:** it's now 50% of the screen width (it was 28%), and it has a mast taller than the ship's. It still has 6 passengers, now spread across the bigger deck, so it reads as larger and less crowded.
+- **Crowded ship:** to make room, I moved it left and shrank it slightly, from 40% to 36% of the width. Its 26 passengers are packed a bit closer together.
+- **Ladder:** it still runs from the ship's rail down to the boat's deck. The boat still sits slightly lower than the ship.
+
+The two ladder scenes after this one (the baby carried down, then falling) are close-ups that show only one side of each vessel, so they don't show which one is bigger. I didn't change them.
+
+*Time: 27s · Cost: $0.1538 (input 14, output 2.3k, cache write 7.2k, cache read 246.9k) · session $0.3345*

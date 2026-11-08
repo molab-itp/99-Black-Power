@@ -545,25 +545,27 @@
         sky(c, ['#5d6b80', '#a8b2bd']);
         const hy = H * 0.62;
         sea(c, hy, t, '#3b5468', '#1b2a38', 3);
-        const x1 = W * 0.3, x2 = W * 0.72;
+        const x1 = W * 0.24, x2 = W * 0.72;
         const d1 = hy - H * 0.01 + waveAt(x1, t, 3);
         const d2 = hy + H * 0.01 + waveAt(x2, t + 1, 3);
         // crowded ship
         c.fillStyle = '#1e140f';
         c.fillRect(x1 - 2, d1 - H * 0.35, 4, H * 0.35);
         for (let i = 0; i < 26; i++) {
-          const x = x1 - W * 0.18 + (W * 0.36 * (i + rnd(i) * 0.5)) / 26;
+          const x = x1 - W * 0.16 + (W * 0.32 * (i + rnd(i) * 0.5)) / 26;
           person(c, x, d1, H * (0.08 + rnd(i + 9) * 0.03), SKIN[i % SKIN.length]);
         }
-        hull(c, x1, d1, W * 0.4, '#2a1a14');
-        // less crowded boat
+        hull(c, x1, d1, W * 0.36, '#2a1a14');
+        // less crowded boat, bigger than the ship
+        c.fillStyle = '#2e1f16';
+        c.fillRect(x2 + W * 0.04 - 2, d2 - H * 0.4, 4, H * 0.4);
         for (let i = 0; i < 6; i++) {
-          person(c, x2 - W * 0.1 + i * W * 0.04, d2, H * 0.09, SKIN[(i + 2) % SKIN.length]);
+          person(c, x2 - W * 0.17 + i * W * 0.07, d2, H * 0.09, SKIN[(i + 2) % SKIN.length]);
         }
-        hull(c, x2, d2, W * 0.28, '#4a3020');
+        hull(c, x2, d2, W * 0.5, '#4a3020');
         // a ladder from the ship down to the boat; people climb down, one way only
-        const top = [x1 + W * 0.19, d1 - H * 0.005];
-        const bot = [x2 - W * 0.1, d2];
+        const top = [x1 + W * 0.17, d1 - H * 0.005];
+        const bot = [x2 - W * 0.21, d2];
         c.strokeStyle = '#8a6a48';
         c.lineWidth = Math.max(1.5, H * 0.006);
         c.beginPath();
