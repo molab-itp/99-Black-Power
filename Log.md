@@ -717,3 +717,43 @@ I ran it on one of your earlier transcripts and it printed the line above. It ha
 The time is measured from when you send the prompt to the last recorded event of that turn, which is usually the final reply. The new `lapseOf` function computes it. It shows `18s`, `1m 05s` or `1h 02m 03s` depending on length.
 
 *Time: 15s · Cost: $0.1735 (input 8, output 1.2k, cache write 15.0k, cache read 141.4k) · session $0.1735*
+
+---
+
+## User (11/8/2026, 1:00:44 AM)
+
+```
+for BlackExplore create web version
+```
+
+## Assistant
+
+Now a quick check that it runs, using headless Chrome screenshots.
+
+Screenshots look right but are clipped on the right — likely headless Chrome's minimum window width. Re-checking at a wider size:
+
+Fits correctly at wider widths. Now adding a card to the landing page — I'll generate a static SVG of the wheel for its thumbnail.
+
+The web version of BlackExplore is in [BlackExplore/web/](BlackExplore/web/). It's a static page with no build step, so the existing Pages workflow will deploy it to `https://molab-itp.github.io/99-Black-Power/BlackExplore/web/` when this reaches `main`.
+
+It copies the iOS app's navigation: a "Black Power" list with four screens, and a back link.
+
+- **Timeline** and **Timer** draw the same spinning red, green and gold wheel, nested 16 levels deep. Like the iOS app, Timeline updates on the screen's animation frames and Timer uses a fixed 0.1s timer. Both turn the wheel 1° per tick.
+- **Black Font 8** shows "Lob!" in the 8x8 bitmap font made of `░▓` characters, at 31px with scale 2.
+- **Black Banner** scrolls "Black Power " right to left at 60px per second in a seamless loop.
+
+I loaded the pages in headless Chrome and checked screenshots: the home list, wheel, Font 8 and banner all render. The iOS views are copied with these changes:
+- Font 8 and Banner have a text box, so you can change the string. The iOS versions are fixed strings.
+- Font 8 shrinks to fit the screen instead of being clipped.
+- The wheel is centered horizontally. The Swift code sets x = 0 even though its comment says "Center horizontal".
+- Characters outside ASCII show as spaces. In Swift they would crash on `asciiValue!`.
+
+**Files**
+- [index.html](BlackExplore/web/index.html) has the layout and styles, including light and dark mode.
+- [app.js](BlackExplore/web/app.js) has the screen switching and a port of `drawBlackExplore` to the browser canvas.
+- [font8x8.js](BlackExplore/web/font8x8.js) has the font table (pulled from `Font8x8View.swift`) and a port of `buildFont8String`.
+- [img/blackexplore-icon.svg](BlackExplore/web/img/blackexplore-icon.svg) is a still image of the wheel, used as the favicon and the landing-page thumbnail.
+
+I also added a BlackExplore card to the root [index.html](index.html) and its links to [README.md](README.md). Nothing is committed yet.
+
+*Time: 2m 17s · Cost: $0.7830 (input 30, output 13.0k, cache write 45.0k, cache read 819.3k) · session $0.7830*

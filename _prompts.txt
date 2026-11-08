@@ -272,6 +272,10 @@ v1.31
 in tools/log-turn.js
 include lapse time
 
+v1.32
+
+for BlackExplore create web version
+
 # --
 
 nav to show JHT's art work
