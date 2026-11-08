@@ -282,4 +282,6 @@ v1.32
 
 for RandomShapes create web version
 
+bin/publish.sh
+
 # --
