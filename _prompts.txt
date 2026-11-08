@@ -276,7 +276,6 @@ v1.32
 
 for BlackExplore create web version
 
-# --
+bin/publish.sh
 
-nav to show JHT's art work
-/Users/jht2/Documents/projects/molab/99-Black-Power/Black-Power/Black-Power/BlackFont8View.swift
+# --
