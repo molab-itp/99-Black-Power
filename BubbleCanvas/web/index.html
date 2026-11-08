@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>BubbleCanvas</title>
+  <link rel="icon" href="img/bubblecanvas-icon.png">
+  <style>
+    :root {
+      --bg: #fff; --fg: #000; --muted: #6b6b70; --level: rgba(60, 60, 67, 0.15);
+      --btn: rgba(0, 122, 255, 0.12); --accent: #007aff;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #000; --fg: #fff; --muted: #98989f; --level: rgba(235, 235, 245, 0.15);
+              --btn: rgba(10, 132, 255, 0.2); --accent: #0a84ff; }
+    }
+    [hidden] { display: none !important; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg);
+                 font-family: system-ui, -apple-system, sans-serif; }
+    body {
+      display: flex; flex-direction: column; box-sizing: border-box;
+      padding: calc(2.25rem + env(safe-area-inset-top, 0px)) 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    }
+    .home-link { position: absolute; top: calc(0.5rem + env(safe-area-inset-top, 0px)); left: 1rem;
+                 font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+
+    /* LevelView: BubbleCanvas fills the space above the controls */
+    #level {
+      flex: 1; min-height: 0; position: relative; overflow: hidden;
+      border-radius: 20px; background: var(--level);
+      touch-action: none; user-select: none; -webkit-user-select: none;
+    }
+    #level canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .row { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-top: 10px; flex-wrap: wrap; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric: tabular-nums; }
+    #alphaRow input { flex: 1; min-width: 8rem; accent-color: var(--accent); }
+    button {
+      font: 500 17px system-ui, -apple-system, sans-serif; color: var(--accent);
+      background: var(--btn); border: 0; border-radius: 8px; padding: 0.4rem 0.9rem; cursor: pointer;
+    }
+    button:active { opacity: 0.5; }
+    #status { color: var(--muted); font-size: 0.85rem; text-align: center; min-height: 1.2em; margin-top: 6px; }
+    #orientation { margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <a class="home-link" href="../../">‹ all apps</a>
+
+  <div id="level">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="row" id="alphaRow">
+    <span class="mono" id="alphaLabel">Alpha 0.02</span>
+    <input id="alpha" type="range" min="0.01" max="1" step="any" value="0.02" aria-label="Dot alpha">
+  </div>
+
+  <div class="row">
+    <button id="save">Save</button>
+    <button id="load">Load</button>
+    <button id="clear">Clear</button>
+    <button id="motion" hidden>Enable Motion</button>
+  </div>
+
+  <div class="row mono" id="orientation">
+    <span id="hText">H: +00.00</span>
+    <span id="vText">V: +00.00</span>
+  </div>
+  <div id="status"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

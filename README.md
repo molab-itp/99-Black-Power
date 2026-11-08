@@ -9,7 +9,7 @@
 | App | Folder |
 | --- | --- |
 | BlackExplore | [BlackExplore/](BlackExplore/) — web version at https://molab-itp.github.io/99-Black-Power/BlackExplore/web/ |
-| BubbleCanvas | [BubbleCanvas/](BubbleCanvas/) |
+| BubbleCanvas | [BubbleCanvas/](BubbleCanvas/) — web version at https://molab-itp.github.io/99-Black-Power/BubbleCanvas/web/ |
 | FaceMeshMash | [FaceMeshMash/](FaceMeshMash/) — web version at https://molab-itp.github.io/99-Black-Power/FaceMeshMash/web/ |
 | RandomShapes | [RandomShapes/](RandomShapes/) — web version at https://molab-itp.github.io/99-Black-Power/RandomShapes/web/ |
 | Seismometer | [Seismometer/](Seismometer/) |
@@ -23,6 +23,7 @@
 - [FaceMeshMash/web/](FaceMeshMash/web/) — browser version of FaceMeshMash using MediaPipe Face Landmarker
 - [BlackExplore/web/](BlackExplore/web/) — browser version of BlackExplore (Timeline, Timer, Black Font 8, Black Banner)
 - [RandomShapes/web/](RandomShapes/web/) — browser version of RandomShapes (Shape1–Shape5 tabs)
+- [BubbleCanvas/web/](BubbleCanvas/web/) — browser version of BubbleCanvas (tilt or drag to paint a bubble trail)
 - [.github/workflows/pages.yml](.github/workflows/pages.yml) — deploys every `<app>/web/` (plus `<app>/prep/data/`) and the landing page to GitHub Pages.
   To add a web version of another app, create `<App>/web/index.html` and add a card to `index.html`.
 - [bin/publish.sh](bin/publish.sh) — commit, push, and fast-forward `main`

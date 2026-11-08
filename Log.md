@@ -799,3 +799,43 @@ Some details differ from the iOS app or are worth knowing:
 I also added a RandomShapes card to the root [index.html](index.html) and the web-version links to [README.md](README.md). Nothing is committed yet, so you can run `bin/publish.sh` when you're ready.
 
 *Time: 2m 07s · Cost: $0.7876 (input 24, output 13.2k, cache write 49.0k, cache read 659.6k) · session $0.7876*
+
+---
+
+## User (11/8/2026, 1:41:58 AM)
+
+```
+for BubbleCanvas create web version
+```
+
+## Assistant
+
+Now I have the full picture of the Swift app. Writing the web port.
+
+Files written. Checking it in headless Chrome with a simulated drag.
+
+Found a bug from the screenshot: `status()` runs before `let statusTimer` is initialized (TDZ error), which stops the script. Fixing that, and making pointer capture tolerant.
+
+I've built a web version of BubbleCanvas in [BubbleCanvas/web/](BubbleCanvas/web/). It's a static page with no build step, like the other web apps. Once it reaches `main`, the Pages workflow will publish it at `https://molab-itp.github.io/99-Black-Power/BubbleCanvas/web/`.
+
+I tested it in headless Chrome with a simulated drag. The trail drew in gold at the slider's alpha setting, and the donut followed the pointer. I couldn't test tilting, so that still needs a check on a real phone.
+
+**What carries over from the Swift app:**
+- **The level:** a rounded gray box with the 50px accent-colored donut bubble, the small center circle and crosshair, and tick marks at the middle of each edge.
+- **Motion:** it reads the phone's tilt and adjusts for screen rotation the same way `adjustedRollAndPitch` does. Roll and pitch are swapped for x and y, as in the Swift code, and the H/V readout shows them in radians in the same format.
+- **Drag:** touching or dragging the level moves the bubble and draws; letting go hands control back to motion.
+- **Trail:** 20px dots in red, green, gold and black, changing color every second, with an Alpha slider from 0.01 to 1 (starting at 0.02). Dots aren't added when the bubble hasn't moved.
+- **Save / Load / Clear:** the trail is saved as a PNG in the browser's local storage, since there's no Documents folder. Load stretches it to the current size, and resizing the window stretches the trail to fit, as the iOS image view does.
+
+**Things to know:**
+- On iPhone, Safari needs a tap before it allows motion access, so there's an **Enable Motion** button. Desktop Chrome also shows that button. Without a motion sensor you can still drag to draw.
+- Black dots are hard to see in dark mode. That's also true of the iOS app.
+
+**Files:**
+- [index.html](BubbleCanvas/web/index.html) has the layout and the light and dark colors.
+- [app.js](BubbleCanvas/web/app.js) has the port.
+- [img/bubblecanvas-icon.png](BubbleCanvas/web/img/bubblecanvas-icon.png) is the app icon at 256px, used as the favicon and the landing-page thumbnail.
+
+I also added a BubbleCanvas card to the root [index.html](index.html) and the web-version links to [README.md](README.md). Nothing is committed yet, so you can run `bin/publish.sh` when you're ready.
+
+*Time: 2m 15s · Cost: $0.7624 (input 28, output 14.4k, cache write 41.9k, cache read 698.1k) · session $0.7624*
