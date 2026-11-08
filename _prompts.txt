@@ -231,3 +231,15 @@ bin/publish.sh
 v1.27
 
 https://molab-itp.github.io/99-Black-Power/FaceMeshMash/web/
+
+# --
+
+v1.28
+
+update Black-Power to top level 
+nav to show the variations
+BlackFont8View
+BlackPowerTimeline
+
+nav to show JHT's art work
+/Users/jht2/Documents/projects/molab/99-Black-Power/Black-Power/Black-Power/BlackFont8View.swift
