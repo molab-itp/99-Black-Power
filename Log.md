@@ -966,3 +966,32 @@ Sources:
 - [Hypebeast – Ai Weiwei's Epic Refugee Boat Installation](https://hypebeast.com/2017/3/ai-weiwei-law-of-journey-exhibition)
 
 *Time: 2m 10s · Cost: $0.7502 (input 28, output 11.1k, cache write 48.1k, cache read 715.6k) · session $0.7502*
+
+---
+
+## User (11/8/2026, 5:00:30 PM)
+
+```
+Link fails:
+https://www.lissongallery.com/404
+The page you were looking for doesn't exist.
+
+Link OK:
+https://hypebeast.com/2017/3/ai-weiwei-law-of-journey-exhibition
+
+use OK link
+```
+
+## Assistant
+
+The link is swapped. The footer's numbers (60 metres, 258 figures) came from the Lisson page, so I'll check them against the Hypebeast article.
+
+The article says "230 feet long" (about 70 m) and 258 figures. The footer says 60 metres, so I'm changing it to 70 to match the page it now links to.
+
+The Law of the Journey link in the footer of [BabyBoat/web/index.html:66](BabyBoat/web/index.html#L66) now points to the Hypebeast article instead of the broken Lisson Gallery page.
+
+I also changed the boat length in the footer from 60 metres to 70. The Hypebeast article says the boat is 230 feet long, which is about 70 m, and it gives the same 258 figures. The 60-metre figure had come from the Lisson page, so the footer now matches the page it links to.
+
+[Log.md](Log.md) still has the old Lisson link and the 60-metre note on lines 958 and 965. I didn't change them because they record what was done at the time.
+
+*Time: 21s · Cost: $0.1807 (input 12, output 1.5k, cache write 13.4k, cache read 214.0k) · session $0.1807*

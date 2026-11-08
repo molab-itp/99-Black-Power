@@ -312,12 +312,18 @@ include link to ai weiwei law of the journey
 
 https://www.google.com/search?q=ai+weiwei+law+of+the+journey&oq=Ai+Weiwei+law+&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyCggCEAAYgAQYtAcyBggDEEUYOTIICAQQABgWGB4yCggFEAAYChgWGB4yCAgGEAAYFhgeMggIBxAAGBYYHjIICAgQABgWGB4yCAgJEAAYFhge0gEIMzgwN2owajeoAgCwAgA&sourceid=chrome&source=chrome.ob&ie=UTF-8
 
+v1.37
+
+Link fails:
 https://www.lissongallery.com/404
 The page you were looking for doesn't exist.
 
+Link OK:
 https://hypebeast.com/2017/3/ai-weiwei-law-of-journey-exhibition
-ok
 
+use OK link
+
+# --
 
 use this api 
 https://www.instigate.ai/app/developers
