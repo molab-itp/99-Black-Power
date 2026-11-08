@@ -1,6 +1,6 @@
 //
-//  Black_ExploreApp.swift
-//  Black_Explore
+//  BlackExploreApp.swift
+//  BlackExplore
 //
 //  Created by jht2 on 9/27/26.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Black_ExploreApp: App {
+struct BlackExploreApp: App {
     var body: some Scene {
         WindowGroup {
           ContentView()

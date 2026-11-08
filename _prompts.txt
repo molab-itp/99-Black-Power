@@ -247,6 +247,9 @@ in Black-Power rename to
 Black_Explore include
 Black_Power and BlackPower prefix
 
+in Black_Explore rename to
+BlackExplore
+
 # --
 
 nav to show JHT's art work

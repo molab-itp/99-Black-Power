@@ -595,3 +595,29 @@ I renamed the Black-Power project to Black_Explore, and it builds for the iOS Si
 I also updated the Black-Power entry in [README.md](README.md) to point to the new folder. Nothing is committed yet.
 
 *Cost: $0.3419 (input 14, output 2.9k, cache write 28.3k, cache read 289.6k) · session $0.3419*
+
+---
+
+## User (11/8/2026, 12:38:56 AM)
+
+```
+in Black_Explore rename to
+BlackExplore
+```
+
+## Assistant
+
+I renamed `Black_Explore` to `BlackExplore` throughout, and the project builds for the iOS Simulator with no errors.
+
+- **Folders:** `Black_Explore/` became [BlackExplore/](BlackExplore/). The `.xcodeproj` and the source folder inside it were renamed the same way.
+- **App file:** `Black_ExploreApp.swift` became [BlackExploreApp.swift](BlackExplore/BlackExplore/BlackExploreApp.swift), and the struct is now `BlackExploreApp`.
+- **Xcode project:** the target, scheme, product (`BlackExplore.app`) and source folder path are all renamed.
+- **Other text:** the header comments in all the Swift files and the link in [README.md](README.md) now say `BlackExplore`.
+
+I used `git mv`, so git records these as renames. Nothing is committed.
+
+Two things I left alone:
+- **[Log.md](Log.md):** it still says `Black_Explore` because it's a record of the earlier rename.
+- **Bundle identifier:** it's still `com.jht1900.Black-Explore`. Changing it would make the device treat this as a new app. I can change it to `BlackExplore` if you want.
+
+*Cost: $0.2049 (input 10, output 1.8k, cache write 16.6k, cache read 182.6k) · session $0.2049*

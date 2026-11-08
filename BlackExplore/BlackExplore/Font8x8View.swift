@@ -1,6 +1,6 @@
 //
 //  Font8x8View.swift
-//  Black_Explore
+//  BlackExplore
 //
 //  Created by jht2 on 9/29/26.
 //
