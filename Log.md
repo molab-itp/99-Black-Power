@@ -324,3 +324,114 @@ Exchanges already in `Log.md` won't get a cost line. Only new ones will.
 I first tried to make the edit through the shell, but a built-in safety check blocked that command, so nothing ran. I then made the same changes with the Edit tool.
 
 *Cost: $0.7725 (input 16, output 8.2k, cache write 64.8k, cache read 445.2k) · session $0.7725*
+
+---
+
+## User (11/7/2026, 6:46:09 PM)
+
+```
+create a web version of FacedMeshMash
+```
+
+## Assistant
+
+Now a quick check that the mesh topology logic gives the expected triangle count and a closed face oval:
+
+I wasn't allowed to run the downloaded MediaPipe bundle in Node, so I skipped that offline check. Next I'll add the app to the landing page and README.
+
+I built a browser version of FaceMeshMash at [FaceMeshMash/web/index.html](FaceMeshMash/web/index.html), but I haven't run it with a camera yet. I also couldn't run a quick offline check of the mesh triangles and face outline, because that meant running the downloaded MediaPipe code in Node and the permission check blocked it.
+
+**What it does:**
+- **Face tracking:** MediaPipe Face Landmarker stands in for ARKit. It's loaded from the jsDelivr CDN, so there's no build step.
+- **Status panel:** the same as the iOS app. It shows Neutral, Smiling, Blinking or Winking left/right, plus the `smile / blink L / blink R` values, using the same 0.5 thresholds.
+- **Toggles:** Video, Mesh, Color, Mask and Fill, with icons only on phone-width screens.
+  - **Video:** shows the camera full-screen, mirrored like a selfie view.
+  - **Mesh:** draws the cyan wireframe.
+  - **Color:** fills each triangle with the camera color at its center.
+  - **Mask:** shows video only inside the face outline. Eyes and mouth stay filled, so the iOS hole-filling code wasn't needed.
+  - **Fill:** centers the face and scales it to fill the screen. It smooths the movement so the face doesn't jitter. Unlike iOS, it doesn't rotate the face to face forward; the face keeps its tilt from the camera.
+- **Start screen:** there's a "Start camera" button because iOS Safari needs a tap before it will open the camera. If permission is denied, the page says so.
+
+**Other changes:**
+- Added a smaller copy of the existing app icon at [FaceMeshMash/web/img/facemesh-icon.jpeg](FaceMeshMash/web/img/facemesh-icon.jpeg).
+- Added a FaceMeshMash card to the landing page [index.html](index.html).
+- Added links to the web version in [README.md](README.md).
+- [pages.yml](.github/workflows/pages.yml) needed no changes: it already publishes any `<app>/web/` folder.
+
+To try it locally, run this from the repo root and open http://localhost:8000/FaceMeshMash/web/:
+
+```
+python3 -m http.server
+```
+
+The camera works on localhost, or over HTTPS once it's deployed to GitHub Pages. When you're ready to deploy, run `bin/publish.sh` after adding your v1.24 entry to `_prompts.txt`.
+
+*Cost: $0.6215 (input 18, output 12.2k, cache write 36.6k, cache read 417.4k) · session $0.6215*
+
+---
+
+## User (11/7/2026, 7:01:01 PM)
+
+```
+FacedMeshMash web version takes a very long time
+to load model
+ Log-screenshots/2026-11-07-facemeshmash-web-fail.png
+```
+
+## Assistant
+
+The model wasn't actually slow. It had already loaded, but the start screen never went away, so "Loading face model…" stayed up forever. I haven't reloaded the page to confirm the fix yet.
+
+**What was wrong:** the code hides the start screen with `start.hidden = true`, but the start screen's CSS rule `.start { display: flex }` overrides `hidden`, so it stayed on screen. Your screenshot shows the signs. The console says "Graph successfully started running", the bottom panel is showing, and the camera feed is drawing behind the start screen.
+
+**Changes in [index.html](FaceMeshMash/web/index.html):**
+1. I added `[hidden] { display: none !important; }`, so the start screen now goes away once the model is ready.
+2. The face model now starts downloading as soon as the page opens, instead of after you tap **Start camera**. It's usually ready by the time you tap, so the wait is shorter.
+
+The red "INFO: Created TensorFlow Lite XNNPACK delegate for CPU" line in the console is harmless. MediaPipe sends that message through the error log, so the console shows it in red.
+
+**Separate issue: "No face detected".** In the screenshot you're sitting quite far back on the couch. MediaPipe's face detector is built for faces within about 2 m of the camera, so a small face far from it may not be picked up. Try it again sitting closer once the start screen clears.
+
+*Cost: $0.2938 (input 8, output 2.9k, cache write 25.6k, cache read 152.7k) · session $0.2938*
+
+---
+
+## User (11/7/2026, 7:05:55 PM)
+
+```
+FacedMeshMash web still fails
+```
+
+## Assistant
+
+No new screenshot, so I'll reproduce it myself. I'll run it in headless Chrome with a fake camera and capture the console output.
+
+Loading works in my test: the start screen goes away after about 3 s. Next I'll check face detection with a real face, using one of your photos as the fake camera feed.
+
+That photo is cropped too tightly to count as a real test. I'll crop your face out of the original screenshot and use that instead.
+
+With your face filling the frame, it works: the mesh tracks and the status updates. Now I'll try the full wide shot, where your face is small, to see whether distance is the problem.
+
+Confirmed: from couch distance (your face is about 1/10 of the frame width) MediaPipe doesn't find a face. I'll check whether lowering the detection threshold helps.
+
+The wide test frame still contains the app's own start screen, including the low-poly face icon, and the detector is finding that icon. I'll blank out that region and test again.
+
+The search loop is running but finding nothing. I'll test the zoom tiles directly on a still image to see which zoom level works.
+
+The tiles work when each one is checked as a single image. So the problem is in VIDEO mode, maybe from resizing the crop canvas every frame. I'll try a fixed-size crop canvas.
+
+Still failing. Next I'll run the same tile test in VIDEO mode.
+
+It now finds your face from couch distance. I tested in headless Chrome, using a frame from your screenshot as the fake camera feed. The mesh locks on and the status shows "Neutral" instead of "No face detected". The test frame was a still image, so I haven't tested tracking while you move.
+
+**Why it failed:** MediaPipe's face detector only works at short range. When you sit back on the couch, your face is about a tenth of the frame width, which is too small for it. Lowering the confidence threshold didn't help.
+
+**The fix, in [index.html](FaceMeshMash/web/index.html):**
+- **Digital zoom.** Each frame, detection runs on a cropped window of the camera image, not the full frame. When there's no face, it cycles through the full frame, then 3×3 tiles at half size, then 5×5 tiles at third size. A full pass takes under a second. Once it finds you, the crop follows your face and stays about 3× its size. The landmarks are mapped back to the full frame, so the mesh, colour and mask layers draw as before.
+- **IMAGE mode instead of VIDEO mode.** In VIDEO mode MediaPipe tracks from the previous frame's landmarks, so it lost the face every time the crop moved. IMAGE mode detects fresh each frame. The trade-off is a little more work per frame and no built-in smoothing between frames, so the mesh may jitter slightly.
+
+The fix from last time, hiding the start screen properly, is still in place.
+
+If Live Server has cached the old page, do a hard reload (Cmd+Shift+R) before testing. All the test files I made were deleted.
+
+*Cost: $0.7155 (input 46, output 13.7k, cache write 21.7k, cache read 1334.4k) · session $1.0093*

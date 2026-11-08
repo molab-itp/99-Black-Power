@@ -193,4 +193,15 @@ currently only greatest-100
 
  update tools/log-turn.js
  to include cost
- 
+
+ v1.23
+
+ create a web version of FacedMeshMash
+
+FacedMeshMash web version takes a very long time
+to load model
+ Log-screenshots/2026-11-07-facemeshmash-web-fail.png
+
+v1.24
+
+FacedMeshMash web still fails
