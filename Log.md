@@ -1016,3 +1016,58 @@ In the transfer scene, the receiving boat on the right is now bigger than the cr
 The two ladder scenes after this one (the baby carried down, then falling) are close-ups that show only one side of each vessel, so they don't show which one is bigger. I didn't change them.
 
 *Time: 27s · Cost: $0.1538 (input 14, output 2.3k, cache write 7.2k, cache read 246.9k) · session $0.3345*
+
+---
+
+## User (11/8/2026, 5:23:17 PM)
+
+```
+use this api 
+https://www.instigate.ai/app/developers
+and this key:
+ink_live_b4e5b3347a6b4069980f38ddf14c73010b77f8ec84649c81
+to convert BabyBoat to instigate story
+store build script in new folder
+BabyBoat/instigate-build
+```
+
+## Assistant
+
+The developer page is a JS app, so I'm pulling the API docs out of its bundle.
+
+Found the base: `GET /api/v1/stories` with a Bearer token. Checking what the API exposes and reading BabyBoat.
+
+Write API exists: create story with tiles (text, image, narration, music), upload media, publish. Now reading the BabyBoat story content.
+
+Chrome and Node are available. Next I'm checking the full endpoint reference and whether this key has write access, using a harmless request.
+
+Frames rendered. Spot-checking a few before uploading.
+
+Scene 9 at t=3 still shows the baby held, where I expected it mid-fall. Comparing with scene 8 to see whether the scene or the timing is wrong.
+
+Scene 9 is drawn correctly. At t=3 the baby has only just left her hands, so the frame still reads as "held". I'll move it to t=5, when the ripples are spreading and her hand is empty.
+
+The frames look right. Running the full build now. Visibility is set to **shared**: anyone with the link can view it, but it isn't listed publicly.
+
+The story is live and verified: 22 tiles, all 10 images attached, cover set. Adding a short README to the build folder.
+
+BabyBoat is now an Instigate story:
+
+**https://www.instigate.ai/app/s/the-baby-and-the-boat-esh5zdjq**
+(embed: https://www.instigate.ai/app/embed/the-baby-and-the-boat-esh5zdjq)
+
+I set it to **shared**, meaning anyone with the link can view it but it isn't listed. I fetched the story back from the API to check it: it has 22 tiles, all 10 images are attached, and the opening sunset scene is the cover.
+
+**How it's built.** The script renders each of the 10 canvas scenes in headless Chrome as a 1920×1080 still. Each image is followed by that scene's captions as a text tile. The refrain gets its own tile, and a credits tile at the end links back to your page and mentions Ai Weiwei. The scene 9 still is frozen at 5 seconds, after the baby has fallen, showing ripples and her empty hand. Earlier in the fall it looked like she was still holding the baby.
+
+**Rebuilding.** Edit [story.json](BabyBoat/instigate-build/story.json) and run `node build.mjs` again. It replaces the tiles in the existing story, so the link stays the same. Use `--visibility public` to list the story or `--new` to make a separate one. Details are in [README.md](BabyBoat/instigate-build/README.md).
+
+**Pacing.** Instigate gave each text tile 4 seconds, which may be too quick for the longer captions. Check it in the player; you can raise the time per story or per tile.
+
+**API key — needs your action:**
+- The script doesn't contain the key. It's in `BabyBoat/instigate-build/.env`, which is gitignored and readable only by you.
+- The key is still in plain text in `_prompts.txt`, which git tracks and which has uncommitted changes. Remove it before committing, or revoke the key at the developers page and make a new write key. This one can create, edit and delete all your stories.
+
+Nothing is committed yet. The new files are in [BabyBoat/instigate-build/](BabyBoat/instigate-build/).
+
+*Time: 4m 23s · Cost: $1.3208 (input 54, output 18.2k, cache write 77.7k, cache read 1678.6k) · session $1.3208*

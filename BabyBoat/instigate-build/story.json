@@ -1,0 +1,54 @@
+{
+  "title": "The Baby and the Boat",
+  "description": "A story my father, Walter Thompson, told.",
+  "visibility": "shared",
+  "imageDurationSec": 5,
+  "scenes": [
+    {
+      "scene": 1, "t": 6,
+      "texts": ["The Baby and the Boat\n\nA story my father told."]
+    },
+    {
+      "scene": 2, "t": 6,
+      "texts": ["My Dad, Walter Thompson, retold this story to me as we sat on his front porch in Kingston.\n\nHere's what I remember."]
+    },
+    {
+      "scene": 3, "t": 6,
+      "texts": ["My Dad roomed with the Dookie family.\n\nHe was good friends with my Uncle Felix Dookie, and I think that's how he came to meet my mom, Mabel."]
+    },
+    {
+      "scene": 4, "t": 6,
+      "texts": ["My Dad would shave grandpa Dookie regularly.\n\n\"Every time I shaved grandpa Dookie,\" my Dad said, \"grandpa Dookie would tell the same story.\""]
+    },
+    {
+      "scene": 5, "t": 6,
+      "texts": ["Grandpa Dookie and his young wife were taken to Jamaica on a very crowded boat\n\n(most likely a ship)."]
+    },
+    {
+      "scene": 6, "t": 6,
+      "texts": ["On the boat was another young couple, and the wife was pregnant.\n\nWhile at sea, she gave birth on the boat."]
+    },
+    {
+      "scene": 7, "t": 6,
+      "texts": ["The boat was so crowded, passengers had to transfer to another, less crowded boat."]
+    },
+    {
+      "scene": 8, "t": 6,
+      "texts": ["While crossing over to the new boat, the newborn baby was carried down a ladder."]
+    },
+    {
+      "scene": 9, "t": 5,
+      "texts": ["Someone let the baby slip,\n\nand the baby fell into the sea."]
+    },
+    {
+      "scene": 10, "t": 6,
+      "texts": [
+        "Grandpa Dookie told the same story every time Walter shaved him, and would end with the same refrain:",
+        "\"De baby born a sea, an the baby die a sea.\"\n\n(The baby born at sea, and the baby died at sea.)"
+      ]
+    }
+  ],
+  "closing": [
+    "A story my father, Walter Thompson, told, retold from John Henry Thompson's page:\nm.jht1493.net/johnhenrythompson/heros/walter-thompson-bio/his-stories.html\n\nSee also Ai Weiwei's Law of the Journey (2017), a 70-metre refugee boat crowded with 258 figures."
+  ]
+}

@@ -328,9 +328,14 @@ v1.38
 in BabyBoat
 the receiving boat should be bigger than the left boat
 
-# --
+v1.38
 
 use this api 
 https://www.instigate.ai/app/developers
 and this key:
 ink_live_b4e5b3347a6b4069980f38ddf14c73010b77f8ec84649c81
+to convert BabyBoat to instigate story
+store build script in new folder
+BabyBoat/instigate-build
+
+# --

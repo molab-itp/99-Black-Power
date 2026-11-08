@@ -1,0 +1,12 @@
+{
+  "name": "babyboat-instigate-build",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "render": "node build.mjs --render-only"
+  },
+  "dependencies": {
+    "playwright-core": "1.56.1"
+  }
+}
