@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RandomShapes</title>
+  <link rel="icon" href="img/randomshapes-icon.svg">
+  <style>
+    :root {
+      --bg: #fff; --fg: #000; --muted: #6b6b70; --bar: #f9f9f9; --line: #d1d1d6; --accent: #007aff;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #000; --fg: #fff; --muted: #98989f; --bar: #121212; --line: #38383a; --accent: #0a84ff; }
+    }
+    [hidden] { display: none !important; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, sans-serif; }
+    body { display: flex; flex-direction: column; }
+
+    main { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-top: env(safe-area-inset-top, 0px); }
+    section { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; box-sizing: border-box; }
+    section h1 { font-size: 34px; font-weight: 700; margin: 0; }
+    canvas { display: block; max-width: 100%; }
+
+    /* Shape1 fills the available space like GeometryReader */
+    #view-shape1 { align-items: stretch; padding-inline: 0; }
+    #view-shape1 h1 { text-align: center; }
+    #shape1Area { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+
+    input[type=range] { width: min(400px, 100%); accent-color: var(--accent); }
+    button.big {
+      font: 700 34px system-ui, -apple-system, sans-serif; color: var(--accent);
+      background: none; border: 0; padding: 0.25rem 1rem; cursor: pointer;
+    }
+    button.big:active { opacity: 0.4; }
+
+    /* Bottom tab bar, like SwiftUI TabView */
+    nav {
+      display: flex; justify-content: space-around;
+      border-top: 1px solid var(--line); background: var(--bar);
+      padding: 0.35rem 0.5rem calc(0.35rem + env(safe-area-inset-bottom, 0px));
+    }
+    nav a {
+      flex: 1; max-width: 6rem; display: flex; flex-direction: column; align-items: center; gap: 2px;
+      color: var(--muted); text-decoration: none; font-size: 10px; font-weight: 500;
+    }
+    nav a img { width: 28px; height: 28px; opacity: 0.55; }
+    nav a[aria-current=page] { color: var(--accent); }
+    nav a[aria-current=page] img { opacity: 1; }
+    .home-link { position: absolute; top: calc(0.5rem + env(safe-area-inset-top, 0px)); left: 1rem; font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <a class="home-link" href="../../">‹ all apps</a>
+  <main>
+    <section id="view-shape1">
+      <h1>Shape1</h1>
+      <div id="shape1Area">
+        <canvas id="circlesCanvas"></canvas>
+        <canvas id="graphicsCanvas"></canvas>
+      </div>
+    </section>
+
+    <section id="view-shape2" hidden>
+      <h1>Shape2</h1>
+      <canvas id="shape2Canvas"></canvas>
+    </section>
+
+    <section id="view-shape3" hidden>
+      <h1>Shape3</h1>
+      <canvas id="shape3Canvas"></canvas>
+      <input id="shape3Slider" type="range" min="0" max="6.283185307179586" step="any" aria-label="Start angle">
+    </section>
+
+    <section id="view-shape4" hidden>
+      <h1>Shape4</h1>
+      <canvas id="shape4Canvas"></canvas>
+      <input id="shape4Slider" type="range" min="0" max="6.283185307179586" step="any" aria-label="Start angle">
+    </section>
+
+    <section id="view-shape5" hidden>
+      <h1>Shape5</h1>
+      <canvas id="shape5Canvas"></canvas>
+      <button class="big" id="shuffle">Shuffle</button>
+    </section>
+  </main>
+
+  <nav>
+    <a href="#shape1"><img src="img/Shape1.png" alt="">Shape1</a>
+    <a href="#shape2"><img src="img/Shape2.png" alt="">Shape2</a>
+    <a href="#shape3"><img src="img/Shape3.png" alt="">Shape3</a>
+    <a href="#shape4"><img src="img/Shape4.png" alt="">Shape4</a>
+    <a href="#shape5"><img src="img/Shape5.png" alt="">Shape5</a>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

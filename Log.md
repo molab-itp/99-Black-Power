@@ -757,3 +757,45 @@ I loaded the pages in headless Chrome and checked screenshots: the home list, wh
 I also added a BlackExplore card to the root [index.html](index.html) and its links to [README.md](README.md). Nothing is committed yet.
 
 *Time: 2m 17s · Cost: $0.7830 (input 30, output 13.0k, cache write 45.0k, cache read 819.3k) · session $0.7830*
+
+---
+
+## User (11/8/2026, 1:23:19 AM)
+
+```
+for RandomShapes create web version
+```
+
+## Assistant
+
+I've read the six Swift views. Next I'm copying the tab icons and writing the web port in `RandomShapes/web/`, built the same way as BlackExplore/web.
+
+Files are written. Now I'm checking it in headless Chrome.
+
+The five tabs render correctly. Last step: adding a landing-page card (with an SVG thumbnail of the Shape2 ring) and README links.
+
+I've built a web version of RandomShapes in [RandomShapes/web/](RandomShapes/web/). Like BlackExplore/web, it's a static page with no build step. The Pages workflow will publish it at `https://molab-itp.github.io/99-Black-Power/RandomShapes/web/` once it reaches `main`.
+
+I loaded all five tabs in headless Chrome and checked the screenshots, and each one draws correctly.
+
+The page copies the iOS `TabView`, with a tab bar along the bottom that uses the app's own tab icons:
+
+- **Shape1** draws the concentric black, red, green and gold circles over the four-color bar strip with its gray inset outlines. Both images are sized from the window, the same way `GeometryReader` sizes them on iOS.
+- **Shape2** draws the arc ring at a fixed angle of π.
+- **Shape3** draws the same ring with a slider for the start angle, which starts at a random value.
+- **Shape4** adds a timer that turns the ring 1° every 0.1s.
+- **Shape5** draws the 50px random color grid with a **Shuffle** button.
+
+Some details differ from the iOS app or are worth knowing:
+- Colors match the UIKit ones in the Swift code (pure `#ff0000`, `#00ff00` and so on), not SwiftUI's softer red and green.
+- Shape4's timer only runs while its tab is open. Like the iOS slider, the web slider stays at the far right once the angle passes 2π.
+- I didn't port `Shape2_Canvas.swift`, because it isn't one of the app's tabs.
+
+**Files**
+- [index.html](RandomShapes/web/index.html) has the layout, the tab bar, and light and dark mode.
+- [app.js](RandomShapes/web/app.js) ports `renderCircles`, `renderGraphics`, `renderArcs` and `renderColorGrid` to the browser canvas, and handles switching tabs.
+- [img/](RandomShapes/web/img/) holds the tab icons copied from `Assets.xcassets`, plus `randomshapes-icon.svg`, a picture of the Shape2 ring used as the favicon and the landing-page thumbnail.
+
+I also added a RandomShapes card to the root [index.html](index.html) and the web-version links to [README.md](README.md). Nothing is committed yet, so you can run `bin/publish.sh` when you're ready.
+
+*Time: 2m 07s · Cost: $0.7876 (input 24, output 13.2k, cache write 49.0k, cache read 659.6k) · session $0.7876*
