@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		AB06C1092B794AAF001E0DDD /* RandomShapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomShapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5850AB30A04C8600F94206 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -28,6 +29,7 @@
 		AB06C1002B794AAF001E0DDD = {
 			isa = PBXGroup;
 			children = (
+				AB5850AB30A04C8600F94206 /* README.md */,
 				AB68546E305A356000CEA712 /* RandomShapes */,
 				AB06C10A2B794AAF001E0DDD /* Products */,
 			);
