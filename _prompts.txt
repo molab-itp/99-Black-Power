@@ -295,4 +295,14 @@ v1.34
 in BlackExplore BlackBanderView
 update to scale to height
 
-# --
+v1.35
+
+create a new folder called "BabyBoat"
+to retell this story:
+https://m.jht1493.net/johnhenrythompson/heros/walter-thompson-bio/his-stories.html
+as a dynamic web page using plain old javascript no framework
+
+use this api 
+https://www.instigate.ai/app/developers
+and this key:
+ink_live_b4e5b3347a6b4069980f38ddf14c73010b77f8ec84649c81

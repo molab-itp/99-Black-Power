@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Baby and the Boat</title>
+  <style>
+    :root { --bg: #1e131d; --panel: #2a1c28; --line: #4a3446; --ink: #f4ece6; --gold: #fba414; }
+    * { box-sizing: border-box; }
+    body > * { flex-shrink: 0; }
+    body {
+      min-height: 100vh;
+      margin: 0; padding: 0 1rem; background: var(--bg); color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif; line-height: 1.5;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    header { width: 100%; max-width: 60rem; display: flex; align-items: baseline; gap: 1rem; padding: 0.75rem 0 0.5rem; }
+    header h1 { margin: 0; font-size: 1.2rem; color: var(--gold); font-weight: normal; letter-spacing: 0.03em; }
+    header a { margin-left: auto; color: var(--gold); font-family: system-ui, sans-serif; font-size: 0.85rem; }
+    #stage {
+      width: 100%; max-width: 60rem; aspect-ratio: 16 / 9; max-height: 60vh;
+      border-radius: 0.5rem; overflow: hidden; background: #0d0a14; cursor: pointer;
+    }
+    #stage canvas { display: block; width: 100%; height: 100%; }
+    #caption {
+      width: 100%; max-width: 46rem; min-height: 8.5rem; padding: 1rem 0 0.5rem;
+      font-size: clamp(1rem, 2.4vw, 1.25rem); text-align: center;
+    }
+    #caption p { margin: 0 0 0.5rem; opacity: 0; transform: translateY(6px); transition: opacity 0.8s, transform 0.8s; }
+    #caption p.show { opacity: 1; transform: none; }
+    #caption .quote { font-style: italic; }
+    #caption .refrain { font-size: 1.5em; color: var(--gold); font-style: italic; }
+    #caption .gloss { font-size: 0.85em; opacity: 0.75; }
+    nav { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0 1.5rem; font-family: system-ui, sans-serif; flex-wrap: wrap; justify-content: center; }
+    nav button {
+      background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.45rem 1.1rem; font-size: 0.95rem; cursor: pointer;
+    }
+    nav button:hover:not(:disabled), nav button:focus-visible { border-color: var(--gold); }
+    nav button:disabled { opacity: 0.35; cursor: default; }
+    #again[hidden] { display: none; }
+    #dots { display: flex; gap: 0.4rem; }
+    #dots span { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--line); cursor: pointer; }
+    #dots span.on { background: var(--gold); }
+    footer { font-family: system-ui, sans-serif; font-size: 0.8rem; opacity: 0.6; padding-bottom: 1rem; text-align: center; }
+    footer a { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Baby and the Boat</h1>
+    <a href="../../">99 Black Power</a>
+  </header>
+  <div id="stage"><canvas id="canvas" aria-hidden="true"></canvas></div>
+  <div id="caption" aria-live="polite"></div>
+  <nav>
+    <button id="prev" aria-label="Previous">&larr; Back</button>
+    <div id="dots"></div>
+    <button id="next" aria-label="Next">Next &rarr;</button>
+    <button id="again" hidden>Tell it again</button>
+  </nav>
+  <footer>
+    A story my father, Walter Thompson, told &mdash; retold from
+    <a href="https://m.jht1493.net/johnhenrythompson/heros/walter-thompson-bio/his-stories.html">John Henry Thompson's page</a>.
+    Tap the picture, or use the arrow keys.
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

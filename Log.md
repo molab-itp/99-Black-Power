@@ -868,3 +868,57 @@ The Black Banner now scales so its height fills the view. The iOS build compiles
 **One small glitch on the web:** resizing the window changes the scale factor, so the banner may jump to a new position once.
 
 *Time: 37s · Cost: $0.2990 (input 16, output 3.3k, cache write 21.6k, cache read 301.4k) · session $0.2990*
+
+---
+
+## User (11/8/2026, 4:33:34 PM)
+
+```
+create a new folder called "BabyBoat"
+to retell this story:
+https://m.jht1493.net/johnhenrythompson/heros/walter-thompson-bio/his-stories.html
+as a dynamic web page using plain old javascript no framework
+```
+
+## Assistant
+
+Deployment picks up `<App>/web/`, so I'll put the page in `BabyBoat/web/` and follow the repo's conventions.
+
+Now an icon, a landing-page card, and README entries.
+
+Let me screenshot each scene with headless Chrome to check the drawing.
+
+Headless Chrome doesn't advance animation frames much, so the fade-in overlay is still on. I'll add a `?t=` debug parameter that freezes time so I can check specific moments.
+
+Two fixes: ripples in the fall scene spill over the hulls (I'll clip them to the gap), and on short screens the flex layout squeezes the caption under the buttons.
+
+I made a `BabyBoat` folder with an animated, ten-scene retelling of the story in plain JavaScript and canvas, no framework. It's at [BabyBoat/web/](BabyBoat/web/). I put the page in `web/` because that's the folder the repo's GitHub Pages workflow publishes for each app.
+
+**Files**
+- [BabyBoat/web/index.html](BabyBoat/web/index.html): the page layout and styles, using the same dark plum and gold as the landing page.
+- [BabyBoat/web/app.js](BabyBoat/web/app.js): the scenes and controls. Each scene has a caption and its own animated drawing.
+- [BabyBoat/web/img/babyboat-icon.svg](BabyBoat/web/img/babyboat-icon.svg): the picture for the landing-page card.
+
+**The scenes**
+1. Title, with a ship on the horizon at sunset.
+2. Walter and his son on the front porch in Kingston.
+3. The Dookie household at night, with Grandpa Dookie, Felix, Walter and Mabel named. A soft glow appears between Walter and Mabel.
+4. Walter shaving Grandpa Dookie, with a speech bubble showing a little boat.
+5. The overcrowded ship at sea.
+6. The birth on deck at night, with the baby appearing in a warm glow.
+7. Passengers crossing over to the less crowded boat.
+8. The baby passed from person to person along the rails.
+9. The baby slips and falls; empty hands reach out and ripples spread on the water.
+10. The refrain, "De baby born a sea, an the baby die a sea.", over a calm moonlit sea, with the English translation underneath.
+
+**How it works**
+- You move through it by tapping the picture, using the arrow keys or space bar, or clicking the dots. Each scene has its own link (`#1` to `#10`).
+- On the last scene, **Tell it again** goes back to the shaving scene and adds a tally mark on the wall, because Grandpa Dookie told the story every time he was shaved.
+- The captions use your page's wording almost word for word. One sentence on your page seems to be missing a word ("I think that's how my mom Mabel"). I wrote it as "that's how he came to meet my mom, Mabel", so please check that's what you meant.
+- I added a testing option: `?t=5` in the address stops every scene at the 5-second mark, which makes screenshots easy.
+
+**Other changes:** I added a card for it to the root [index.html](index.html) and two lines to [README.md](README.md).
+
+I checked every scene in screenshots from headless Chrome and fixed two problems that showed up: ripples were drawn over the boats, and the caption overlapped the buttons on short screens. My test at phone width didn't show the true 400px layout, so I haven't confirmed how it looks on a phone. Nothing is committed.
+
+*Time: 5m 44s · Cost: $1.2586 (input 32, output 31.8k, cache write 55.1k, cache read 914.6k) · session $1.2586*
