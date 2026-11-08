@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             if tracker.isSupported {
-                FaceViewAR(tracker: tracker, layers: layers)
+                FaceViewAR(tracker: tracker, layers: layers, faceDetected: tracker.faceDetected)
                     .ignoresSafeArea()
             } else {
                 Color.black.ignoresSafeArea()

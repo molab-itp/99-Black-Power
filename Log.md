@@ -503,3 +503,29 @@ The Xcode app now starts with the same settings as the web app: Mesh off, and Vi
 - [ContentView.swift](FaceMeshMash/FaceMeshMash/ContentView.swift): the app loads the saved toggles at launch and saves them whenever one changes.
 
 *Cost: $0.0943 (input 10, output 1.7k, cache write 2.4k, cache read 208.8k) · session $0.4986*
+
+---
+
+## User (11/7/2026, 9:49:49 PM)
+
+```
+in FacedMeshMash iOS and web
+when no face is detected show video feed
+```
+
+## Assistant
+
+Both apps currently draw a black background whenever Mask is on (the default), so with no face the screen goes black. I'll show the full camera feed whenever no face is tracked.
+
+FaceMeshMash now shows the full camera feed whenever no face is detected, on both iOS and web. Once a face is found, it switches back to your chosen layers.
+
+Before this, the screen went completely black with no face, because Mask was on by default and only the face area showed video.
+
+- **Web** ([index.html](FaceMeshMash/web/index.html)): the full video is now drawn whenever no face is found.
+- **iOS** ([FaceViewAR.swift](FaceMeshMash/FaceMeshMash/FaceViewAR.swift), [ContentView.swift](FaceMeshMash/FaceMeshMash/ContentView.swift)): the camera background now comes back whenever ARKit loses the face.
+
+The iOS app builds without errors, but I haven't run it on a phone. I also haven't tested the web change in a browser.
+
+With no face, the video shows even if the **Video** toggle is off, since otherwise the screen would just be black. If you'd rather the Video toggle still hide it, that's a one-line change.
+
+*Cost: $0.4295 (input 18, output 3.2k, cache write 35.9k, cache read 385.2k) · session $0.4295*

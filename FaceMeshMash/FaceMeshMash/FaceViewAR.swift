@@ -44,6 +44,7 @@ nonisolated struct FaceLayers: Equatable, Codable {
 struct FaceViewAR: UIViewRepresentable {
     let tracker: FaceTracker
     var layers = FaceLayers()
+    var faceDetected = false
 
     func makeCoordinator() -> Coordinator {
         Coordinator(tracker: tracker)
@@ -61,12 +62,12 @@ struct FaceViewAR: UIViewRepresentable {
             config.isLightEstimationEnabled = true
             view.session.run(config, options: [.resetTracking, .removeExistingAnchors])
         }
-        context.coordinator.apply(layers, to: view)
+        context.coordinator.apply(layers, faceDetected: faceDetected, to: view)
         return view
     }
 
     func updateUIView(_ uiView: ARSCNView, context: Context) {
-        context.coordinator.apply(layers, to: uiView)
+        context.coordinator.apply(layers, faceDetected: faceDetected, to: uiView)
     }
 
     static func dismantleUIView(_ uiView: ARSCNView, coordinator: Coordinator) {
@@ -99,16 +100,18 @@ struct FaceViewAR: UIViewRepresentable {
             self.tracker = tracker
         }
 
-        func apply(_ newLayers: FaceLayers, to view: ARSCNView) {
+        func apply(_ newLayers: FaceLayers, faceDetected: Bool, to view: ARSCNView) {
             layers = newLayers
             session = view.session
 
+            // With no face, always show the camera feed so the screen isn't black.
+            let showsBackground = newLayers.showsBackground || !faceDetected
             let background = view.scene.background
-            if !newLayers.showsBackground && !videoHidden {
+            if !showsBackground && !videoHidden {
                 savedBackground = background.contents
                 background.contents = UIColor.black
                 videoHidden = true
-            } else if newLayers.showsBackground && videoHidden {
+            } else if showsBackground && videoHidden {
                 background.contents = savedBackground
                 savedBackground = nil
                 videoHidden = false

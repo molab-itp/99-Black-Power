@@ -327,8 +327,9 @@
       const cover = coverTransform(vw, vh);
       const setT = m => { ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.transform(...m); };
 
-      // Full-screen camera background, shown only when video is on and not masked.
-      if (layers.showVideo && !layers.maskVideo) {
+      // Full-screen camera background, shown when video is on and not masked,
+      // and always when no face is detected so the screen isn't black.
+      if (!face || (layers.showVideo && !layers.maskVideo)) {
         setT(cover);
         ctx.drawImage(video, 0, 0, vw, vh);
       }

@@ -220,3 +220,8 @@ correction: default to zoom in
 
 use same defaults for FacedMeshMash web app
 and xcode project
+
+v1.26
+
+in FacedMeshMash iOS and web
+when no face is detected show video feed
