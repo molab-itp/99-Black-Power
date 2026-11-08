@@ -692,3 +692,28 @@ The live site address changes to `…/99-Black-Power/Greatest100/web/`. So that 
 The rename is staged but not committed.
 
 *Cost: $0.1920 (input 10, output 1.7k, cache write 15.2k, cache read 178.9k) · session $0.1920*
+
+---
+
+## User (11/8/2026, 12:59:08 AM)
+
+```
+in tools/log-turn.js
+include lapse time
+```
+
+## Assistant
+
+Let me try it on a real transcript.
+
+I added lapse time to [tools/log-turn.js](tools/log-turn.js). Each logged exchange now starts its summary line with how long the turn took, for example:
+
+```
+*Time: 18s · Cost: $0.1920 (input 10, output 1.7k, …) · session $0.1920*
+```
+
+I ran it on one of your earlier transcripts and it printed the line above. It hasn't run yet as the live hook writing to `Log.md`.
+
+The time is measured from when you send the prompt to the last recorded event of that turn, which is usually the final reply. The new `lapseOf` function computes it. It shows `18s`, `1m 05s` or `1h 02m 03s` depending on length.
+
+*Time: 15s · Cost: $0.1735 (input 8, output 1.2k, cache write 15.0k, cache read 141.4k) · session $0.1735*

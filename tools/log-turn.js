@@ -67,9 +67,19 @@ function costOf(entries) {
   return t;
 }
 
+// Lapse time from the prompt to the turn's last timestamped entry, e.g. "1m 05s".
+function lapseOf(prompt, turn) {
+  const end = turn.findLast((e) => e.timestamp)?.timestamp;
+  const ms = end ? Date.parse(end) - Date.parse(prompt.timestamp) : 0;
+  const s = Math.max(0, Math.round(ms / 1000));
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+  const pad = (n) => String(n).padStart(2, '0');
+  return h ? `${h}h ${pad(m)}m ${pad(sec)}s` : m ? `${m}m ${pad(sec)}s` : `${sec}s`;
+}
+
 const k = (n) => (n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n));
-const costLine = (turn, session) =>
-  `*Cost: $${turn.cost.toFixed(4)} (input ${k(turn.in)}, output ${k(turn.out)}, cache write ${k(turn.write)}, cache read ${k(turn.read)})` +
+const costLine = (lapse, turn, session) =>
+  `*Time: ${lapse} · Cost: $${turn.cost.toFixed(4)} (input ${k(turn.in)}, output ${k(turn.out)}, cache write ${k(turn.write)}, cache read ${k(turn.read)})` +
   ` · session $${session.cost.toFixed(4)}` +
   (turn.unpriced.size ? ` · no price for ${[...turn.unpriced].join(', ')}` : '') +
   '*';
@@ -105,7 +115,7 @@ async function write(transcript, logFile) {
     const turn = entries.slice(start + 1, prompts[n + 1]);
     const reply = turn.filter(isReply).map(textOf).filter(Boolean).join('\n\n');
     const when = new Date(entries[start].timestamp).toLocaleString();
-    const cost = costLine(costOf(turn), costOf(entries.slice(0, prompts[n + 1])));
+    const cost = costLine(lapseOf(entries[start], turn), costOf(turn), costOf(entries.slice(0, prompts[n + 1])));
     fs.appendFileSync(logFile, `\n---\n\n## User (${when})\n\n\`\`\`\n${cleanPrompt(entries[start])}\n\`\`\`\n\n## Assistant\n\n${reply}\n\n${cost}\n`);
     fs.writeFileSync(stateFile, entries[start].uuid);
   }
