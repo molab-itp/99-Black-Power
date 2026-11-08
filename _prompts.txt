@@ -207,3 +207,16 @@ v1.24
 FacedMeshMash web still fails
 FacedMeshMash web still works
 bin/publish.sh
+
+v1.25
+
+in FacedMeshMash
+remember settings in local settings
+defualt to mesh off, show trangle video pixels,
+mask to show video pixels,
+zoom out
+
+correction: default to zoom in
+
+use same defaults for FacedMeshMash web app
+and xcode project

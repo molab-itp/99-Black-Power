@@ -9,15 +9,32 @@ import SceneKit
 import SwiftUI
 
 /// Which layers of the AR view are visible.
-nonisolated struct FaceLayers: Equatable {
+/// Defaults match the web app: colored triangles masked to the face, mesh off, zoomed in (Fill).
+nonisolated struct FaceLayers: Equatable, Codable {
     var showVideo = true
-    var showMesh = true
-    var showColoredTriangles = false
-    var maskVideo = false  // show camera pixels only inside the face mesh
-    var fillScreen = false  // center the face and scale it to fill the screen
+    var showMesh = false
+    var showColoredTriangles = true
+    var maskVideo = true  // show camera pixels only inside the face mesh
+    var fillScreen = true  // center the face and scale it to fill the screen
 
     /// Full-screen camera background is drawn only when video is on and not masked.
     var showsBackground: Bool { showVideo && !maskVideo }
+
+    private static let defaultsKey = "FaceMeshMash.layers"
+
+    /// Layers saved by `save()`, or the defaults if nothing is saved.
+    static func load() -> FaceLayers {
+        guard let data = UserDefaults.standard.data(forKey: defaultsKey),
+              let saved = try? JSONDecoder().decode(FaceLayers.self, from: data)
+        else { return FaceLayers() }
+        return saved
+    }
+
+    func save() {
+        if let data = try? JSONEncoder().encode(self) {
+            UserDefaults.standard.set(data, forKey: Self.defaultsKey)
+        }
+    }
 }
 
 /// Front-camera AR view running ARFaceTrackingConfiguration.

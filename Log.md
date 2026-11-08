@@ -435,3 +435,71 @@ The fix from last time, hiding the start screen properly, is still in place.
 If Live Server has cached the old page, do a hard reload (Cmd+Shift+R) before testing. All the test files I made were deleted.
 
 *Cost: $0.7155 (input 46, output 13.7k, cache write 21.7k, cache read 1334.4k) · session $1.0093*
+
+---
+
+## User (11/7/2026, 8:32:05 PM)
+
+```
+in FacedMeshMash
+remember settings in local settings
+defualt to mesh off, show trangle video pixels,
+mask to show video pixels,
+zoom out
+```
+
+## Assistant
+
+I updated the web version of FaceMeshMash in [index.html](FaceMeshMash/web/index.html). The script passes a syntax check, but I haven't tried it in a browser with a camera.
+
+**Saved settings**
+- The five toggles are now saved in the browser's local storage, so they stay set between visits.
+- On load, the buttons show the saved settings.
+
+**New defaults** (first visit, or after the browser's site data is cleared)
+- Mesh is off.
+- Color is on, so each triangle is filled with the video pixel color at its center.
+- Mask is on, so video only shows inside the face outline.
+- Fill is off.
+
+**Zoom out:** I read this as showing the whole camera frame instead of cropping it to fill the screen. On a phone held upright, the wide camera picture now fits with black bars above and below, where before the sides were cut off. Fill still zooms in on the face when you turn it on. If you meant something else, like a smaller zoom when Fill is on, tell me and I'll change it.
+
+I didn't change the iOS app. To make it match, it would need the same saved settings and defaults.
+
+*Cost: $0.3516 (input 16, output 3.6k, cache write 26.9k, cache read 326.4k) · session $0.3516*
+
+---
+
+## User (11/7/2026, 8:33:28 PM)
+
+```
+correction: default to zoom in
+```
+
+## Assistant
+
+Fill now starts on, so the app opens zoomed in on the face. I also undid my "zoom out" change: with Fill off, the video fills the whole screen with the edges cropped, as it did before. The change is in [index.html](FaceMeshMash/web/index.html), and I haven't tried it in a browser.
+
+New defaults are Mesh off and Color, Mask and Fill on.
+
+Saved settings take priority over the defaults. If you've already opened this version in a browser, it will keep the settings saved there, which has Fill off. Turn Fill on, or clear the site's data, to see the new default.
+
+*Cost: $0.0527 (input 6, output 1.0k, cache write 1.5k, cache read 100.2k) · session $0.4043*
+
+---
+
+## User (11/7/2026, 8:35:33 PM)
+
+```
+use same defaults for FacedMeshMash web app
+and xcode project
+```
+
+## Assistant
+
+The Xcode app now starts with the same settings as the web app: Mesh off, and Video, Color, Mask and Fill on. Like the web app, it also remembers your toggle settings between launches now. The app builds for iOS, but I haven't run it on a phone.
+
+- [FaceViewAR.swift](FaceMeshMash/FaceMeshMash/FaceViewAR.swift): I changed the defaults and added saving and loading of the toggles.
+- [ContentView.swift](FaceMeshMash/FaceMeshMash/ContentView.swift): the app loads the saved toggles at launch and saves them whenever one changes.
+
+*Cost: $0.0943 (input 10, output 1.7k, cache write 2.4k, cache read 208.8k) · session $0.4986*

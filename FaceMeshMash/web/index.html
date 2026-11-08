@@ -61,16 +61,16 @@
       <button type="button" data-layer="showVideo" aria-pressed="true">
         <svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></svg>
         <span class="label">Video</span></button>
-      <button type="button" data-layer="showMesh" aria-pressed="true">
+      <button type="button" data-layer="showMesh" aria-pressed="false">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg>
         <span class="label">Mesh</span></button>
-      <button type="button" data-layer="showColor" aria-pressed="false">
+      <button type="button" data-layer="showColor" aria-pressed="true">
         <svg viewBox="0 0 24 24"><path d="M12 3L22 20H2z" fill="currentColor"/></svg>
         <span class="label">Color</span></button>
-      <button type="button" data-layer="maskVideo" aria-pressed="false">
+      <button type="button" data-layer="maskVideo" aria-pressed="true">
         <svg viewBox="0 0 24 24"><path d="M4 4h16v7a8 8 0 0 1-16 0z"/><path d="M8 9h2M14 9h2M9 14q3 2 6 0"/></svg>
         <span class="label">Mask</span></button>
-      <button type="button" data-layer="fillScreen" aria-pressed="false">
+      <button type="button" data-layer="fillScreen" aria-pressed="true">
         <svg viewBox="0 0 24 24"><path d="M3 9V3h6M3 3l7 7M21 15v6h-6M21 21l-7-7"/></svg>
         <span class="label">Fill</span></button>
     </div>
@@ -92,13 +92,24 @@
     const valuesEl = document.getElementById("values");
 
     // Which layers are visible (mirrors FaceLayers in the iOS app).
-    const layers = { showVideo: true, showMesh: true, showColor: false, maskVideo: false, fillScreen: false };
+    // Defaults: colored triangles of video pixels, masked to the face, mesh off, zoomed in on the face (Fill).
+    const layers = { showVideo: true, showMesh: false, showColor: true, maskVideo: true, fillScreen: true };
+
+    // Remember the toggles across visits.
+    const SETTINGS_KEY = "FaceMeshMash.layers";
+    try {
+      const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}");
+      for (const k in layers) if (typeof saved[k] === "boolean") layers[k] = saved[k];
+    } catch {}
+    const saveLayers = () => { try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(layers)); } catch {} };
 
     for (const btn of document.querySelectorAll("[data-layer]")) {
+      const key = btn.dataset.layer;
+      btn.setAttribute("aria-pressed", layers[key]);
       btn.addEventListener("click", () => {
-        const key = btn.dataset.layer;
         layers[key] = !layers[key];
         btn.setAttribute("aria-pressed", layers[key]);
+        saveLayers();
       });
     }
 

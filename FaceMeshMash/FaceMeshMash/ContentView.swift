@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tracker = FaceTracker()
-    @State private var layers = FaceLayers()
+    @State private var layers = FaceLayers.load()
     @Environment(\.horizontalSizeClass) private var sizeClass
 
     var body: some View {
@@ -44,6 +44,7 @@ struct ContentView: View {
             .background(.black.opacity(0.5), in: RoundedRectangle(cornerRadius: 12))
             .padding()
         }
+        .onChange(of: layers) { _, newLayers in newLayers.save() }
     }
 
     private func layerToggle(_ title: String, systemImage: String, isOn: Binding<Bool>) -> some View {
