@@ -206,3 +206,4 @@ v1.24
 
 FacedMeshMash web still fails
 FacedMeshMash web still works
+bin/publish.sh
