@@ -8,7 +8,7 @@
 
 | App | Folder |
 | --- | --- |
-| Black-Power | [Black-Power/](Black-Power/) |
+| Black_Explore | [Black_Explore/](Black_Explore/) |
 | BubbleCanvas | [BubbleCanvas/](BubbleCanvas/) |
 | FaceMeshMash | [FaceMeshMash/](FaceMeshMash/) — web version at https://molab-itp.github.io/99-Black-Power/FaceMeshMash/web/ |
 | RandomShapes | [RandomShapes/](RandomShapes/) |

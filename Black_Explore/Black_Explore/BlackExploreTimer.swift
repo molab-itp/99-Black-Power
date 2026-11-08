@@ -1,6 +1,6 @@
 //
-//  BlackPower.swift
-//  Black-Power
+//  BlackExplore.swift
+//  Black_Explore
 //
 //  Created by jht2 on 9/27/26.
 //
@@ -13,7 +13,7 @@ fileprivate let animInterval = 0.10; // update very tenth of a second
 // TimelineView vs. Combine Timer
 // ask AI for trade offs
 
-struct BlackPowerTimer: View {
+struct BlackExploreTimer: View {
   @State private var angle: CGFloat = .pi
   
   // Requires import Combine
@@ -24,7 +24,7 @@ struct BlackPowerTimer: View {
       Text("Black Power taking up space")
         .font(.system(size: 28))
         .bold()
-      BlackPowerCanvasView(startingAngle: angle)
+      BlackExploreCanvasView(startingAngle: angle)
       Text("...more")
         .font(.largeTitle)
     }
@@ -34,14 +34,14 @@ struct BlackPowerTimer: View {
       //            print("startAngle", startAngle)
     }
     .onAppear {
-      print("BlackPowerTimer onAppear")
+      print("BlackExploreTimer onAppear")
     }
   }
 }
 
 #Preview {
-  BlackPowerTimer()
+  BlackExploreTimer()
 }
 
-// Shared drawing helpers (BlackPowerCanvasView, drawBlackPower, and the
-// gold color extensions) are defined in BlackPowerTimeline.swift.
+// Shared drawing helpers (BlackExploreCanvasView, drawBlackExplore, and the
+// gold color extensions) are defined in BlackExploreTimeline.swift.

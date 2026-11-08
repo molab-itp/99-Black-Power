@@ -241,5 +241,13 @@ nav to show the variations
 BlackFont8View
 BlackPowerTimeline
 
+v1.28
+
+in Black-Power rename to
+Black_Explore include
+Black_Power and BlackPower prefix
+
+# --
+
 nav to show JHT's art work
 /Users/jht2/Documents/projects/molab/99-Black-Power/Black-Power/Black-Power/BlackFont8View.swift

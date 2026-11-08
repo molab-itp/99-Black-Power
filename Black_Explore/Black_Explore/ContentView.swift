@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Black-Power
+//  Black_Explore
 //
 //  Created by jht2 on 9/27/26.
 //
@@ -13,12 +13,12 @@ struct ContentView: View {
     NavigationStack {
       List {
         NavigationLink("Black Power Timeline") {
-          BlackPowerTimeline()
+          BlackExploreTimeline()
             .navigationTitle("Timeline")
             .navigationBarTitleDisplayMode(.inline)
         }
         NavigationLink("Black Power Timer") {
-          BlackPowerTimer()
+          BlackExploreTimer()
             .navigationTitle("Timer")
             .navigationBarTitleDisplayMode(.inline)
         }

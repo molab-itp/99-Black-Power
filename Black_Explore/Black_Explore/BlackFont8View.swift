@@ -1,6 +1,6 @@
 //
 //  BlackFont8View.swift
-//  Black-Power
+//  Black_Explore
 //
 //  Created by jht2 on 9/29/26.
 //
@@ -15,7 +15,7 @@ struct BlackFont8View: View {
     TimelineView(.animation(minimumInterval: 0.1)) {
       context in
       Canvas { context, size in
-//        drawBlackPower(context: context,
+//        drawBlackExplore(context: context,
 //                       size: size,
 //                       startingAngle: angle)
         let str = buildFont8String(inputString, scale: 2).joined(separator: "\n")

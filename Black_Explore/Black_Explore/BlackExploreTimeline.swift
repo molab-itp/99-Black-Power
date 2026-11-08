@@ -1,6 +1,6 @@
 //
-//  BlackPower.swift
-//  Black-Power
+//  BlackExplore.swift
+//  Black_Explore
 //
 //  Created by jht2 on 9/27/26.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 
 fileprivate let animInterval = 0.10; // update very tenth of a second
 
-struct BlackPowerTimeline: View {
+struct BlackExploreTimeline: View {
   @State private var angle: CGFloat = .pi
   var body: some View {
     VStack {
@@ -18,7 +18,7 @@ struct BlackPowerTimeline: View {
         .bold()
       TimelineView(.animation(minimumInterval: animInterval)) {
         context in
-        BlackPowerCanvasView(startingAngle: angle)
+        BlackExploreCanvasView(startingAngle: angle)
           .onChange(of: context.date) { _, _ in
             angle += .pi / 180
           }
@@ -27,27 +27,27 @@ struct BlackPowerTimeline: View {
         .font(.largeTitle)
     }
     .onAppear {
-      print("BlackPowerTimeline onAppear")
+      print("BlackExploreTimeline onAppear")
     }
   }
 }
 
 #Preview {
-  BlackPowerTimeline()
+  BlackExploreTimeline()
 }
 
-struct BlackPowerCanvasView: View {
+struct BlackExploreCanvasView: View {
   var startingAngle: CGFloat
   var body: some View {
     Canvas { context, size in
-      drawBlackPower(context: context,
+      drawBlackExplore(context: context,
                      size: size,
                      startingAngle: startingAngle)
     }
   }
 }
 
-func drawBlackPower(
+func drawBlackExplore(
   context: GraphicsContext,
   size: CGSize,
   startingAngle: CGFloat,
@@ -107,7 +107,7 @@ func drawBlackPower(
   var n = ninner ?? 16;
   if innerRect == nil ||  n > 0 {
     // Inner circle
-    drawBlackPower(context: context,
+    drawBlackExplore(context: context,
                    size: ibox.size,
                    startingAngle: startingAngle + Double.pi * 0.06,
                    innerRect: ibox,

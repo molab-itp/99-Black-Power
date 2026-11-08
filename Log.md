@@ -556,3 +556,42 @@ I didn't link `Font8x8View`, which is a test view.
 I also left the next line in `_prompts.txt`, "nav to show JHT's art work", for a separate step. If you want it, tell me which artwork views or files it should show.
 
 *Cost: $0.2471 (input 12, output 2.2k, cache write 20.0k, cache read 221.9k) · session $0.2471*
+
+---
+
+## User (11/8/2026, 12:33:13 AM)
+
+```
+in Black-Power rename to
+Black_Explore include
+Black_Power and BlackPower prefix
+```
+
+## Assistant
+
+Synchronized root group, so file renames don't need pbxproj file entries. Doing the rename now.
+
+The renames worked; the `for` loop failed because zsh doesn't word-split. Redoing the content replace:
+
+Build succeeds (pre-existing warnings only). Updating the README row:
+
+I renamed the Black-Power project to Black_Explore, and it builds for the iOS Simulator. The only compiler output is warnings that were already there before the rename.
+
+**Folders and files (moved with `git mv`, so git keeps their history):**
+- `Black-Power/` → [Black_Explore/](Black_Explore/), along with the `.xcodeproj` and the source folder inside it
+- `Black_PowerApp.swift` → [Black_ExploreApp.swift](Black_Explore/Black_Explore/Black_ExploreApp.swift)
+- `BlackPowerTimeline.swift` → [BlackExploreTimeline.swift](Black_Explore/Black_Explore/BlackExploreTimeline.swift)
+- `BlackPowerTimer.swift` → [BlackExploreTimer.swift](Black_Explore/Black_Explore/BlackExploreTimer.swift)
+
+**Names in the code:**
+- `Black-Power` and `Black_Power` became `Black_Explore`.
+- `BlackPower` became `BlackExplore`, so the types are now `Black_ExploreApp`, `BlackExploreTimeline`, `BlackExploreTimer` and `BlackExploreCanvasView`, and the function is `drawBlackExplore`.
+- In the Xcode project, the target, scheme, product (`Black_Explore.app`) and source folder path are all renamed.
+
+**Two things to know:**
+- **Bundle ID:** it is now `com.jht1900.Black-Explore`. Bundle IDs can't contain underscores, so it uses a hyphen. Because the ID changed, a phone treats this as a new app and installs it next to the old Black-Power app rather than replacing it.
+- **Left unchanged:** the repo name `99-Black-Power` and its URLs, the workspace file, and the icon filename `black-power-icon2-1024.png`.
+
+I also updated the Black-Power entry in [README.md](README.md) to point to the new folder. Nothing is committed yet.
+
+*Cost: $0.3419 (input 14, output 2.9k, cache write 28.3k, cache read 289.6k) · session $0.3419*
