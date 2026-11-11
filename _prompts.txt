@@ -352,3 +352,8 @@ with  a colored line
 stepping thru the colors
 red, gold, and green 
 every second
+
+v1.41
+
+in FaceMash/web outline only the interior of the lips.
+as it is in FaceMash/iOS

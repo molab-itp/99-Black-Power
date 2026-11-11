@@ -1142,3 +1142,22 @@ Things to know:
 - **Not committed.** Both files are changed but nothing has been committed.
 
 *Time: 1m 19s · Cost: $0.5451 (input 22, output 7.2k, cache write 37.1k, cache read 517.4k) · session $0.5451*
+
+---
+
+## User (11/11/2026, 5:38:39 PM)
+
+```
+in FaceMash/web outline only the interior of the lips.
+as it is in FaceMash/iOS
+```
+
+## Assistant
+
+The web version of FaceMash now outlines only the inside edge of the lips (the mouth opening), the same as the iOS app. The eye outlines haven't changed. I haven't run it with a camera yet.
+
+The change is in [index.html](FaceMash/web/index.html): from MediaPipe's lip connections, it keeps only the ones joining the 20 points that trace the inner lip edge. This relies on MediaPipe's standard face point numbering. As far as I know, the inner-edge points I listed don't overlap with any outer-edge points, so the outer lip line is gone entirely.
+
+Nothing is committed yet.
+
+*Time: 12s · Cost: $0.0573 (input 6, output 1.1k, cache write 1.4k, cache read 125.7k) · session $0.6024*

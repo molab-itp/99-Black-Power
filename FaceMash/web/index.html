@@ -118,11 +118,12 @@
     const EDGES = FaceLandmarker.FACE_LANDMARKS_TESSELATION.map(c => [c.start, c.end]);
     const OVAL = edgesToLoop(FaceLandmarker.FACE_LANDMARKS_FACE_OVAL);
     const TRIANGLES = trianglesFromEdges(EDGES);
-    // Eye and mouth contours (lips include both the outer and inner edge).
+    // Eye contours and the inner edge of the lips (the mouth opening), matching the iOS app.
+    const INNER_LIPS = new Set([78, 95, 88, 178, 87, 14, 317, 402, 318, 324, 308, 415, 310, 311, 312, 13, 82, 81, 80, 191]);
     const OUTLINE_EDGES = [
       ...FaceLandmarker.FACE_LANDMARKS_LEFT_EYE,
       ...FaceLandmarker.FACE_LANDMARKS_RIGHT_EYE,
-      ...FaceLandmarker.FACE_LANDMARKS_LIPS,
+      ...FaceLandmarker.FACE_LANDMARKS_LIPS.filter(c => INNER_LIPS.has(c.start) && INNER_LIPS.has(c.end)),
     ].map(c => [c.start, c.end]);
 
     function trianglesFromEdges(edges) {
