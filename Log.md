@@ -1106,3 +1106,39 @@ I renamed FaceMeshMash to FaceMash everywhere except the log history and your pr
 - **Log.md was briefly changed by mistake.** My bulk replace also changed the old FaceMeshMash entries in Log.md. I put them back, and the file now matches git exactly.
 
 *Time: 1m 05s · Cost: $0.3384 (input 18, output 3.4k, cache write 24.6k, cache read 369.4k) · session $0.3384*
+
+---
+
+## User (11/11/2026, 4:40:40 PM)
+
+```
+in FaceMash out the eyes and mouth shapes 
+with  a colored line  
+stepping thru the colors
+red, gold, and green 
+every second
+```
+
+## Assistant
+
+No version string in code, so just the feature. Web edit:
+
+Now iOS: share the eye/mouth hole loops between the mask and a new outline layer.
+
+iOS builds cleanly. Quick syntax check on the web script:
+
+FaceMash now draws a line around the eyes and mouth in both the iOS app and the web version. The line changes color once a second: red, then gold, then green, then back to red. The iOS app builds without errors and the web script passes a syntax check. I haven't run either one on a camera yet, so I haven't seen the line on a real face.
+
+**iOS ([FaceViewAR.swift](FaceMash/FaceMash/FaceViewAR.swift))**
+- The eye and mouth openings in the face mesh were already being found for the Mask layer. I moved that code into a small shared helper so the mask and the new outline both use it.
+- The new outline draws a band about 2 mm wide around each opening, on top of all the other layers. It moves and scales with the face when Fill is on.
+
+**Web ([index.html](FaceMash/web/index.html))**
+- The outline uses MediaPipe's built-in eye and lip outlines, drawn about 4 px thick on top of the other layers.
+- The lip outline includes both the outer and inner edge of the lips. On iOS, only the inner mouth opening is outlined, because that's what the face mesh provides.
+
+Things to know:
+- **No on/off button.** The outline is always visible. A button is easy to add, but on iOS adding a new saved setting would wipe each user's saved button choices once, unless I also change how those settings are loaded.
+- **Not committed.** Both files are changed but nothing has been committed.
+
+*Time: 1m 19s · Cost: $0.5451 (input 22, output 7.2k, cache write 37.1k, cache read 517.4k) · session $0.5451*

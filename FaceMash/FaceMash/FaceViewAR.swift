@@ -90,6 +90,7 @@ struct FaceViewAR: UIViewRepresentable {
         nonisolated private static let meshName = "mesh"
         nonisolated private static let colorName = "color"
         nonisolated private static let maskName = "mask"
+        nonisolated private static let outlineName = "outline"
         nonisolated private static let contentName = "content"
 
         // Face bounds in anchor space, measured once so Fill doesn't jitter as the face moves.
@@ -150,12 +151,17 @@ struct FaceViewAR: UIViewRepresentable {
             maskNode.renderingOrder = -1  // draw video-textured face under the other layers
             maskNode.isHidden = !layers.maskVideo
 
+            let outlineNode = SCNNode()
+            outlineNode.name = Self.outlineName
+            outlineNode.renderingOrder = 2  // eye and mouth outlines on top of everything
+
             // Holds all layers so Fill can move and scale them together.
             let contentNode = SCNNode()
             contentNode.name = Self.contentName
             contentNode.addChildNode(maskNode)
             contentNode.addChildNode(colorNode)
             contentNode.addChildNode(meshNode)
+            contentNode.addChildNode(outlineNode)
 
             let faceNode = SCNNode()
             faceNode.addChildNode(contentNode)
@@ -176,6 +182,9 @@ struct FaceViewAR: UIViewRepresentable {
                let maskNode = node.childNode(withName: Self.maskName, recursively: true),
                let frame = session?.currentFrame {
                 maskNode.geometry = FaceVideoMask.geometry(for: faceAnchor, in: frame)
+            }
+            if let outlineNode = node.childNode(withName: Self.outlineName, recursively: true) {
+                outlineNode.geometry = FaceOutline.geometry(for: faceAnchor)
             }
             if let contentNode = node.childNode(withName: Self.contentName, recursively: false) {
                 contentNode.simdTransform = layers.fillScreen
@@ -336,15 +345,18 @@ nonisolated enum TriangleColorizer {
     }
 }
 
-/// Builds a face geometry textured with the part of the camera image the face covers,
-/// so drawing it over a black background shows the video only inside the face mesh.
-/// The eye and mouth openings in the mesh are filled so the video shows there too.
-nonisolated enum FaceVideoMask {
-    private static let context = CIContext(options: [.cacheIntermediates: false])
+/// Vertex loops around the eye and mouth openings in the ARKit face mesh.
+nonisolated enum FaceHoles {
+    // The face topology never changes, so the loops are found once.
+    // Only touched on the SceneKit render thread.
+    nonisolated(unsafe) private static var cached: [[Int]]?
 
-    // Vertex loops around the eye and mouth openings; the face topology never changes,
-    // so they are found once. Only touched on the SceneKit render thread.
-    nonisolated(unsafe) private static var holeLoops: [[Int]]?
+    static func loops(for face: ARFaceGeometry) -> [[Int]] {
+        if let cached { return cached }
+        let loops = findHoleLoops(face.triangleIndices)
+        cached = loops
+        return loops
+    }
 
     /// Finds the mesh's open edge loops (edges used by one triangle only),
     /// dropping the longest one, which is the outer edge of the face.
@@ -371,11 +383,73 @@ nonisolated enum FaceVideoMask {
         loops.sort { $0.count > $1.count }
         return Array(loops.dropFirst())
     }
+}
+
+/// Builds a band of color around the eye and mouth openings,
+/// stepping through red, gold and green once per second.
+nonisolated enum FaceOutline {
+    private static let colors: [UIColor] = [
+        UIColor(red: 0.89, green: 0.11, blue: 0.14, alpha: 1),  // red
+        UIColor(red: 1.00, green: 0.84, blue: 0.00, alpha: 1),  // gold
+        UIColor(red: 0.00, green: 0.65, blue: 0.32, alpha: 1),  // green
+    ]
+
+    /// Line width in face (meter) units.
+    private static let width: Float = 0.002
+
+    private static let material: SCNMaterial = {
+        let material = SCNMaterial()
+        material.lightingModel = .constant
+        material.isDoubleSided = true
+        material.readsFromDepthBuffer = false  // always visible over the other layers
+        return material
+    }()
+
+    static func geometry(for anchor: ARFaceAnchor) -> SCNGeometry? {
+        let face = anchor.geometry
+        let vertices = face.vertices
+        var positions: [SCNVector3] = []
+        var indices: [Int32] = []
+
+        // For each loop, a ribbon centered on the hole's edge: every loop vertex is pushed
+        // half the width toward and away from the loop's center.
+        for loop in FaceHoles.loops(for: face) {
+            let center = loop.reduce(SIMD3<Float>()) { $0 + vertices[$1] } / Float(loop.count)
+            let base = Int32(positions.count)
+            for v in loop {
+                let p = vertices[v]
+                let out = simd_normalize(p - center) * (width / 2)
+                positions.append(SCNVector3(p - out))
+                positions.append(SCNVector3(p + out))
+            }
+            let n = Int32(loop.count)
+            for i in 0..<n {
+                let j = (i + 1) % n
+                let a = base + 2 * i, b = a + 1, c = base + 2 * j, d = c + 1
+                indices += [a, b, c, b, d, c]
+            }
+        }
+        guard !positions.isEmpty else { return nil }
+
+        let step = Int(Date().timeIntervalSinceReferenceDate) % colors.count
+        material.diffuse.contents = colors[step]
+
+        let geometry = SCNGeometry(sources: [SCNGeometrySource(vertices: positions)],
+                                   elements: [SCNGeometryElement(indices: indices, primitiveType: .triangles)])
+        geometry.firstMaterial = material
+        return geometry
+    }
+}
+
+/// Builds a face geometry textured with the part of the camera image the face covers,
+/// so drawing it over a black background shows the video only inside the face mesh.
+/// The eye and mouth openings in the mesh are filled so the video shows there too.
+nonisolated enum FaceVideoMask {
+    private static let context = CIContext(options: [.cacheIntermediates: false])
 
     static func geometry(for anchor: ARFaceAnchor, in frame: ARFrame) -> SCNGeometry? {
         let face = anchor.geometry
-        let loops = holeLoops ?? findHoleLoops(face.triangleIndices)
-        holeLoops = loops
+        let loops = FaceHoles.loops(for: face)
 
         // Add a center vertex to each hole and close it with a triangle fan.
         // Reversing each open edge keeps the fill facing the same way as the face.

@@ -344,3 +344,11 @@ v1.39
 
 rename FaceMash FaceMash
 and related references
+
+v1.40
+
+in FaceMash out the eyes and mouth shapes 
+with  a colored line  
+stepping thru the colors
+red, gold, and green 
+every second

@@ -82,6 +82,7 @@
     const WASM = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm";
     const MODEL = "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task";
     const MESH_COLOR = "#00ffff";
+    const OUTLINE_COLORS = ["#e31b23", "#ffd700", "#00a651"];  // red, gold, green: one step per second
     const SMILE_THRESHOLD = 0.5;
     const BLINK_THRESHOLD = 0.5;
 
@@ -117,6 +118,12 @@
     const EDGES = FaceLandmarker.FACE_LANDMARKS_TESSELATION.map(c => [c.start, c.end]);
     const OVAL = edgesToLoop(FaceLandmarker.FACE_LANDMARKS_FACE_OVAL);
     const TRIANGLES = trianglesFromEdges(EDGES);
+    // Eye and mouth contours (lips include both the outer and inner edge).
+    const OUTLINE_EDGES = [
+      ...FaceLandmarker.FACE_LANDMARKS_LEFT_EYE,
+      ...FaceLandmarker.FACE_LANDMARKS_RIGHT_EYE,
+      ...FaceLandmarker.FACE_LANDMARKS_LIPS,
+    ].map(c => [c.start, c.end]);
 
     function trianglesFromEdges(edges) {
       const adj = new Map();
@@ -385,6 +392,17 @@
         }
         ctx.stroke();
       }
+
+      // Outline: eyes and mouth in a line that steps through red, gold, green every second.
+      ctx.strokeStyle = OUTLINE_COLORS[Math.floor(performance.now() / 1000) % OUTLINE_COLORS.length];
+      ctx.lineWidth = 4 / lineScale;
+      ctx.lineCap = ctx.lineJoin = "round";
+      ctx.beginPath();
+      for (const [a, b] of OUTLINE_EDGES) {
+        ctx.moveTo(pts[a].x, pts[a].y);
+        ctx.lineTo(pts[b].x, pts[b].y);
+      }
+      ctx.stroke();
     }
   </script>
 </body>
