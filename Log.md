@@ -1161,3 +1161,36 @@ The change is in [index.html](FaceMash/web/index.html): from MediaPipe's lip con
 Nothing is committed yet.
 
 *Time: 12s · Cost: $0.0573 (input 6, output 1.1k, cache write 1.4k, cache read 125.7k) · session $0.6024*
+
+---
+
+## User (11/11/2026, 6:00:53 PM)
+
+```
+in FaceMash xcodeproj add above the
+status text "smile %.2f blink L %.2f blink R %.2f"
+a line that displays the number of blinks, average duration,
+and number of smiles and average duration.
+sync changes to FaceMash/web
+```
+
+## Assistant
+
+FaceMash now shows a new line above the smile/blink values in both the iOS app and the web version:
+
+`blinks 3  avg 0.18s   smiles 2  avg 1.45s`
+
+The iOS app builds and the web script passes a syntax check. I haven't tried either on a real face yet.
+
+How it counts:
+- **Blinks** count only when both eyes close together. A wink doesn't count, which matches when the status says "Blinking".
+- **Smiles** count when the smile value goes above the same 0.5 threshold that shows "Smiling".
+- **Average duration** is the time from start to end, averaged over finished blinks or smiles. One that is still going isn't counted until it ends, so an open smile doesn't change the numbers yet.
+- **Losing the face** throws away any blink or smile in progress. The totals stay and pick up again when the face is found.
+- **Totals don't reset.** They keep adding up until you reload the page or relaunch the app. There's no reset button.
+
+The counting is in [FaceTracker.swift](FaceMash/FaceMash/FaceTracker.swift) and shown in [ContentView.swift](FaceMash/FaceMash/ContentView.swift). [index.html](FaceMash/web/index.html) has the same logic.
+
+Nothing is committed yet.
+
+*Time: 33s · Cost: $0.1177 (input 6, output 3.1k, cache write 3.6k, cache read 128.5k) · session $0.7201*

@@ -25,6 +25,10 @@ struct ContentView: View {
                 Text(tracker.status)
                     .font(.title2.bold())
                 if tracker.faceDetected {
+                    Text(String(format: "blinks %d  avg %.2fs   smiles %d  avg %.2fs",
+                                tracker.blinks.count, tracker.blinks.averageDuration,
+                                tracker.smiles.count, tracker.smiles.averageDuration))
+                        .font(.caption.monospacedDigit())
                     Text(String(format: "smile %.2f   blink L %.2f   blink R %.2f",
                                 tracker.smile, tracker.blinkLeft, tracker.blinkRight))
                         .font(.caption.monospacedDigit())

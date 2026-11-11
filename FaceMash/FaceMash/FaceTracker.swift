@@ -20,6 +20,10 @@ final class FaceTracker {
     var smileThreshold: Float = 0.5
     var blinkThreshold: Float = 0.5
 
+    // Completed blinks (both eyes) and smiles, with how long each lasted.
+    var blinks = EventCounter()
+    var smiles = EventCounter()
+
     var isSmiling: Bool { faceDetected && smile > smileThreshold }
     var isBlinkingLeft: Bool { faceDetected && blinkLeft > blinkThreshold }
     var isBlinkingRight: Bool { faceDetected && blinkRight > blinkThreshold }
@@ -45,6 +49,8 @@ final class FaceTracker {
         blinkLeft = blendShapes[.eyeBlinkLeft]?.floatValue ?? 0
         blinkRight = blendShapes[.eyeBlinkRight]?.floatValue ?? 0
         faceDetected = true
+        blinks.update(isOn: isBlinkingLeft && isBlinkingRight)
+        smiles.update(isOn: isSmiling)
     }
 
     func faceLost() {
@@ -52,5 +58,30 @@ final class FaceTracker {
         smile = 0
         blinkLeft = 0
         blinkRight = 0
+        // A blink or smile in progress when the face is lost is not counted.
+        blinks.cancel()
+        smiles.cancel()
     }
+}
+
+/// Counts how many times a state turns on and off, and how long it stays on.
+struct EventCounter {
+    private(set) var count = 0
+    private(set) var totalDuration: TimeInterval = 0
+    private var start: Date?
+
+    /// Average duration in seconds of completed events, 0 if none.
+    var averageDuration: TimeInterval { count > 0 ? totalDuration / Double(count) : 0 }
+
+    mutating func update(isOn: Bool, at time: Date = .now) {
+        if isOn {
+            if start == nil { start = time }
+        } else if let start {
+            count += 1
+            totalDuration += time.timeIntervalSince(start)
+            self.start = nil
+        }
+    }
+
+    mutating func cancel() { start = nil }
 }

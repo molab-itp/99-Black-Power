@@ -357,3 +357,15 @@ v1.41
 
 in FaceMash/web outline only the interior of the lips.
 as it is in FaceMash/iOS
+
+v1.41
+
+in FaceMash xcodeproj add above the
+status text "smile %.2f blink L %.2f blink R %.2f"
+a line that displays the number of blinks, average duration,
+and number of smiles and average duration.
+sync changes to FaceMash/web
+
+v1.42
+
+add a reset button to clear blink and smile stats

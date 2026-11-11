@@ -56,6 +56,7 @@
 
   <div class="panel" id="panel" hidden>
     <p class="status" id="status">Loading…</p>
+    <p class="values" id="counts"></p>
     <p class="values" id="values"></p>
     <div class="toggles">
       <button type="button" data-layer="showVideo" aria-pressed="true">
@@ -91,6 +92,7 @@
     const ctx = canvas.getContext("2d");
     const statusEl = document.getElementById("status");
     const valuesEl = document.getElementById("values");
+    const countsEl = document.getElementById("counts");
 
     // Which layers are visible (mirrors FaceLayers in the iOS app).
     // Defaults: colored triangles of video pixels, masked to the face, mesh off, zoomed in on the face (Fill).
@@ -284,10 +286,28 @@
       draw(face);
     }
 
+    // Counts how many times a state turns on and off, and how long it stays on (mirrors EventCounter in the iOS app).
+    function eventCounter() {
+      let start = null;
+      return {
+        count: 0, total: 0,
+        get average() { return this.count ? this.total / this.count : 0; },
+        update(isOn, t = performance.now() / 1000) {
+          if (isOn) { if (start === null) start = t; }
+          else if (start !== null) { this.count++; this.total += t - start; start = null; }
+        },
+        cancel() { start = null; },
+      };
+    }
+    // Completed blinks (both eyes) and smiles, with how long each lasted.
+    const blinks = eventCounter(), smiles = eventCounter();
+
     function updateStatus(face, blend) {
       if (!face || !blend) {
         statusEl.textContent = "No face detected";
-        valuesEl.textContent = "";
+        valuesEl.textContent = countsEl.textContent = "";
+        // A blink or smile in progress when the face is lost is not counted.
+        blinks.cancel(); smiles.cancel();
         fillBox = null;
         return;
       }
@@ -299,6 +319,9 @@
       const parts = [];
       if (smile > SMILE_THRESHOLD) parts.push("Smiling");
       const l = blinkL > BLINK_THRESHOLD, r = blinkR > BLINK_THRESHOLD;
+      blinks.update(l && r);
+      smiles.update(smile > SMILE_THRESHOLD);
+      countsEl.textContent = `blinks ${blinks.count}  avg ${blinks.average.toFixed(2)}s   smiles ${smiles.count}  avg ${smiles.average.toFixed(2)}s`;
       if (l && r) parts.push("Blinking");
       else if (l) parts.push("Winking left");
       else if (r) parts.push("Winking right");
