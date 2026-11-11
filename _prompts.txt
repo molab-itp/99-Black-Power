@@ -159,7 +159,7 @@ only show icons in controls, drop the text label
 v1.20
 
 claude: rename FaceMeshUI/FaceMeshUI.xcodeproj
-FaceMeshMash/FaceMeshMash.xcodeproj
+FaceMash/FaceMash.xcodeproj
 
 append this chat to Log.md with date and time stamp,
 model used,
@@ -172,7 +172,7 @@ create and track code for building a black power movement
 apps:
     Black-Power
     BubbleCanvas
-    FaceMeshMash
+    FaceMash
     RandomSampes
     Seismometer
     web
@@ -230,7 +230,7 @@ bin/publish.sh
 
 v1.27
 
-https://molab-itp.github.io/99-Black-Power/FaceMeshMash/web/
+https://molab-itp.github.io/99-Black-Power/FaceMash/web/
 
 # --
 
@@ -339,3 +339,8 @@ store build script in new folder
 BabyBoat/instigate-build
 
 # --
+
+v1.39
+
+rename FaceMash FaceMash
+and related references

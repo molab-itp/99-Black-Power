@@ -1,6 +1,6 @@
 //
 //  FaceViewAR.swift
-//  FaceMeshMash
+//  FaceMash
 //
 
 import ARKit
@@ -20,7 +20,7 @@ nonisolated struct FaceLayers: Equatable, Codable {
     /// Full-screen camera background is drawn only when video is on and not masked.
     var showsBackground: Bool { showVideo && !maskVideo }
 
-    private static let defaultsKey = "FaceMeshMash.layers"
+    private static let defaultsKey = "FaceMash.layers"
 
     /// Layers saved by `save()`, or the defaults if nothing is saved.
     static func load() -> FaceLayers {

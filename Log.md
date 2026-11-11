@@ -1071,3 +1071,38 @@ I set it to **shared**, meaning anyone with the link can view it but it isn't li
 Nothing is committed yet. The new files are in [BabyBoat/instigate-build/](BabyBoat/instigate-build/).
 
 *Time: 4m 23s · Cost: $1.3208 (input 54, output 18.2k, cache write 77.7k, cache read 1678.6k) · session $1.3208*
+
+---
+
+## User (11/11/2026, 4:31:04 PM)
+
+```
+rename FaceMeshMash FaceMash
+and related references
+```
+
+## Assistant
+
+Log.md matches git again. Now the build check:
+
+I renamed FaceMeshMash to FaceMash everywhere except the log history and your prompts file. A generic iOS build of the renamed project succeeds (unsigned), and `xcodebuild -list` shows the FaceMash target and scheme. I haven't tried the web version in a browser. Nothing is committed.
+
+**Renamed (with `git mv`, so git tracks them as renames):**
+- `FaceMeshMash/` → [FaceMash/](FaceMash/)
+- `FaceMeshMash.xcodeproj` → [FaceMash.xcodeproj](FaceMash/FaceMash.xcodeproj)
+- the source folder → [FaceMash/FaceMash/](FaceMash/FaceMash/)
+- `FaceMeshMashApp.swift` → [FaceMashApp.swift](FaceMash/FaceMash/FaceMashApp.swift); the struct is now `FaceMashApp`
+
+**References updated:**
+- the Xcode project file: target, product, scheme and bundle ID, which is now `com.jht1900.FaceMash`
+- your Xcode scheme settings file
+- the header comments in the Swift files
+- the web page's title and heading in [web/index.html](FaceMash/web/index.html)
+- the landing page [index.html](index.html) and [README.md](README.md). The README link is now `.../99-Black-Power/FaceMash/web/`, so the old FaceMeshMash URL will stop working once this is pushed.
+
+**Changes to note:**
+- **The bundle ID changed,** so iOS will install FaceMash as a separate app. You can delete the old one from your device.
+- **Saved toggles will reset.** I also renamed the settings key from `FaceMeshMash.layers` to `FaceMash.layers` on both iOS and web, so toggles saved before the rename won't load.
+- **Log.md was briefly changed by mistake.** My bulk replace also changed the old FaceMeshMash entries in Log.md. I put them back, and the file now matches git exactly.
+
+*Time: 1m 05s · Cost: $0.3384 (input 18, output 3.4k, cache write 24.6k, cache read 369.4k) · session $0.3384*

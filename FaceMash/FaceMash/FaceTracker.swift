@@ -1,6 +1,6 @@
 //
 //  FaceTracker.swift
-//  FaceMeshMash
+//  FaceMash
 //
 
 import ARKit

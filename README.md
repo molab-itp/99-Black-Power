@@ -11,7 +11,7 @@
 | BabyBoat | [BabyBoat/](BabyBoat/) — web only, live at https://molab-itp.github.io/99-Black-Power/BabyBoat/web/ |
 | BlackExplore | [BlackExplore/](BlackExplore/) — web version at https://molab-itp.github.io/99-Black-Power/BlackExplore/web/ |
 | BubbleCanvas | [BubbleCanvas/](BubbleCanvas/) — web version at https://molab-itp.github.io/99-Black-Power/BubbleCanvas/web/ |
-| FaceMeshMash | [FaceMeshMash/](FaceMeshMash/) — web version at https://molab-itp.github.io/99-Black-Power/FaceMeshMash/web/ |
+| FaceMash | [FaceMash/](FaceMash/) — web version at https://molab-itp.github.io/99-Black-Power/FaceMash/web/ |
 | RandomShapes | [RandomShapes/](RandomShapes/) — web version at https://molab-itp.github.io/99-Black-Power/RandomShapes/web/ |
 | Seismometer | [Seismometer/](Seismometer/) |
 | 100 Greatest (web) | [Greatest100/](Greatest100/) — live at https://molab-itp.github.io/99-Black-Power/Greatest100/web/ |
@@ -22,7 +22,7 @@
 - [Greatest100/prep/](Greatest100/prep/) — Node.js app that builds `Greatest100/prep/data/people.json` and images
 - [Greatest100/web/](Greatest100/web/) — web app (grid) that reads `Greatest100/prep/data/`
 - [BabyBoat/web/](BabyBoat/web/) — The Baby and the Boat, a story Walter Thompson told, as an animated picture book (plain JS + canvas)
-- [FaceMeshMash/web/](FaceMeshMash/web/) — browser version of FaceMeshMash using MediaPipe Face Landmarker
+- [FaceMash/web/](FaceMash/web/) — browser version of FaceMash using MediaPipe Face Landmarker
 - [BlackExplore/web/](BlackExplore/web/) — browser version of BlackExplore (Timeline, Timer, Black Font 8, Black Banner)
 - [RandomShapes/web/](RandomShapes/web/) — browser version of RandomShapes (Shape1–Shape5 tabs)
 - [BubbleCanvas/web/](BubbleCanvas/web/) — browser version of BubbleCanvas (tilt or drag to paint a bubble trail)

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>FaceMeshMash</title>
+  <title>FaceMash</title>
   <link rel="icon" href="img/facemesh-icon.jpeg">
   <style>
     html, body { margin: 0; height: 100%; background: #000; color: #fff; font-family: system-ui, sans-serif; overflow: hidden; }
@@ -48,7 +48,7 @@
 
   <div class="start" id="start">
     <img src="img/facemesh-icon.jpeg" alt="">
-    <h1 style="margin:0">FaceMeshMash</h1>
+    <h1 style="margin:0">FaceMash</h1>
     <p id="startMsg">Tracks your face with the front camera. Video stays on your device.</p>
     <button id="startBtn" type="button">Start camera</button>
     <p><a href="../../">← all apps</a></p>
@@ -96,7 +96,7 @@
     const layers = { showVideo: true, showMesh: false, showColor: true, maskVideo: true, fillScreen: true };
 
     // Remember the toggles across visits.
-    const SETTINGS_KEY = "FaceMeshMash.layers";
+    const SETTINGS_KEY = "FaceMash.layers";
     try {
       const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}");
       for (const k in layers) if (typeof saved[k] === "boolean") layers[k] = saved[k];
