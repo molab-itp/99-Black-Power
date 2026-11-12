@@ -369,3 +369,7 @@ sync changes to FaceMash/web
 v1.42
 
 add a reset button to clear blink and smile stats
+
+v1.43
+
+in BlackExplore sync web with xcodeproj

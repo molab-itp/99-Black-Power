@@ -1215,3 +1215,31 @@ The reset is in [FaceTracker.swift](FaceMash/FaceMash/FaceTracker.swift) and the
 Nothing is committed yet.
 
 *Time: 24s · Cost: $0.1123 (input 8, output 2.3k, cache write 3.2k, cache read 204.7k) · session $0.8324*
+
+---
+
+## User (11/11/2026, 11:48:34 PM)
+
+```
+in BlackExplore sync web with xcodeproj
+```
+
+## Assistant
+
+The web version already matched the Xcode app. The only thing out of sync was the `BlackBanderView` → `BlackBannerView` rename you have staged, which a comment in the web code still used.
+
+The web version of BlackExplore was already in sync with the Xcode project, apart from one comment. I fixed it in [app.js:6](BlackExplore/web/app.js#L6) to use the new name `BlackBannerView`, matching your staged file rename. I didn't run the web page or build the app.
+
+I compared each screen against its Swift file:
+- **Home list:** same four items and the same titles as in `ContentView`.
+- **Timeline and Timer:** same wheel drawing, colors, nesting depth, and step size per tick, every 0.1s.
+- **Black Font 8:** same 8x8 font, characters, scale and margins.
+- **Black Banner:** same scale-to-fill-height, 60 points per second scroll speed, and wrap-around copies.
+
+Two differences remain, and both look deliberate:
+- **Black Font 8 on the web** shrinks the text to fit the screen, while the iOS view cuts it off at the edges.
+- **Characters outside basic ASCII** show as a blank space on the web. In Swift, `ch.asciiValue!` would crash on them.
+
+[Log.md](Log.md) still says `BlackBanderView`. I left it because it's a history of earlier steps. Your other two changes (the rename and `ContentView.swift`) are still uncommitted.
+
+*Time: 21s · Cost: $0.3966 (input 14, output 1.7k, cache write 37.3k, cache read 322.4k) · session $0.3966*

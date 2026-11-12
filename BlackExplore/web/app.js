@@ -3,7 +3,7 @@
 //   #timeline  BlackExploreTimeline  (requestAnimationFrame, like TimelineView)
 //   #timer     BlackExploreTimer     (setInterval, like Combine Timer)
 //   #font8     BlackFont8View
-//   #banner    BlackBanderView
+//   #banner    BlackBannerView
 
 const animInterval = 100; // ms — update every tenth of a second
 

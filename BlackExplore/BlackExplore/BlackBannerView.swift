@@ -1,5 +1,5 @@
 //
-//  BlackBanderView.swift
+//  BlackBannerView.swift
 //  BlackExplore
 //
 //  Created by jht2 on 11/8/26.
@@ -9,7 +9,7 @@ import SwiftUI
 
 // Scrolls a BlackFont8View banner right to left in a seamless loop.
 // The banner is scaled so its height fills the view's height.
-struct BlackBanderView: View {
+struct BlackBannerView: View {
   var inputString: String = "Black Power "
   var scale: Int = 1
   var fontSize: CGFloat = 16 // base size used to measure the banner
@@ -63,5 +63,5 @@ struct BlackBanderView: View {
 }
 
 #Preview {
-  BlackBanderView()
+  BlackBannerView()
 }
