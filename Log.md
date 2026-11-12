@@ -1194,3 +1194,24 @@ The counting is in [FaceTracker.swift](FaceMash/FaceMash/FaceTracker.swift) and 
 Nothing is committed yet.
 
 *Time: 33s · Cost: $0.1177 (input 6, output 3.1k, cache write 3.6k, cache read 128.5k) · session $0.7201*
+
+---
+
+## User (11/11/2026, 6:04:06 PM)
+
+```
+add a reset button to clear blink and smile stats
+```
+
+## Assistant
+
+FaceMash now has a **Reset** button at the end of the blinks/smiles line, in both the iOS app and the web version. Tapping it sets both counts and both averages back to zero. The iOS app builds and the web script passes a syntax check, but I haven't tapped the button on a real device yet.
+
+- **When it shows:** the button only appears while a face is detected, because the stats line itself only shows then (on web, both are hidden together).
+- **Mid-smile or mid-blink:** if you tap Reset during a smile or blink, the part before the tap is thrown away. Whatever is left of it gets counted once it ends.
+
+The reset is in [FaceTracker.swift](FaceMash/FaceMash/FaceTracker.swift) and the button is in [ContentView.swift](FaceMash/FaceMash/ContentView.swift). [index.html](FaceMash/web/index.html) has the same button.
+
+Nothing is committed yet.
+
+*Time: 24s · Cost: $0.1123 (input 8, output 2.3k, cache write 3.2k, cache read 204.7k) · session $0.8324*

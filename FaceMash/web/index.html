@@ -18,6 +18,12 @@
     }
     .status { font-size: 1.5rem; font-weight: 700; margin: 0; }
     .values { font: 0.8rem ui-monospace, monospace; margin: 0.25rem 0 0; font-variant-numeric: tabular-nums; }
+    .counts-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
+    .counts-row .values { margin: 0; }
+    .counts-row button {
+      font: 600 0.7rem system-ui, sans-serif; color: #5ce1e6; background: rgba(92, 225, 230, 0.15);
+      border: 0; border-radius: 6px; padding: 0.2rem 0.5rem; cursor: pointer;
+    }
     .toggles { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
     .toggles button {
       display: inline-flex; align-items: center; gap: 0.35rem;
@@ -56,7 +62,10 @@
 
   <div class="panel" id="panel" hidden>
     <p class="status" id="status">Loading…</p>
-    <p class="values" id="counts"></p>
+    <div class="counts-row" id="countsRow" hidden>
+      <p class="values" id="counts"></p>
+      <button type="button" id="resetStats">↺ Reset</button>
+    </div>
     <p class="values" id="values"></p>
     <div class="toggles">
       <button type="button" data-layer="showVideo" aria-pressed="true">
@@ -93,6 +102,7 @@
     const statusEl = document.getElementById("status");
     const valuesEl = document.getElementById("values");
     const countsEl = document.getElementById("counts");
+    const countsRow = document.getElementById("countsRow");
 
     // Which layers are visible (mirrors FaceLayers in the iOS app).
     // Defaults: colored triangles of video pixels, masked to the face, mesh off, zoomed in on the face (Fill).
@@ -300,12 +310,16 @@
       };
     }
     // Completed blinks (both eyes) and smiles, with how long each lasted.
-    const blinks = eventCounter(), smiles = eventCounter();
+    let blinks = eventCounter(), smiles = eventCounter();
+    document.getElementById("resetStats").addEventListener("click", () => {
+      blinks = eventCounter(); smiles = eventCounter();
+    });
 
     function updateStatus(face, blend) {
       if (!face || !blend) {
         statusEl.textContent = "No face detected";
-        valuesEl.textContent = countsEl.textContent = "";
+        valuesEl.textContent = "";
+        countsRow.hidden = true;
         // A blink or smile in progress when the face is lost is not counted.
         blinks.cancel(); smiles.cancel();
         fillBox = null;
@@ -321,6 +335,7 @@
       const l = blinkL > BLINK_THRESHOLD, r = blinkR > BLINK_THRESHOLD;
       blinks.update(l && r);
       smiles.update(smile > SMILE_THRESHOLD);
+      countsRow.hidden = false;
       countsEl.textContent = `blinks ${blinks.count}  avg ${blinks.average.toFixed(2)}s   smiles ${smiles.count}  avg ${smiles.average.toFixed(2)}s`;
       if (l && r) parts.push("Blinking");
       else if (l) parts.push("Winking left");

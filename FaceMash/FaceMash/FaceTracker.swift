@@ -53,6 +53,12 @@ final class FaceTracker {
         smiles.update(isOn: isSmiling)
     }
 
+    /// Clears the blink and smile counts and durations.
+    func resetStats() {
+        blinks = EventCounter()
+        smiles = EventCounter()
+    }
+
     func faceLost() {
         faceDetected = false
         smile = 0
